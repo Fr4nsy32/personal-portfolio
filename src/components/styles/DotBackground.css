@@ -1,0 +1,70 @@
+.dot-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.dot-background-pattern {
+  position: absolute;
+  left: -5rem;
+  top: -3.75rem;
+  width: 90vw;
+  height: 120vh;
+
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0,
+    rgba(255, 255, 255, 1) 1.5px,
+    transparent 2px
+  );
+
+  background-size: 28px 28px;
+
+  mask-image: linear-gradient(
+    135deg,
+    black 0%,
+    black 12%,
+    rgba(0, 0, 0, 0.8) 25%,
+    rgba(0, 0, 0, 0.35) 32%,
+    transparent 42%
+  );
+
+  -webkit-mask-image: linear-gradient(
+    135deg,
+    black 0%,
+    black 12%,
+    rgba(0, 0, 0, 0.8) 25%,
+    rgba(0, 0, 0, 0.35) 32%,
+    transparent 42%
+  );
+}
+
+@media (max-width: 768px) {
+  .dot-background-pattern {
+    width: 120vw;
+    height: 120vh;
+    left: -5rem;
+    top: -3.75rem;
+
+    background-size: 24px 24px;
+
+    mask-image: linear-gradient(
+      135deg,
+      black 0%,
+      black 15%,
+      rgba(0, 0, 0, 0.8) 30%,
+      rgba(0, 0, 0, 0.35) 40%,
+      transparent 52%
+    );
+
+    -webkit-mask-image: linear-gradient(
+      135deg,
+      black 0%,
+      black 15%,
+      rgba(0, 0, 0, 0.8) 30%,
+      rgba(0, 0, 0, 0.35) 40%,
+      transparent 52%
+    );
+  }
+}
