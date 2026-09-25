@@ -39,32 +39,3 @@
     transparent 42%
   );
 }
-
-@media (max-width: 768px) {
-  .dot-background-pattern {
-    width: 120vw;
-    height: 120vh;
-    left: -5rem;
-    top: -3.75rem;
-
-    background-size: 24px 24px;
-
-    mask-image: linear-gradient(
-      135deg,
-      black 0%,
-      black 15%,
-      rgba(0, 0, 0, 0.8) 30%,
-      rgba(0, 0, 0, 0.35) 40%,
-      transparent 52%
-    );
-
-    -webkit-mask-image: linear-gradient(
-      135deg,
-      black 0%,
-      black 15%,
-      rgba(0, 0, 0, 0.8) 30%,
-      rgba(0, 0, 0, 0.35) 40%,
-      transparent 52%
-    );
-  }
-}

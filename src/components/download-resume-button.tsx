@@ -1,30 +1,27 @@
-import { Lottie } from "lottie-react";
+import { LottieDisplay, useLottie } from "lottie-react";
 import downloadAnimation from "../assets/lottie/downloadAnimation.json";
 import cv_eng from "../assets/curriculum/Andi_Sina_CV_Eng.pdf";
-import { useState } from "react";
 
 const DownloadResumeButton: React.FC = () => {
-  const [isDownloading, setIsDownloading] = useState(false);
-
-  const handleDownload = () => {
-    if (isDownloading) return;
-
-    setIsDownloading(true);
-
-    setTimeout(() => {
-      const link = document.createElement("a");
-      link.href = cv_eng;
-      link.download = "Andi_Sina_CV_Eng.pdf";
-      link.click();
-
-      setIsDownloading(false);
-    }, 4000);
-  };
+  const lottie = useLottie({
+    src: downloadAnimation,
+    loop: false,
+    speed: 2,
+    subscriptions: {
+      complete: () => {
+        const link = document.createElement("a");
+        link.href = cv_eng;
+        link.download = "Andi_Sina_CV_Eng.pdf";
+        link.click();
+      },
+      error: ({ error }) => console.error(error),
+    },
+  });
 
   return (
     <button
       type="button"
-      onClick={handleDownload}
+      onClick={() => lottie.play()}
       className="
         inline-flex
         cursor-pointer
@@ -50,17 +47,7 @@ const DownloadResumeButton: React.FC = () => {
       "
     >
       <span>Curriculum</span>
-
-      <Lottie
-        src={downloadAnimation}
-        autoplay={isDownloading}
-        loop={1}
-        speed={0.7}
-        className="w-7 h-7 shrink-0"
-        style={{
-          transform: "scale(0.8)",
-        }}
-      />
+      <LottieDisplay lottie={lottie} />
     </button>
   );
 };
