@@ -1,12 +1,8 @@
 import "./App.css";
-import Layout from "./pages/layout";
+import RenderRoutes from "./routes";
 
 const App: React.FC = () => {
-  return (
-    <>
-      <Layout />
-    </>
-  );
-}
+  return <RenderRoutes />;
+};
 
 export default App;

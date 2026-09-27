@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import logo from "../../assets/svg/personal_logo.svg";
 import DownloadResumeButton from "../../components/download-resume-button";
-
-const NAV_LINKS = [
-  { label: "About", href: "#" },
-  { label: "Projects", href: "#" },
-  { label: "Contacts", href: "#" },
-];
+import { RouteNames } from "../../routes/route-names";
+import { Link, NavLink } from "react-router-dom";
 
 const NavbarComponent: React.FC = () => {
+  const NAV_LINKS = [
+    { label: "About", route: RouteNames.ABOUT },
+    { label: "Projects", route: RouteNames.PROJECTS },
+    { label: "Contacts", route: RouteNames.CONTACTS },
+  ];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -25,8 +26,7 @@ const NavbarComponent: React.FC = () => {
         ${isMenuOpen ? "rounded-t-4xl" : "rounded-full"}
       `}
     >
-      {" "}
-      <a href="/">
+      <Link to="/" onClick={() => setIsMenuOpen(false)}>
         <img
           src={logo}
           alt="Logo"
@@ -34,8 +34,8 @@ const NavbarComponent: React.FC = () => {
             w-10 h-10
           "
         />
-      </a>
-      {/* Desktop: links + buttons pushed to the end with ml-auto */}
+      </Link>
+      {/* Desktop navigation links and download button */}
       <div
         className="
           hidden
@@ -44,15 +44,16 @@ const NavbarComponent: React.FC = () => {
           md:flex
         "
       >
-        {NAV_LINKS.map(({ label, href }) => (
-          <a
+        {NAV_LINKS.map(({ label, route }) => (
+          <NavLink
             key={label}
-            href={href}
-            className="
+            to={route}
+            className={({ isActive }) => `
               overflow-hidden
               h-6
               relative group
-            "
+              ${isActive ? "text-white font-medium" : "text-gray-300"}
+            `}
           >
             <span
               className="
@@ -72,7 +73,7 @@ const NavbarComponent: React.FC = () => {
             >
               {label}
             </span>
-          </a>
+          </NavLink>
         ))}
 
         <div
@@ -85,7 +86,7 @@ const NavbarComponent: React.FC = () => {
           <DownloadResumeButton />
         </div>
       </div>
-      {/* Mobile menu toggle */}
+      {/* Mobile menu button and dropdown */}
       <button
         onClick={() => setIsMenuOpen((open) => !open)}
         aria-expanded={isMenuOpen}
@@ -113,10 +114,6 @@ const NavbarComponent: React.FC = () => {
           )}
         </svg>
       </button>
-      {/* Mobile menu: always mounted so its open/close can animate instead of
-          snapping in and out. The outer div animates a grid row from 0fr to 1fr
-          (a CSS trick for animating to an auto/content height), paired with an
-          opacity fade; the inner div clips the content while it grows/shrinks. */}
       <div
         aria-hidden={!isMenuOpen}
         className={`
@@ -145,17 +142,19 @@ const NavbarComponent: React.FC = () => {
               items-center
             "
           >
-            {NAV_LINKS.map(({ label, href }, index) => (
+            {NAV_LINKS.map(({ label, route }, index) => (
               <React.Fragment key={label}>
-                <a
-                  href={href}
+                <NavLink
+                  to={route}
                   tabIndex={isMenuOpen ? 0 : -1}
-                  className="
+                  onClick={() => setIsMenuOpen(false)}
+                  className={({ isActive }) => `
                     py-4
-                  "
+                    ${isActive ? "text-white font-medium" : "text-gray-300"}
+                  `}
                 >
                   {label}
-                </a>
+                </NavLink>
                 {index < NAV_LINKS.length - 1 && (
                   <div
                     className="
