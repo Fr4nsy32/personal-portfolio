@@ -13,7 +13,7 @@ interface Slide {
   outputs: NonNullable<TerminalProps["outputs"]>;
 }
 
-const PAUSE_AFTER_DONE = 5000;
+const PAUSE_AFTER_DONE = 10000;
 
 const buildSlide = (p: Project): Slide => {
   const url = `https://github.com/${GITHUB_USER}/${p.repo}`;
@@ -64,7 +64,7 @@ const TerminalCarousel: React.FC = () => {
   }, [api, completed, paused]);
 
   return (
-    <section className="w-full mt-2 md:py-20">
+    <section className="w-full mt-2 lg:py-20">
       <p className="mb-6 text-center font-heading text-sm uppercase tracking-widest text-neutral-400">
         Selected projects
       </p>
