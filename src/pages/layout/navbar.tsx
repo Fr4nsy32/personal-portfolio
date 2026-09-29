@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import logo from "../../assets/svg/personal_logo.svg";
-import DownloadResumeButton from "../../components/download-resume-button";
-import { RouteNames } from "../../routes/route-names";
+import logo from "@/assets/svg/personal_logo.svg";
+import DownloadResumeButton from "@/components/download-resume-button";
+import { RouteNames } from "@/routes/route-names";
 import { Link, NavLink } from "react-router-dom";
 
 const NavbarComponent: React.FC = () => {
