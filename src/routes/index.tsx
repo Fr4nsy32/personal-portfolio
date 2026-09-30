@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { RouteNames } from "./route-names";
-import Layout from "../pages/layout/index.tsx";
+import Layout from "@/pages/layout";
+import HomePage from "@/pages/home";
 
 const RenderRoutes: React.FC = () => {
   const router = createBrowserRouter([
@@ -10,7 +11,7 @@ const RenderRoutes: React.FC = () => {
       children: [
         {
           index: true,
-          element: <div className="text-white text-center">Home Page</div>,
+          element: <HomePage />,
         },
         {
           path: RouteNames.ABOUT,
