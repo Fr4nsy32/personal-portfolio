@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import DotBackground from "../../components/dot-background";
+import DotBackground from "@/components/dot-background";
 import NavbarComponent from "./navbar";
-import { version } from "../../../package.json";
+import { version } from "@/../package.json";
 
 const Layout: React.FC = () => {
   return (

@@ -1,6 +1,6 @@
 import { LottieDisplay, useLottie } from "lottie-react";
-import downloadAnimation from "../assets/lottie/downloadAnimation.json";
-import cv_eng from "../assets/curriculum/Andi_Sina_CV_Eng.pdf";
+import downloadAnimation from "@/assets/lottie/downloadAnimation.json";
+import cv_eng from "@/assets/curriculum/Andi_Sina_CV_Eng.pdf";
 
 const DownloadResumeButton: React.FC = () => {
   const lottie = useLottie({
