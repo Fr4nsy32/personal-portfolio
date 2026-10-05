@@ -1,0 +1,12 @@
+{
+    "nav": {
+        "about": "Chi sono",
+        "projects": "Progetti",
+        "contacts": "Contatti",
+        "toggleMenu": "Apri menu"
+    },
+    "home": {
+        "title": "Sviluppatore Full_Stack",
+        "description": "Sviluppatore full-stack che trasforma le idee in prodotti web affidabili e curati. Lavoro con React, TypeScript, Node.js e strumenti cloud per realizzare codice pulito e ottime esperienze utente. Disponibile per progetti freelance e nuove opportunità: contattami."
+    }
+}
