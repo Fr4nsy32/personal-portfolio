@@ -5,7 +5,7 @@ import { version } from "@/../package.json";
 
 const Layout: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col" id="layout">
+    <div className="min-h-dvh flex flex-col" id="layout">
       <DotBackground />
       <NavbarComponent />
 
@@ -13,7 +13,7 @@ const Layout: React.FC = () => {
         <Outlet />
       </main>
 
-      <footer className="mt-auto text-center text-sm text-muted-foreground text-gray-700 py-4">
+      <footer className="mt-auto text-center text-sm text-muted-foreground py-4">
         <p>&copy; {new Date().getFullYear()} Andi Sina. All rights reserved.</p>
         <p>Version: {version}</p>
       </footer>

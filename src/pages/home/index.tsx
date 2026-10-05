@@ -1,20 +1,21 @@
+import { useTranslation } from "react-i18next";
 import TerminalCarousel from "./terminal-carousel";
 
 const HomePage: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
-    <div className="flex flex-col items-center justify-center gap-8 px-4 pt-3 lg:flex-row-reverse lg:items-center lg:justify-center lg:gap-12  lg:px-24">
-      <div className="flex flex-col items-center text-center lg:items-start lg:text-left lg:flex-1">
-        <h1 className="font-heading text-5xl font-medium text-white lg:text-7xl">
-          Full_Stack Developer
+    <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-8 px-4 pt-12 pb-8 sm:px-6 xl:flex-row-reverse xl:gap-16 xl:px-12 xl:pt-12">
+      <div className="flex min-w-0 flex-col items-center text-center xl:flex-[2] xl:items-start xl:text-left">
+        <h1 className="font-heading text-4xl font-medium text-white sm:text-5xl xl:text-6xl ">
+          {t("home.title")}
         </h1>
-        <p className="mt-4 p-3 pt-2 lg:text-xl text-lg text-gray-400 lg:p-0 lg:pt-4">
-          Full-stack developer turning ideas into reliable, well-crafted web
-          products. I work with React, TypeScript, Node.js and cloud tooling to
-          ship clean code and great user experiences. Open to freelance projects
-          and new opportunities, so get in touch.
+        <p className="mt-4 max-w-xl text-gray-400 text-base md:text-lg xl:text-xl">
+          {t("home.description")}
         </p>
       </div>
-      <div className="w-full lg:flex-1">
+
+      <div className="w-full min-w-0 max-w-2xl xl:max-w-none xl:flex-[3]">
         <TerminalCarousel />
       </div>
     </div>

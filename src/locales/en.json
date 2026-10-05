@@ -1,0 +1,12 @@
+{
+    "nav": {
+        "about": "About",
+        "projects": "Projects",
+        "contacts": "Contacts",
+        "toggleMenu": "Toggle menu"
+    },
+    "home": {
+        "title": "Full_Stack Developer",
+        "description": "Full-stack developer turning ideas into reliable, well-crafted web products. I work with React, TypeScript, Node.js and cloud tooling to ship clean code and great user experiences. Open to freelance projects and new opportunities, so get in touch."
+    }
+}
