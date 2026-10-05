@@ -3,12 +3,16 @@ import logo from "@/assets/svg/personal_logo.svg";
 import DownloadResumeButton from "@/components/download-resume-button";
 import { RouteNames } from "@/routes/route-names";
 import { Link, NavLink } from "react-router-dom";
+import LanguageToggle from "@/components/language-toggle";
+import { useTranslation } from "react-i18next";
 
 const NavbarComponent: React.FC = () => {
+  const { t } = useTranslation();
+
   const NAV_LINKS = [
-    { label: "About", route: RouteNames.ABOUT },
-    { label: "Projects", route: RouteNames.PROJECTS },
-    { label: "Contacts", route: RouteNames.CONTACTS },
+    { label: t("nav.about"), route: RouteNames.ABOUT },
+    { label: t("nav.projects"), route: RouteNames.PROJECTS },
+    { label: t("nav.contacts"), route: RouteNames.CONTACTS },
   ];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -41,7 +45,7 @@ const NavbarComponent: React.FC = () => {
           hidden
           ml-auto
           items-center gap-6
-          md:flex
+          sm:flex
         "
       >
         {NAV_LINKS.map(({ label, route }) => (
@@ -52,7 +56,8 @@ const NavbarComponent: React.FC = () => {
               overflow-hidden
               h-6
               relative group
-              ${isActive ? "text-white font-medium" : "text-gray-300"}
+              hover:drop-shadow-[0_0_1px_#fff]
+              ${isActive ? "text-white font-medium drop-shadow-[0_0_1px_#fff] " : "text-gray-300"}
             `}
           >
             <span
@@ -84,6 +89,7 @@ const NavbarComponent: React.FC = () => {
           "
         >
           <DownloadResumeButton />
+          <LanguageToggle />
         </div>
       </div>
       {/* Mobile menu button and dropdown */}
@@ -93,7 +99,7 @@ const NavbarComponent: React.FC = () => {
         aria-label="Toggle menu"
         className="
           text-gray-600
-          md:hidden
+          sm:hidden
         "
       >
         <svg
@@ -120,7 +126,7 @@ const NavbarComponent: React.FC = () => {
           grid z-10
           transition-[grid-template-rows,opacity]
           absolute top-full -inset-x-px -mt-px duration-200 ease-in-out
-          md:hidden
+          sm:hidden
           ${
             isMenuOpen
               ? "grid-rows-[1fr] opacity-100"
@@ -150,7 +156,7 @@ const NavbarComponent: React.FC = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className={({ isActive }) => `
                     py-4
-                    ${isActive ? "text-white font-medium" : "text-gray-300"}
+                    ${isActive ? "text-white font-medium drop-shadow-[0_0_1px_#fff]" : "text-gray-300"}
                   `}
                 >
                   {label}
@@ -165,7 +171,10 @@ const NavbarComponent: React.FC = () => {
                 )}
               </React.Fragment>
             ))}
-            <DownloadResumeButton />
+            <div className="flex gap-3 align-middle">
+              <DownloadResumeButton />
+              <LanguageToggle />
+            </div>
           </div>
         </div>
       </div>

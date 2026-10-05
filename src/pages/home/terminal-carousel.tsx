@@ -64,7 +64,7 @@ const TerminalCarousel: React.FC = () => {
   }, [api, completed, paused]);
 
   return (
-    <section className="w-full mt-2 lg:py-20">
+    <section className="w-full mt-2 xl:py-20">
       <p className="mb-6 text-center font-heading text-sm uppercase tracking-widest text-neutral-400">
         Selected projects
       </p>
@@ -78,7 +78,7 @@ const TerminalCarousel: React.FC = () => {
       >
         <CarouselContent>
           {slides.map((slide, i) => (
-            <CarouselItem key={i} className="h-80">
+            <CarouselItem key={i} className="h-full">
               {current === i && (
                 <Terminal
                   commands={slide.commands}
