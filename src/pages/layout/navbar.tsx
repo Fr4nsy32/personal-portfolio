@@ -22,7 +22,7 @@ const NavbarComponent: React.FC = () => {
         z-50 flex
         w-[calc(100%-2rem)] max-w-4xl
         px-6 py-4
-        text-white text-sm
+        text-white text-md
         bg-black
         border border-slate-700
         transition-[border-radius]
@@ -57,6 +57,7 @@ const NavbarComponent: React.FC = () => {
               h-6
               relative group
               hover:drop-shadow-[0_0_1px_#fff]
+              font-heading
               ${isActive ? "text-white font-medium drop-shadow-[0_0_1px_#fff] " : "text-gray-300"}
             `}
           >
@@ -156,6 +157,7 @@ const NavbarComponent: React.FC = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className={({ isActive }) => `
                     py-4
+                    font-heading
                     ${isActive ? "text-white font-medium drop-shadow-[0_0_1px_#fff]" : "text-gray-300"}
                   `}
                 >

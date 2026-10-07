@@ -328,7 +328,7 @@ export function Terminal({
   className,
   typingSpeed = 50,
   delayBetweenCommands = 800,
-  initialDelay = 500,
+  initialDelay = 2000,
   enableSound = true,
   onComplete,
 }: TerminalProps) {

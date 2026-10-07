@@ -3,10 +3,69 @@
         "about": "Chi sono",
         "projects": "Progetti",
         "contacts": "Contatti",
-        "toggleMenu": "Apri menu"
+        "toggleMenu": "Apri/chiudi menu"
     },
     "home": {
-        "title": "Sviluppatore Full_Stack",
-        "description": "Sviluppatore full-stack che trasforma le idee in prodotti web affidabili e curati. Lavoro con React, TypeScript, Node.js e strumenti cloud per realizzare codice pulito e ottime esperienze utente. Disponibile per progetti freelance e nuove opportunità: contattami."
+        "title": "Full_Stack Developer",
+        "description": "Sviluppatore full-stack che trasforma le idee in prodotti web affidabili e curati. Lavoro con React, TypeScript, Node.js e strumenti cloud per realizzare codice pulito ed esperienze utente di qualità. Disponibile per progetti freelance e nuove opportunità, contattami."
+    },
+    "about": {
+        "header": {
+            "title": "Changelog delle mie esperienze",
+            "description": "Ecco una timeline del mio percorso professionale e delle esperienze chiave nel corso degli anni."
+        },
+        "timeline": {
+            "hospitality": {
+                "intro": "Prima di scrivere codice, ho passato anni nell'ospitalità, dalla linea di cucina al bancone dei fast food. Era un ambiente veloce, rumoroso e senza sconti, e mi ha insegnato gran parte di ciò che so sul lavorare con le persone.",
+                "pathTitle": "Il percorso",
+                "tablistLabel": "Ruoli nell'ospitalità",
+                "stats": {
+                    "years": "Anni nell'ospitalità",
+                    "roles": "Ruoli, dalla cucina alla sala"
+                },
+                "roles": {
+                    "cook": {
+                        "title": "Cuoco",
+                        "where": "Linea di cucina di un ristorante di alta cucina",
+                        "summary": "Preparavo e assemblavo le comande in linea, tenevo le postazioni rifornite e seguivo rigorose procedure di sicurezza alimentare mentre gli ordini continuavano ad arrivare.",
+                        "learned": [
+                            "Lavorare sotto pressione",
+                            "Sicurezza e igiene alimentare",
+                            "Preparazione e organizzazione della postazione"
+                        ]
+                    },
+                    "service": {
+                        "title": "Servizio",
+                        "where": "Bancone e sala",
+                        "summary": "Prendevo gli ordini, gestivo i pagamenti e mi occupavo direttamente degli ospiti, compresi quelli che entravano già insoddisfatti.",
+                        "learned": [
+                            "Servizio clienti e comunicazione",
+                            "Organizzazione del lavoro",
+                            "Software di cassa e sistemi POS"
+                        ]
+                    },
+                    "barman": {
+                        "title": "Barman",
+                        "where": "Bar del centro città",
+                        "summary": "Preparavo drink, gestivo l'area bar e mi coordinavo con la cucina per mantenere il servizio fluido.",
+                        "learned": [
+                            "Multitasking e gestione delle priorità",
+                            "Mixology e preparazione dei drink",
+                            "Servizio clienti sotto pressione"
+                        ]
+                    },
+                    "lead": {
+                        "title": "Responsabile di turno",
+                        "where": "Catena di fast food",
+                        "summary": "Coordinavo la squadra nelle ore di punta, formavo i nuovi colleghi e prendevo le decisioni rapide che mantenevano il turno in carreggiata.",
+                        "learned": [
+                            "Delegare e stabilire le priorità",
+                            "Formazione dei nuovi colleghi",
+                            "Organizzazione e turnazione del personale"
+                        ]
+                    }
+                }
+            }
+        }
     }
 }

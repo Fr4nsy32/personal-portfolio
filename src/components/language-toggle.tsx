@@ -26,7 +26,7 @@ const LanguageToggle: React.FC = () => {
             aria-pressed={current === code}
             className={`px-2 py-1 rounded-full transition-colors ${
               current === code
-                ? "text-white font-medium"
+                ? "text-white font-medium font-heading"
                 : "text-gray-500 hover:text-gray-200 dark:hover:text-white"
             }`}
           >

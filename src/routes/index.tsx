@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { RouteNames } from "./route-names";
 import Layout from "@/pages/layout";
 import HomePage from "@/pages/home";
+import AboutPage from "@/pages/about";
 
 const RenderRoutes: React.FC = () => {
   const router = createBrowserRouter([
@@ -15,7 +16,7 @@ const RenderRoutes: React.FC = () => {
         },
         {
           path: RouteNames.ABOUT,
-          element: <div className="text-white text-center">About Page</div>,
+          element: <AboutPage />,
         },
         {
           path: RouteNames.PROJECTS,
