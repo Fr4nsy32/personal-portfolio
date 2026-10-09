@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { ChefHat, ConciergeBell, Users, Wine } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // Language-neutral data lives at module level, so it isn't recreated on every render
@@ -18,14 +19,25 @@ const ROLES = [
 
 type RoleId = (typeof ROLES)[number]["id"];
 
+const ICONS: Record<RoleId, React.ElementType> = {
+  cook: ChefHat,
+  service: ConciergeBell,
+  barman: Wine,
+  lead: Users,
+};
+
+// Shared "selected" glow
+const GLOW = "drop-shadow-[0_0_1px_#fff]";
+
 const Background: React.FC = () => {
   const { t } = useTranslation(undefined, {
-    keyPrefix: "about.timeline.hospitality",
+    keyPrefix: "about.timeline.background",
   });
   const reduceMotion = useReducedMotion();
   const [activeId, setActiveId] = useState<RoleId>(ROLES[0].id);
 
   const active = ROLES.find((r) => r.id === activeId) ?? ROLES[0];
+  const ActiveIcon = ICONS[active.id];
   const learned = t(`roles.${active.id}.learned`, {
     returnObjects: true,
   }) as string[];
@@ -61,10 +73,11 @@ const Background: React.FC = () => {
         <div
           role="tablist"
           aria-label={t("tablistLabel")}
-          className="relative flex gap-1 border-b border-neutral-800"
+          className="relative flex gap-1 overflow-x-auto border-b border-neutral-800 overflow-y-hidden"
         >
           {ROLES.map((role) => {
             const isActive = role.id === activeId;
+            const Icon = ICONS[role.id];
             return (
               <button
                 key={role.id}
@@ -74,18 +87,22 @@ const Background: React.FC = () => {
                 aria-controls={`panel-${role.id}`}
                 onClick={() => setActiveId(role.id)}
                 className={cn(
-                  "relative px-3 py-2 text-xs font-heading transition-colors md:text-sm",
+                  "relative flex shrink-0 items-center gap-1.5 px-3 py-2 text-xs font-heading transition-colors md:text-sm",
                   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-white",
                   isActive
-                    ? "text-white"
+                    ? cn("text-white", GLOW)
                     : "text-neutral-500 hover:text-neutral-300",
                 )}
               >
+                <Icon
+                  className="hidden h-3.5 w-3.5 sm:block"
+                  aria-hidden
+                />
                 {t(`roles.${role.id}.title`)}
                 {isActive && (
                   <motion.span
                     layoutId="role-underline"
-                    className="absolute inset-x-0 -bottom-px h-px bg-white"
+                    className="absolute inset-x-0 -bottom-px h-0.5 bg-white"
                     transition={
                       reduceMotion
                         ? { duration: 0 }
@@ -110,17 +127,27 @@ const Background: React.FC = () => {
             transition={{ duration: 0.2 }}
             className="pt-5"
           >
-            <p className="text-xs text-neutral-500 md:text-sm">
-              {t(`roles.${active.id}.where`)} · {active.period}
-            </p>
-            <p className="mt-2 max-w-xl text-sm leading-relaxed text-neutral-300 md:text-base">
+            <div className="flex items-center gap-3">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10">
+                <ActiveIcon
+                  className={cn("h-5 w-5 text-white")}
+                  aria-hidden
+                />
+              </span>
+              <p className="text-xs text-neutral-500 md:text-sm">
+                {t(`roles.${active.id}.where`)} ·{" "}
+                <span className="text-white">{active.period}</span>
+              </p>
+            </div>
+
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-neutral-300 md:text-base">
               {t(`roles.${active.id}.summary`)}
             </p>
             <ul className="mt-4 flex flex-wrap gap-2">
               {learned.map((skill) => (
                 <li
                   key={skill}
-                  className="rounded-full border border-neutral-700 px-3 py-1 text-xs text-neutral-300"
+                  className="rounded-full border border-white/40 px-3 py-1 text-xs text-white"
                 >
                   {skill}
                 </li>

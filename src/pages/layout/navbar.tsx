@@ -56,7 +56,6 @@ const NavbarComponent: React.FC = () => {
               overflow-hidden
               h-6
               relative group
-              hover:drop-shadow-[0_0_1px_#fff]
               font-heading
               ${isActive ? "text-white font-medium drop-shadow-[0_0_1px_#fff] " : "text-gray-300"}
             `}

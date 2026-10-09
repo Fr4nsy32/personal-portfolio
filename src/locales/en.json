@@ -15,7 +15,7 @@
             "description": "Here is a timeline of my professional journey and key experiences throughout the years."
         },
         "timeline": {
-            "hospitality": {
+            "background": {
                 "intro": "Before I wrote code, I spent years in hospitality, from the kitchen line to the front counter at fast food chains. It was fast, loud and unforgiving, and it taught me most of what I know about working with people.",
                 "pathTitle": "The path",
                 "tablistLabel": "Hospitality roles",
@@ -62,6 +62,89 @@
                             "Delegating and prioritizing",
                             "Training new people",
                             "Workforce organization and scheduling"
+                        ]
+                    }
+                }
+            },
+            "education": {
+                "intro": "I came to software through economics. The first part of my education taught me how to think about systems and data, and the second taught me how to build with them.",
+                "qualifications": {
+                    "diploma": {
+                        "title": "High school diploma in Economics",
+                        "place": "IIS Cassata Gattapone, Gubbio",
+                        "status": "Diploma earned",
+                        "summary": "My first structured introduction to how money, businesses and institutions work, with economics and business subjects alongside the core curriculum.",
+                        "takeaways": [
+                            "Economics and business basics",
+                            "Reading and questioning data",
+                            "Study discipline"
+                        ]
+                    },
+                    "university": {
+                        "title": "B.Sc. Economics, Markets and Institutions",
+                        "place": "University of Turin",
+                        "status": "2 years completed",
+                        "summary": "An intensive, project-driven bootcamp done fully remote with an international cohort: long days of live coding, pair programming and daily challenges, ending with a project built from idea to deployed product.",
+                        "takeaways": [
+                            "Statistics and quantitative reasoning",
+                            "Micro and macroeconomics",
+                            "Structured, analytical thinking"
+                        ]
+                    },
+                    "bootcamp": {
+                        "title": "Full-stack web development bootcamp",
+                        "place": "Le Wagon · Remote",
+                        "status": "Bootcamp completed",
+                        "summary": "A 6-month intensive course in full-stack web development, with a focus on React, Node.js and TypeScript. This is where I learned to build software from scratch and ship it to users.",
+                        "takeaways": [
+                            "Full-stack fundamentals",
+                            "Pair programming and code review",
+                            "Working in English with an international team",
+                            "Shipping a project end to end"
+                        ]
+                    }
+                }
+            },
+            "experience": {
+                "intro": "I build software for robots that make drinks. My work sits where software meets hardware: interfaces that clients and operators use every day to run real machines in real venues.",
+                "stack": "Core Stack",
+                "cards_title": " What I worked on",
+                "cards_action": "Pick a card to see the details.",
+                "areas": {
+                    "platform": {
+                        "title": "Robot management software",
+                        "summary": "The frontend of a complex management platform that lets our clients interact with the robot and its hardware at every level.",
+                        "highlights": [
+                            "Built the frontend of a large, multi-level management platform",
+                            "Worked side by side with a team of experienced designers",
+                            "Turned hardware actions and states into clear, usable interfaces"
+                        ]
+                    },
+                    "sites": {
+                        "title": "Websites and presentations",
+                        "summary": "Beyond the core platform, I took care of several frontend projects for the company and for connected companies.",
+                        "highlights": [
+                            "Art presentation project",
+                            "Bar menu",
+                            "Launch website"
+                        ]
+                    },
+                    "design": {
+                        "title": "A product built from scratch",
+                        "summary": "One project was designed entirely by me, then built end to end on the frontend and shipped together with the backend team.",
+                        "highlights": [
+                            "Owned the UI and UX design from a blank page",
+                            "Built the complete frontend",
+                            "Worked closely with the backend team through development and deployment"
+                        ]
+                    },
+                    "deploy": {
+                        "title": "International deployments",
+                        "summary": "I took part in installing the software on site, working directly on the hardware.",
+                        "highlights": [
+                            "Deployments in the USA and Europe",
+                            "Hands-on work directly on the machines",
+                            "Handled the communication between software and hardware on site"
                         ]
                     }
                 }

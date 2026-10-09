@@ -15,7 +15,7 @@
             "description": "Ecco una timeline del mio percorso professionale e delle esperienze chiave nel corso degli anni."
         },
         "timeline": {
-            "hospitality": {
+            "background": {
                 "intro": "Prima di scrivere codice, ho passato anni nell'ospitalità, dalla linea di cucina al bancone dei fast food. Era un ambiente veloce, rumoroso e senza sconti, e mi ha insegnato gran parte di ciò che so sul lavorare con le persone.",
                 "pathTitle": "Il percorso",
                 "tablistLabel": "Ruoli nell'ospitalità",
@@ -62,6 +62,89 @@
                             "Delegare e stabilire le priorità",
                             "Formazione dei nuovi colleghi",
                             "Organizzazione e turnazione del personale"
+                        ]
+                    }
+                }
+            },
+            "education": {
+                "intro": "Sono arrivato al software passando dall'economia. La prima parte del mio percorso di studi mi ha insegnato a ragionare su sistemi e dati, la seconda a costruire con essi.",
+                "qualifications": {
+                    "diploma": {
+                        "title": "Diploma di scuola superiore in Economia",
+                        "place": "IIS Cassata Gattapone, Gubbio",
+                        "status": "Diploma conseguito",
+                        "summary": "La mia prima introduzione strutturata a come funzionano denaro, aziende e istituzioni, con materie economiche e aziendali accanto al programma di base.",
+                        "takeaways": [
+                            "Basi di economia e gestione aziendale",
+                            "Leggere e mettere in discussione i dati",
+                            "Disciplina nello studio"
+                        ]
+                    },
+                    "university": {
+                        "title": "Laurea triennale in Economia, Mercati e Istituzioni",
+                        "place": "Università di Torino",
+                        "status": "2 anni completati",
+                        "summary": "Un bootcamp intensivo basato su progetti, svolto interamente da remoto con un gruppo internazionale: lunghe giornate di live coding, pair programming e sfide quotidiane, concluse con un progetto realizzato dall'idea al prodotto online.",
+                        "takeaways": [
+                            "Statistica e ragionamento quantitativo",
+                            "Micro e macroeconomia",
+                            "Pensiero strutturato e analitico"
+                        ]
+                    },
+                    "bootcamp": {
+                        "title": "Bootcamp di sviluppo web full-stack",
+                        "place": "Le Wagon · Da remoto",
+                        "status": "Bootcamp completato",
+                        "summary": "Un corso intensivo di 6 mesi in sviluppo web full-stack, con focus su React, Node.js e TypeScript. È qui che ho imparato a costruire software da zero e a metterlo in mano agli utenti.",
+                        "takeaways": [
+                            "Fondamenti del full-stack",
+                            "Pair programming e code review",
+                            "Lavorare in inglese con un team internazionale",
+                            "Portare a termine un progetto end to end"
+                        ]
+                    }
+                }
+            },
+            "experience": {
+                "intro": "Sviluppo software per robot che preparano drink. Il mio lavoro si colloca dove il software incontra l'hardware: interfacce che clienti e operatori usano ogni giorno per far funzionare macchine reali in locali reali.",
+                "stack": "Stack principale",
+                "cards_title": "Progetti su cui ho lavorato",
+                "cards_action": "Scegli una scheda per vedere i dettagli.",
+                "areas": {
+                    "platform": {
+                        "title": "Software di gestione dei robot",
+                        "summary": "Il frontend di una complessa piattaforma di gestione che permette ai nostri clienti di interagire con il robot e il suo hardware a ogni livello.",
+                        "highlights": [
+                            "Ho sviluppato il frontend di una grande piattaforma di gestione multilivello",
+                            "Ho lavorato fianco a fianco con un team di designer esperti",
+                            "Ho trasformato azioni e stati dell'hardware in interfacce chiare e utilizzabili"
+                        ]
+                    },
+                    "sites": {
+                        "title": "Siti web e presentazioni",
+                        "summary": "Oltre alla piattaforma principale, mi sono occupato di diversi progetti frontend per l'azienda e per aziende collegate.",
+                        "highlights": [
+                            "Progetto di presentazione artistica",
+                            "Menu del bar",
+                            "Sito di lancio"
+                        ]
+                    },
+                    "design": {
+                        "title": "Un prodotto costruito da zero",
+                        "summary": "Un progetto è stato progettato interamente da me, poi sviluppato end to end sul frontend e rilasciato insieme al team backend.",
+                        "highlights": [
+                            "Ho curato il design UI e UX partendo da una pagina bianca",
+                            "Ho sviluppato l'intero frontend",
+                            "Ho lavorato a stretto contatto con il team backend durante sviluppo e rilascio"
+                        ]
+                    },
+                    "deploy": {
+                        "title": "Installazioni internazionali",
+                        "summary": "Ho partecipato all'installazione del software sul posto, lavorando direttamente sull'hardware.",
+                        "highlights": [
+                            "Installazioni negli USA e in Europa",
+                            "Lavoro pratico direttamente sulle macchine",
+                            "Ho gestito la comunicazione tra software e hardware sul posto"
                         ]
                     }
                 }
