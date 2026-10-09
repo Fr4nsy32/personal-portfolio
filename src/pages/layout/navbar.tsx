@@ -24,7 +24,7 @@ const NavbarComponent: React.FC = () => {
         px-6 py-4
         text-white text-md
         bg-black
-        border border-slate-700
+        border border-white/30
         transition-[border-radius]
         fixed top-4 left-1/2 -translate-x-1/2 items-center justify-between duration-50 ease-in-out
         ${isMenuOpen ? "rounded-t-4xl" : "rounded-full"}
@@ -57,7 +57,7 @@ const NavbarComponent: React.FC = () => {
               h-6
               relative group
               font-heading
-              ${isActive ? "text-white font-medium drop-shadow-[0_0_1px_#fff] " : "text-gray-300"}
+              ${isActive ? "text-white font-medium drop-shadow-text-glow" : "text-gray-300"}
             `}
           >
             <span
@@ -98,7 +98,7 @@ const NavbarComponent: React.FC = () => {
         aria-expanded={isMenuOpen}
         aria-label="Toggle menu"
         className="
-          text-gray-600
+          text-white/30
           sm:hidden
         "
       >
@@ -144,7 +144,7 @@ const NavbarComponent: React.FC = () => {
               flex flex-col
               text-base
               bg-black
-              border border-t-0 border-slate-700 rounded-b-3xl
+              border border-t-0  border-white/30 rounded-b-3xl
               items-center
             "
           >
@@ -157,7 +157,7 @@ const NavbarComponent: React.FC = () => {
                   className={({ isActive }) => `
                     py-4
                     font-heading
-                    ${isActive ? "text-white font-medium drop-shadow-[0_0_1px_#fff]" : "text-gray-300"}
+                    ${isActive ? "text-white font-medium drop-shadow-text-glow" : "text-gray-300"}
                   `}
                 >
                   {label}
@@ -166,7 +166,7 @@ const NavbarComponent: React.FC = () => {
                   <div
                     className="
                       w-50 h-px
-                      bg-slate-700
+                      bg-white/30
                     "
                   />
                 )}

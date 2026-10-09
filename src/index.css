@@ -9,6 +9,16 @@
 @theme {
   --font-heading: "Space Grotesk", sans-serif;
   --font-sans: "Inter", sans-serif;
+  --drop-shadow-text-glow: 0 0 1px #fff;
+  --drop-shadow-border-glow: 0 0 2px #fff;
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Acernity UI styles */

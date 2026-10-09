@@ -15,20 +15,25 @@
             "description": "Ecco una timeline del mio percorso professionale e delle esperienze chiave nel corso degli anni."
         },
         "timeline": {
+            "steps": {
+                "background": "Background",
+                "education": "Formazione",
+                "experience": "Esperienza"
+            },
             "background": {
                 "intro": "Prima di scrivere codice, ho passato anni nell'ospitalità, dalla linea di cucina al bancone dei fast food. Era un ambiente veloce, rumoroso e senza sconti, e mi ha insegnato gran parte di ciò che so sul lavorare con le persone.",
-                "pathTitle": "Il percorso",
-                "tablistLabel": "Ruoli nell'ospitalità",
+                "listTitle": "Il percorso",
+                "listLabel": "Ruoli nell'ospitalità",
                 "stats": {
                     "years": "Anni nell'ospitalità",
                     "roles": "Ruoli, dalla cucina alla sala"
                 },
-                "roles": {
+                "items": {
                     "cook": {
                         "title": "Cuoco",
-                        "where": "Linea di cucina di un ristorante di alta cucina",
+                        "place": "Linea di cucina di un ristorante di alta cucina",
                         "summary": "Preparavo e assemblavo le comande in linea, tenevo le postazioni rifornite e seguivo rigorose procedure di sicurezza alimentare mentre gli ordini continuavano ad arrivare.",
-                        "learned": [
+                        "highlights": [
                             "Lavorare sotto pressione",
                             "Sicurezza e igiene alimentare",
                             "Preparazione e organizzazione della postazione"
@@ -36,9 +41,9 @@
                     },
                     "service": {
                         "title": "Servizio",
-                        "where": "Bancone e sala",
+                        "place": "Bancone e sala",
                         "summary": "Prendevo gli ordini, gestivo i pagamenti e mi occupavo direttamente degli ospiti, compresi quelli che entravano già insoddisfatti.",
-                        "learned": [
+                        "highlights": [
                             "Servizio clienti e comunicazione",
                             "Organizzazione del lavoro",
                             "Software di cassa e sistemi POS"
@@ -46,9 +51,9 @@
                     },
                     "barman": {
                         "title": "Barman",
-                        "where": "Bar del centro città",
+                        "place": "Bar del centro città",
                         "summary": "Preparavo drink, gestivo l'area bar e mi coordinavo con la cucina per mantenere il servizio fluido.",
-                        "learned": [
+                        "highlights": [
                             "Multitasking e gestione delle priorità",
                             "Mixology e preparazione dei drink",
                             "Servizio clienti sotto pressione"
@@ -56,9 +61,9 @@
                     },
                     "lead": {
                         "title": "Responsabile di turno",
-                        "where": "Catena di fast food",
+                        "place": "Catena di fast food",
                         "summary": "Coordinavo la squadra nelle ore di punta, formavo i nuovi colleghi e prendevo le decisioni rapide che mantenevano il turno in carreggiata.",
-                        "learned": [
+                        "highlights": [
                             "Delegare e stabilire le priorità",
                             "Formazione dei nuovi colleghi",
                             "Organizzazione e turnazione del personale"
@@ -68,13 +73,13 @@
             },
             "education": {
                 "intro": "Sono arrivato al software passando dall'economia. La prima parte del mio percorso di studi mi ha insegnato a ragionare su sistemi e dati, la seconda a costruire con essi.",
-                "qualifications": {
+                "items": {
                     "diploma": {
                         "title": "Diploma di scuola superiore in Economia",
                         "place": "IIS Cassata Gattapone, Gubbio",
                         "status": "Diploma conseguito",
                         "summary": "La mia prima introduzione strutturata a come funzionano denaro, aziende e istituzioni, con materie economiche e aziendali accanto al programma di base.",
-                        "takeaways": [
+                        "highlights": [
                             "Basi di economia e gestione aziendale",
                             "Leggere e mettere in discussione i dati",
                             "Disciplina nello studio"
@@ -84,8 +89,8 @@
                         "title": "Laurea triennale in Economia, Mercati e Istituzioni",
                         "place": "Università di Torino",
                         "status": "2 anni completati",
-                        "summary": "Un bootcamp intensivo basato su progetti, svolto interamente da remoto con un gruppo internazionale: lunghe giornate di live coding, pair programming e sfide quotidiane, concluse con un progetto realizzato dall'idea al prodotto online.",
-                        "takeaways": [
+                        "summary": "Corso triennale in economia, mercati e istituzioni, di cui ho completato due anni. Mi ha dato una solida base di metodi quantitativi e di come funzionano mercati e decisioni di politica economica, e mi ha allenato a scomporre problemi complessi e a sostenere il ragionamento con i dati.",
+                        "highlights": [
                             "Statistica e ragionamento quantitativo",
                             "Micro e macroeconomia",
                             "Pensiero strutturato e analitico"
@@ -96,7 +101,7 @@
                         "place": "Le Wagon · Da remoto",
                         "status": "Bootcamp completato",
                         "summary": "Un corso intensivo di 6 mesi in sviluppo web full-stack, con focus su React, Node.js e TypeScript. È qui che ho imparato a costruire software da zero e a metterlo in mano agli utenti.",
-                        "takeaways": [
+                        "highlights": [
                             "Fondamenti del full-stack",
                             "Pair programming e code review",
                             "Lavorare in inglese con un team internazionale",
@@ -107,10 +112,11 @@
             },
             "experience": {
                 "intro": "Sviluppo software per robot che preparano drink. Il mio lavoro si colloca dove il software incontra l'hardware: interfacce che clienti e operatori usano ogni giorno per far funzionare macchine reali in locali reali.",
-                "stack": "Stack principale",
-                "cards_title": "Progetti su cui ho lavorato",
-                "cards_action": "Scegli una scheda per vedere i dettagli.",
-                "areas": {
+                "stackTitle": "Stack principale",
+                "listTitle": "Progetti su cui ho lavorato",
+                "listHint": "Scegli una scheda per vedere i dettagli.",
+                "listLabel": "Aree di lavoro",
+                "items": {
                     "platform": {
                         "title": "Software di gestione dei robot",
                         "summary": "Il frontend di una complessa piattaforma di gestione che permette ai nostri clienti di interagire con il robot e il suo hardware a ogni livello.",

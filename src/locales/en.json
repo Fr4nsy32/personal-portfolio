@@ -15,20 +15,25 @@
             "description": "Here is a timeline of my professional journey and key experiences throughout the years."
         },
         "timeline": {
+            "steps": {
+                "background": "Background",
+                "education": "Education",
+                "experience": "Experience"
+            },
             "background": {
                 "intro": "Before I wrote code, I spent years in hospitality, from the kitchen line to the front counter at fast food chains. It was fast, loud and unforgiving, and it taught me most of what I know about working with people.",
-                "pathTitle": "The path",
-                "tablistLabel": "Hospitality roles",
+                "listTitle": "The path",
+                "listLabel": "Hospitality roles",
                 "stats": {
                     "years": "Years in hospitality",
                     "roles": "Roles, kitchen to front"
                 },
-                "roles": {
+                "items": {
                     "cook": {
                         "title": "Cook",
-                        "where": "Fine dining kitchen line",
+                        "place": "Fine dining kitchen line",
                         "summary": "Prepared and assembled orders on the line, kept stations stocked and followed strict food safety routines while tickets kept coming in.",
-                        "learned": [
+                        "highlights": [
                             "Working under pressure",
                             "Food safety and hygiene",
                             "Prep and station organization"
@@ -36,9 +41,9 @@
                     },
                     "service": {
                         "title": "Service",
-                        "where": "Front counter and dining room",
+                        "place": "Front counter and dining room",
                         "summary": "Took orders, handled payments and dealt with guests directly, including the ones who were already unhappy when they walked in.",
-                        "learned": [
+                        "highlights": [
                             "Customer service and communication",
                             "Workplace organization",
                             "Register software and POS systems"
@@ -46,9 +51,9 @@
                     },
                     "barman": {
                         "title": "Barman",
-                        "where": "City center bars",
+                        "place": "City center bars",
                         "summary": "Prepared drinks, managed the bar area and coordinated with the kitchen to keep the service running smoothly.",
-                        "learned": [
+                        "highlights": [
                             "Multitasking and prioritization",
                             "Mixology and drink prep",
                             "Customer service under pressure"
@@ -56,9 +61,9 @@
                     },
                     "lead": {
                         "title": "Shift lead",
-                        "where": "Fast food chain",
+                        "place": "Fast food chain",
                         "summary": "Coordinated the team during busy hours, trained new staff and made the quick calls that kept the shift running.",
-                        "learned": [
+                        "highlights": [
                             "Delegating and prioritizing",
                             "Training new people",
                             "Workforce organization and scheduling"
@@ -68,13 +73,13 @@
             },
             "education": {
                 "intro": "I came to software through economics. The first part of my education taught me how to think about systems and data, and the second taught me how to build with them.",
-                "qualifications": {
+                "items": {
                     "diploma": {
                         "title": "High school diploma in Economics",
                         "place": "IIS Cassata Gattapone, Gubbio",
                         "status": "Diploma earned",
                         "summary": "My first structured introduction to how money, businesses and institutions work, with economics and business subjects alongside the core curriculum.",
-                        "takeaways": [
+                        "highlights": [
                             "Economics and business basics",
                             "Reading and questioning data",
                             "Study discipline"
@@ -84,8 +89,8 @@
                         "title": "B.Sc. Economics, Markets and Institutions",
                         "place": "University of Turin",
                         "status": "2 years completed",
-                        "summary": "An intensive, project-driven bootcamp done fully remote with an international cohort: long days of live coding, pair programming and daily challenges, ending with a project built from idea to deployed product.",
-                        "takeaways": [
+                        "summary": "Three-year program in economics, markets and institutions, of which I completed two years. It gave me a solid grounding in quantitative methods and in how markets and policy decisions work, and it trained me to break complex problems down and back my reasoning with data.",
+                        "highlights": [
                             "Statistics and quantitative reasoning",
                             "Micro and macroeconomics",
                             "Structured, analytical thinking"
@@ -96,7 +101,7 @@
                         "place": "Le Wagon · Remote",
                         "status": "Bootcamp completed",
                         "summary": "A 6-month intensive course in full-stack web development, with a focus on React, Node.js and TypeScript. This is where I learned to build software from scratch and ship it to users.",
-                        "takeaways": [
+                        "highlights": [
                             "Full-stack fundamentals",
                             "Pair programming and code review",
                             "Working in English with an international team",
@@ -107,10 +112,11 @@
             },
             "experience": {
                 "intro": "I build software for robots that make drinks. My work sits where software meets hardware: interfaces that clients and operators use every day to run real machines in real venues.",
-                "stack": "Core Stack",
-                "cards_title": " What I worked on",
-                "cards_action": "Pick a card to see the details.",
-                "areas": {
+                "stackTitle": "Core Stack",
+                "listTitle": "What I worked on",
+                "listHint": "Pick a card to see the details.",
+                "listLabel": "Areas of work",
+                "items": {
                     "platform": {
                         "title": "Robot management software",
                         "summary": "The frontend of a complex management platform that lets our clients interact with the robot and its hardware at every level.",
