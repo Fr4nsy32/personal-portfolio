@@ -2,14 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { LottieDisplay, useLottie, type UseLottieOptions } from "lottie-react";
 import { cn } from "@/lib/utils";
 
-const BASE_CLASSES = cn(
-  "inline-flex cursor-pointer items-center justify-center gap-1.5",
-  "rounded-full bg-white px-4 py-2 text-sm font-heading font-medium text-black",
-  "shadow-[0px_0px_15px_8px] shadow-white/20",
-  "transition duration-300 hover:bg-slate-100 hover:shadow-white/20 md:hover:shadow-[0px_0px_20px_10px]",
-  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white",
-);
-
 interface LottieButtonProps {
   text: string;
   animation: UseLottieOptions["src"];
@@ -18,6 +10,14 @@ interface LottieButtonProps {
   speed?: number;
   className?: string;
 }
+
+const BASE_CLASSES = cn(
+  "inline-flex cursor-pointer items-center justify-center gap-1.5",
+  "rounded-full bg-white px-4 py-2 text-sm font-heading font-medium text-black",
+  "shadow-[0px_0px_15px_8px] shadow-white/20",
+  "transition duration-300 hover:bg-slate-100 hover:shadow-white/20 md:hover:shadow-[0px_0px_20px_10px]",
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white",
+);
 
 const LottieButton: React.FC<LottieButtonProps> = ({
   text,

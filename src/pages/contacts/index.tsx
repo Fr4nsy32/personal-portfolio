@@ -1,13 +1,17 @@
 import React, { useState } from "react";
-import { motion, MotionConfig, type Variants } from "motion/react";
+import { motion, MotionConfig } from "motion/react";
 import { Mail, Phone } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { cn } from "@/lib/utils";
 import Tabs from "@/components/tabs";
-import { panelDomId, tabDomId } from "@/utils/tab-ids";
+import { panelDomId, tabDomId } from "@/constants/tab-ids";
 import DemoForm from "./form";
-import ContactLink from "./links";
 import type { Contact, Tab, TabId } from "@/services/types";
+import MotionHeader from "@/components/motion-header";
+import ContactLinks from "./contact-links";
+import { motionContainer, motionItem } from "@/constants";
+
+const ID_PREFIX = "contact";
 
 const ContactsPage: React.FC = () => {
   const contactList: Contact[] = [
@@ -43,22 +47,6 @@ const ContactsPage: React.FC = () => {
     },
   ];
 
-  const ID_PREFIX = "contact";
-
-  const container: Variants = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } },
-  };
-
-  const item: Variants = {
-    hidden: { opacity: 0, y: 24 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   const contactTabs: Tab[] = [
     { id: "form", label: "Send a message" },
     { id: "links", label: "Find me online" },
@@ -71,31 +59,25 @@ const ContactsPage: React.FC = () => {
   return (
     <MotionConfig reducedMotion="user">
       <motion.div
-        className="mx-auto w-full max-w-7xl px-4 pt-12 pb-16 sm:px-6 xl:px-12"
-        variants={container}
+        className="mx-auto w-full max-w-7xl px-4 pt-12 pb-16 sm:px-6 xl:px-12 "
+        variants={motionContainer}
         initial="hidden"
         animate="visible"
       >
-        <motion.header
-          variants={container}
+        <motion.div
+          variants={motionContainer}
           className="mb-10 flex flex-col items-center text-center lg:mb-14"
         >
-          <motion.h1
-            variants={item}
-            className="font-heading text-4xl font-medium text-white sm:text-5xl xl:text-6xl"
-          >
-            Get in touch
-          </motion.h1>
-          <motion.p
-            variants={item}
-            className="mt-4 max-w-full text-base text-gray-400 lg:text-lg xl:text-xl"
-          >
-            Have a project in mind or just want to say hi? Send a message or
-            reach me directly.
-          </motion.p>
-        </motion.header>
+          <MotionHeader
+            title={"Get in touch"}
+            description={
+              "Have a project in mind or just want to say hi? Send a message or reach me directly."
+            }
+            full
+          />
+        </motion.div>
 
-        <motion.div variants={item} className="mb-6 lg:mb-0">
+        <motion.div variants={motionItem} className="mb-6 lg:mb-0">
           <Tabs
             tabs={contactTabs}
             activeId={activeTab}
@@ -110,7 +92,7 @@ const ContactsPage: React.FC = () => {
 
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           <motion.section
-            variants={item}
+            variants={motionItem}
             role="tabpanel"
             id={panelDomId(ID_PREFIX, "form")}
             aria-labelledby={tabDomId(ID_PREFIX, "form")}
@@ -124,7 +106,7 @@ const ContactsPage: React.FC = () => {
           </motion.section>
 
           <motion.section
-            variants={item}
+            variants={motionItem}
             role="tabpanel"
             id={panelDomId(ID_PREFIX, "links")}
             aria-labelledby={tabDomId(ID_PREFIX, "links")}
@@ -133,13 +115,7 @@ const ContactsPage: React.FC = () => {
             <h2 className="mb-4 hidden font-heading text-lg font-medium text-white lg:block lg:text-xl">
               Find me online
             </h2>
-            <ul className="space-y-3">
-              {contactList.map((contact) => (
-                <li key={contact.id}>
-                  <ContactLink contact={contact} />
-                </li>
-              ))}
-            </ul>
+            <ContactLinks contactList={contactList} />
           </motion.section>
         </div>
       </motion.div>

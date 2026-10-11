@@ -4,8 +4,8 @@ import { RouteNames } from "@/routes/route-names";
 import { Link, NavLink } from "react-router-dom";
 import LanguageToggle from "@/components/language-toggle";
 import { useTranslation } from "react-i18next";
-import cv_eng from "@/assets/cv/Andi_Sina_CV_Eng.pdf";
-import cv_ita from "@/assets/cv/Andi_Sina_CV_Ita.pdf";
+import cv_eng from "@/assets/pdf/Andi_Sina_CV_Eng.pdf";
+import cv_ita from "@/assets/pdf/Andi_Sina_CV_Ita.pdf";
 import LottieButton from "@/components/lottie-button";
 import downloadAnimation from "@/assets/lottie/downloadAnimation.json";
 

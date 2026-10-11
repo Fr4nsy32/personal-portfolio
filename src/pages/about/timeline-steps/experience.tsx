@@ -19,19 +19,14 @@ import {
   useTimelineT,
 } from "./timeline-shared";
 
-/* Static (non-translatable) data lives at module level. */
-const ROLE = "JavaScript Developer";
-const COMPANY = "Makr Shakr";
-const PERIOD = "2023 – 2025";
-
 const STACK = [
-  { name: "React", icon: SiReact, color: "#fff" },
-  { name: "Next.js", icon: SiNextdotjs, color: "#fff" },
-  { name: "Nest.js", icon: SiNestjs, color: "#fff" },
-  { name: "TypeScript", icon: SiTypescript, color: "#fff" },
-  { name: "JavaScript", icon: SiJavascript, color: "#fff" },
-  { name: "PostgreSQL", icon: SiPostgresql, color: "#fff" },
-  { name: "Figma", icon: SiFigma, color: "#fff" },
+  { name: "React", icon: SiReact, color: "#61DAFB" },
+  { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
+  { name: "Nest.js", icon: SiNestjs, color: "#E0234E" },
+  { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+  { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+  { name: "PostgreSQL", icon: SiPostgresql, color: "#6E93D6" },
+  { name: "Figma", icon: SiFigma, color: "#F24E1E" },
 ] as const;
 
 const ITEMS = [
@@ -64,7 +59,7 @@ export const Experience: React.FC = () => {
     <div className="space-y-10">
       <div className="space-y-2">
         <MetaLine>
-          {ROLE} · {COMPANY} · {PERIOD}
+          {"JavaScript Developer"} · {"Makr Shakr"} · {"2023 – 2025"}
         </MetaLine>
         <Intro>{t("intro")}</Intro>
       </div>
@@ -75,7 +70,7 @@ export const Experience: React.FC = () => {
           {STACK.map(({ name, icon: Icon, color }) => (
             <li
               key={name}
-              className="flex items-center gap-2 rounded-lg border border-neutral-800 bg-neutral-950 px-3 py-2 text-xs text-neutral-200 transition duration-200 hover:-translate-y-0.5 hover:border-neutral-600 lg:text-sm "
+              className="flex items-center gap-2 rounded-lg border border-neutral-800 bg-neutral-950 px-3 py-2 text-xs text-neutral-200 transition duration-200 hover:-translate-y-0.5 hover:border-neutral-600 lg:text-sm"
             >
               <Icon
                 className="h-4 w-4 shrink-0"

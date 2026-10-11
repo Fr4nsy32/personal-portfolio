@@ -1,7 +1,18 @@
 import { motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/utils";
-import { panelDomId, tabDomId } from "@/utils/tab-ids";
-import type { TabsProps } from "@/services/types/tabs";
+import { panelDomId, tabDomId } from "@/constants";
+import type { Tab } from "@/services/types";
+
+export interface TabsProps<T extends string = string> {
+  tabs: readonly Tab<T>[];
+  activeId: T;
+  onSelect: (id: T) => void;
+  idPrefix: string;
+  label: string;
+  fill?: boolean;
+  bordered?: boolean;
+  className?: string;
+}
 
 function Tabs<T extends string = string>({
   tabs,

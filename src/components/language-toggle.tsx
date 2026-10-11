@@ -1,12 +1,11 @@
 import { useTranslation } from "react-i18next";
-// import TranslateIcon from "@/assets/svg/translate-icon.svg";
 import { useState } from "react";
 import TranslateIcon from "./translate-icon";
 
 const LANGUAGES = [
   { code: "en", label: "EN" },
   { code: "it", label: "IT" },
-];
+] as const;
 
 const LanguageToggle: React.FC = () => {
   const [openTranslate, setOpenTranslate] = useState(false);

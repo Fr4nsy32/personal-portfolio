@@ -14,26 +14,6 @@ interface TimelineEntry {
   content: React.ReactNode;
 }
 
-interface TimelineHeader {
-  title: string;
-  description: string;
-}
-
-// Header: the container only sequences, the children define the movement
-const headerContainer: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } },
-};
-
-const headerItem: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-
 // Rows: the left column (dot + title) slides in, then the content rises
 const rowContainer: Variants = {
   hidden: {},
@@ -58,13 +38,7 @@ const rowContent: Variants = {
   },
 };
 
-export const Timeline = ({
-  data,
-  header,
-}: {
-  data: TimelineEntry[];
-  header: TimelineHeader;
-}) => {
+export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -110,27 +84,10 @@ export const Timeline = ({
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="w-full bg-transparent font-sans lg:px-10" ref={containerRef}>
-        <motion.div
-          className="max-w-7xl mx-auto py-20 px-4 lg:px-8 xl:px-10 flex flex-col gap-4 items-end text-end"
-          variants={headerContainer}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.h2
-            variants={headerItem}
-            className="font-heading text-4xl font-medium text-white sm:text-5xl xl:text-6xl"
-          >
-            {header.title}
-          </motion.h2>
-          <motion.p
-            variants={headerItem}
-            className="mt-4 max-w-md lg:max-w-xl font-body text-gray-400 text-base md:text-lg xl:text-xl"
-          >
-            {header.description}
-          </motion.p>
-        </motion.div>
-
+      <div
+        className="w-full bg-transparent font-sans lg:px-10"
+        ref={containerRef}
+      >
         <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
           {data.map((item, index) => {
             const isActive = index === activeIndex;

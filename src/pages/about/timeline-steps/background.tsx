@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ChefHat, ConciergeBell, Users, Wine } from "lucide-react";
 import Tabs from "@/components/tabs";
-import { panelDomId, tabDomId } from "@/utils/tab-ids";
+import { panelDomId, tabDomId } from "@/constants/tab-ids";
 import {
   Chips,
   IconBadge,
@@ -12,7 +12,6 @@ import {
   useTimelineT,
 } from "./timeline-shared";
 
-/* Static (non-translatable) data lives at module level: id, icon, period. */
 const STATS = [
   { id: "years", value: "6+" },
   { id: "roles", value: "4" },
@@ -25,7 +24,6 @@ const ITEMS = [
   { id: "lead", icon: Users, period: "2021 – 2023" },
 ] as const;
 
-/* Links each tab to its panel (see tabDomId / panelDomId). */
 const ID_PREFIX = "bg";
 
 export const Background: React.FC = () => {

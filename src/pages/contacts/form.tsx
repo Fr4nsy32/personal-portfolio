@@ -4,13 +4,14 @@ import sendAnimation from "@/assets/lottie/sendAnimation.json";
 import { cn } from "@/lib/utils";
 import LottieButton from "@/components/lottie-button";
 
+const labelClass = "mb-1.5 block text-xs font-medium text-white";
+const fieldClass = cn(
+  "w-full rounded-lg border border-neutral-800 bg-black px-3 py-2.5 text-sm text-white",
+  "placeholder:text-neutral-600 transition-colors hover:border-neutral-600",
+  "focus-visible:border-white focus-visible:outline focus-visible:outline-1 focus-visible:outline-white",
+);
+
 const DemoForm: React.FC = () => {
-  const labelClass = "mb-1.5 block text-xs font-medium text-white";
-  const fieldClass = cn(
-    "w-full rounded-lg border border-neutral-800 bg-black px-3 py-2.5 text-sm text-white",
-    "placeholder:text-neutral-600 transition-colors hover:border-neutral-600",
-    "focus-visible:border-white focus-visible:outline focus-visible:outline-1 focus-visible:outline-white",
-  );
   const [sent, setSent] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 

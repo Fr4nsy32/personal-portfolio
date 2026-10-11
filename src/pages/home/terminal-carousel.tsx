@@ -6,7 +6,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { Terminal, type TerminalProps } from "@/components/ui/terminal";
-import { GITHUB_USER, projects, type Project } from "@/utils/projects";
+import type { Project } from "@/services/types";
 
 interface Slide {
   commands: string[];
@@ -14,27 +14,36 @@ interface Slide {
 }
 
 const PAUSE_AFTER_DONE = 10000;
-
-const buildSlide = (p: Project): Slide => {
-  const url = `https://github.com/${GITHUB_USER}/${p.repo}`;
-  return {
-    commands: [`git clone ${url}.git`, "cat README.md"],
-    outputs: {
-      0: [`Cloning into '${p.repo}'...`, "Receiving objects: 100%, done."],
-      1: [
-        `# ${p.title}`,
-        p.description,
-        `Stack: ${p.stack.join(" · ")}`,
-        ...(p.demoUrl ? [`Live: ${p.demoUrl}`] : []),
-        `Case study: /projects/${p.slug}`,
-      ],
-    },
-  };
-};
-
-const slides = projects.slice(0, 3).map(buildSlide);
+const GITHUB_USER = "Fr4nsy32";
 
 const TerminalCarousel: React.FC = () => {
+  const selectedProjects: Project[] = [
+    {
+      slug: "personal-portfolio",
+      title: "Personal Portfolio",
+      repo: "personal-portfolio",
+      description: "A one-line description of what it does.",
+      stack: ["React", "Node", "PostgreSQL"],
+      demoUrl: "https://personal-portfolio.example.com",
+    },
+    {
+      slug: "project-two",
+      title: "Project Two",
+      repo: "project-two",
+      description: "A two-line description of what it does.",
+      stack: ["React", "Node", "PostgreSQL"],
+      demoUrl: "https://project-two.example.com",
+    },
+    {
+      slug: "project-three",
+      title: "Project Three",
+      repo: "project-three",
+      description: "A three-line description of what it does.",
+      stack: ["React", "Node", "PostgreSQL"],
+      demoUrl: "https://project-three.example.com",
+    },
+    // add the others here
+  ];
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [completed, setCompleted] = useState(false);
@@ -63,9 +72,28 @@ const TerminalCarousel: React.FC = () => {
     return () => clearTimeout(timer);
   }, [api, completed, paused]);
 
+  const buildSlide = (p: Project): Slide => {
+    const url = `https://github.com/${GITHUB_USER}/${p.repo}`;
+    return {
+      commands: [`git clone ${url}.git`, "cat README.md"],
+      outputs: {
+        0: [`Cloning into '${p.repo}'...`, "Receiving objects: 100%, done."],
+        1: [
+          `# ${p.title}`,
+          p.description,
+          `Stack: ${p.stack.join(" · ")}`,
+          ...(p.demoUrl ? [`Live: ${p.demoUrl}`] : []),
+          `Case study: /projects/${p.slug}`,
+        ],
+      },
+    };
+  };
+
+  const slides = selectedProjects.slice(0, 3).map(buildSlide);
+
   return (
     <section className="w-full mt-2 xl:py-20">
-      <p className="mb-6 text-center font-heading text-sm uppercase tracking-widest text-neutral-400">
+      <p className="mb-6 text-center font-heading text-sm uppercase tracking-widest text-white">
         Selected projects
       </p>
 

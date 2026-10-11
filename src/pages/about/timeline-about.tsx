@@ -9,11 +9,6 @@ import Experience from "./timeline-steps/experience";
 const TimelineAbout: React.FC = () => {
   const { t } = useTranslation();
 
-  const headerData = {
-    title: t("about.header.title"),
-    description: t("about.header.description"),
-  };
-
   const timelineData = [
     {
       title: t("about.timeline.steps.background"),
@@ -34,7 +29,7 @@ const TimelineAbout: React.FC = () => {
   ];
   return (
     <div className="w-full overflow-clip">
-      <Timeline data={timelineData} header={headerData} />
+      <Timeline data={timelineData} />
     </div>
   );
 };
