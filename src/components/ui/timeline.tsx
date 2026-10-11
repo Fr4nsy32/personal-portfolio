@@ -110,7 +110,7 @@ export const Timeline = ({
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="w-full bg-black font-sans lg:px-10" ref={containerRef}>
+      <div className="w-full bg-transparent font-sans lg:px-10" ref={containerRef}>
         <motion.div
           className="max-w-7xl mx-auto py-20 px-4 lg:px-8 xl:px-10 flex flex-col gap-4 items-end text-end"
           variants={headerContainer}

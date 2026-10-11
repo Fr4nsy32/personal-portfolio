@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import logo from "@/assets/svg/personal_logo.svg";
-import DownloadResumeButton from "@/components/download-resume-button";
 import { RouteNames } from "@/routes/route-names";
 import { Link, NavLink } from "react-router-dom";
 import LanguageToggle from "@/components/language-toggle";
 import { useTranslation } from "react-i18next";
+import cv_eng from "@/assets/cv/Andi_Sina_CV_Eng.pdf";
+import cv_ita from "@/assets/cv/Andi_Sina_CV_Ita.pdf";
+import LottieButton from "@/components/lottie-button";
+import downloadAnimation from "@/assets/lottie/downloadAnimation.json";
 
 const NavbarComponent: React.FC = () => {
   const { t } = useTranslation();
@@ -15,6 +18,15 @@ const NavbarComponent: React.FC = () => {
     { label: t("nav.contacts"), route: RouteNames.CONTACTS },
   ];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const downloadCv = () => {
+    const isEnglish = document.documentElement.lang === "en";
+
+    const link = document.createElement("a");
+    link.href = isEnglish ? cv_eng : cv_ita;
+    link.download = isEnglish ? "Andi_Sina_CV_Eng.pdf" : "Andi_Sina_CV_Ita.pdf";
+    link.click();
+  };
 
   return (
     <nav
@@ -88,7 +100,13 @@ const NavbarComponent: React.FC = () => {
             items-center gap-4
           "
         >
-          <DownloadResumeButton />
+          <LottieButton
+            text={"CV"}
+            animation={downloadAnimation}
+            speed={2}
+            onComplete={downloadCv}
+            className="mb-3 sm:mb-0"
+          />{" "}
           <LanguageToggle />
         </div>
       </div>
@@ -173,7 +191,13 @@ const NavbarComponent: React.FC = () => {
               </React.Fragment>
             ))}
             <div className="flex gap-3 align-middle">
-              <DownloadResumeButton />
+              <LottieButton
+                text={"CV"}
+                animation={downloadAnimation}
+                speed={2}
+                onComplete={downloadCv}
+                className="mb-3 sm:mb-0"
+              />{" "}
               <LanguageToggle />
             </div>
           </div>

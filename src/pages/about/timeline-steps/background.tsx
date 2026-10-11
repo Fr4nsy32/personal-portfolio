@@ -1,7 +1,8 @@
 import React, { useMemo, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ChefHat, ConciergeBell, Users, Wine } from "lucide-react";
-import { cn } from "@/lib/utils";
+import Tabs from "@/components/tabs";
+import { panelDomId, tabDomId } from "@/utils/tab-ids";
 import {
   Chips,
   IconBadge,
@@ -24,6 +25,9 @@ const ITEMS = [
   { id: "lead", icon: Users, period: "2021 – 2023" },
 ] as const;
 
+/* Links each tab to its panel (see tabDomId / panelDomId). */
+const ID_PREFIX = "bg";
+
 export const Background: React.FC = () => {
   const { t, list } = useTimelineT("background");
   const reduceMotion = useReducedMotion();
@@ -40,6 +44,11 @@ export const Background: React.FC = () => {
         highlights: list(`items.${item.id}.highlights`),
       })),
     [t, list],
+  );
+
+  const tabs = useMemo(
+    () => items.map(({ id, icon, title }) => ({ id, icon, label: title })),
+    [items],
   );
 
   const active = items.find((i) => i.id === activeId) ?? items[0];
@@ -68,54 +77,20 @@ export const Background: React.FC = () => {
       <div>
         <SectionTitle>{t("listTitle")}</SectionTitle>
 
-        <div
-          role="tablist"
-          aria-label={t("listLabel")}
-          className="no-scrollbar relative flex gap-1 overflow-x-auto overflow-y-hidden border-b border-neutral-800"
-        >
-          {items.map((item) => {
-            const isActive = item.id === active.id;
-            const Icon = item.icon;
-            return (
-              <button
-                key={item.id}
-                role="tab"
-                id={`bg-tab-${item.id}`}
-                aria-selected={isActive}
-                aria-controls={`bg-panel-${item.id}`}
-                onClick={() => setActiveId(item.id)}
-                className={cn(
-                  "relative flex shrink-0 items-center gap-1.5 px-3 py-2 font-heading text-xs transition-colors lg:text-sm",
-                  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-white",
-                  isActive
-                    ? "text-white drop-shadow-text-glow"
-                    : "text-neutral-500 hover:text-neutral-300",
-                )}
-              >
-                <Icon className="h-3.5 w-3.5" aria-hidden />
-                {item.title}
-                {isActive && (
-                  <motion.span
-                    layoutId="bg-underline"
-                    className="absolute inset-x-0 -bottom-px h-0.5 bg-white"
-                    transition={
-                      reduceMotion
-                        ? { duration: 0 }
-                        : { type: "spring", stiffness: 500, damping: 40 }
-                    }
-                  />
-                )}
-              </button>
-            );
-          })}
-        </div>
+        <Tabs
+          tabs={tabs}
+          activeId={active.id}
+          onSelect={setActiveId}
+          idPrefix={ID_PREFIX}
+          label={t("listLabel")}
+        />
 
         <AnimatePresence mode="wait">
           <motion.div
             key={active.id}
             role="tabpanel"
-            id={`bg-panel-${active.id}`}
-            aria-labelledby={`bg-tab-${active.id}`}
+            id={panelDomId(ID_PREFIX, active.id)}
+            aria-labelledby={tabDomId(ID_PREFIX, active.id)}
             initial={reduceMotion ? false : { opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -4 }}

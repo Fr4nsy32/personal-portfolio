@@ -34,7 +34,7 @@ const LanguageToggle: React.FC = () => {
           </button>
         ))}
       <TranslateIcon
-        className={`w-5 h-5 cursor-pointer ${openTranslate ? "drop-shadow-[0_0_1px_#fff]" : ""}`}
+        className={`w-5 h-5 cursor-pointer ${openTranslate ? "drop-shadow-text-glow" : ""}`}
         onClick={() => setOpenTranslate(!openTranslate)}
       />
     </div>
