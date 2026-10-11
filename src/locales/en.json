@@ -156,5 +156,43 @@
                 }
             }
         }
+    },
+    "contacts": {
+        "header": {
+            "title": "Get in touch",
+            "description": "Have a project in mind or just want to say hi? Send a message or reach me directly."
+        },
+        "tabsLabel": "Contact options",
+        "tabs": {
+            "form": "Send a message",
+            "links": "Find me online"
+        },
+        "form": {
+            "name": {
+                "label": "Name",
+                "placeholder": "Your name"
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": "you@example.com"
+            },
+            "subject": {
+                "label": "Subject",
+                "placeholder": "What is it about?"
+            },
+            "message": {
+                "label": "Message",
+                "placeholder": "Tell me about your project or idea..."
+            },
+            "submit": "Send message",
+            "statusIdle": "Demo form: submitting doesn't send anything yet.",
+            "statusSent": "Thanks! This is a demo, so nothing was actually sent."
+        },
+        "links": {
+            "github": "GitHub",
+            "linkedin": "LinkedIn",
+            "email": "Email",
+            "phone": "Phone"
+        }
     }
 }

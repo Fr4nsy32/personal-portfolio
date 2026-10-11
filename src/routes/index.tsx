@@ -4,6 +4,7 @@ import Layout from "@/pages/layout";
 import HomePage from "@/pages/home";
 import AboutPage from "@/pages/about";
 import ContactsPage from "@/pages/contacts";
+import ProjectsPage from "@/pages/projects";
 
 const RenderRoutes: React.FC = () => {
   const router = createBrowserRouter([
@@ -21,7 +22,7 @@ const RenderRoutes: React.FC = () => {
         },
         {
           path: RouteNames.PROJECTS,
-          element: <div className="text-white text-center">Projects Page</div>,
+          element: <ProjectsPage />,
         },
         {
           path: RouteNames.CONTACTS,

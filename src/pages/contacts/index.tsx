@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { motion, MotionConfig } from "motion/react";
 import { Mail, Phone } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
@@ -14,10 +15,12 @@ import { motionContainer, motionItem } from "@/constants";
 const ID_PREFIX = "contact";
 
 const ContactsPage: React.FC = () => {
+  const { t } = useTranslation();
+
   const contactList: Contact[] = [
     {
       id: "github",
-      label: "GitHub",
+      label: t("contacts.links.github"),
       value: "github.com/your-username",
       href: "https://github.com/your-username",
       icon: FaGithub,
@@ -25,7 +28,7 @@ const ContactsPage: React.FC = () => {
     },
     {
       id: "linkedin",
-      label: "LinkedIn",
+      label: t("contacts.links.linkedin"),
       value: "linkedin.com/in/your-name",
       href: "https://www.linkedin.com/in/your-name",
       icon: FaLinkedinIn,
@@ -33,14 +36,14 @@ const ContactsPage: React.FC = () => {
     },
     {
       id: "email",
-      label: "Email",
+      label: t("contacts.links.email"),
       value: "you@example.com",
       href: "mailto:you@example.com",
       icon: Mail,
     },
     {
       id: "phone",
-      label: "Phone",
+      label: t("contacts.links.phone"),
       value: "+39 000 000 0000",
       href: "tel:+390000000000",
       icon: Phone,
@@ -48,8 +51,8 @@ const ContactsPage: React.FC = () => {
   ];
 
   const contactTabs: Tab[] = [
-    { id: "form", label: "Send a message" },
-    { id: "links", label: "Find me online" },
+    { id: "form", label: t("contacts.tabs.form") },
+    { id: "links", label: t("contacts.tabs.links") },
   ];
   const [activeTab, setActiveTab] = useState<TabId>(contactTabs[0].id);
 
@@ -69,10 +72,8 @@ const ContactsPage: React.FC = () => {
           className="mb-10 flex flex-col items-center text-center lg:mb-14"
         >
           <MotionHeader
-            title={"Get in touch"}
-            description={
-              "Have a project in mind or just want to say hi? Send a message or reach me directly."
-            }
+            title={t("contacts.header.title")}
+            description={t("contacts.header.description")}
             full
           />
         </motion.div>
@@ -83,7 +84,7 @@ const ContactsPage: React.FC = () => {
             activeId={activeTab}
             onSelect={setActiveTab}
             idPrefix={ID_PREFIX}
-            label="Contact options"
+            label={t("contacts.tabsLabel")}
             fill
             bordered={false}
             className="lg:hidden"
@@ -100,7 +101,7 @@ const ContactsPage: React.FC = () => {
           >
             {/* The tab acts as the title below lg */}
             <h2 className="mb-4 hidden font-heading text-lg font-medium text-white lg:block lg:text-xl">
-              Send a message
+              {t("contacts.tabs.form")}
             </h2>
             <DemoForm />
           </motion.section>
@@ -113,7 +114,7 @@ const ContactsPage: React.FC = () => {
             className={panelClass("links")}
           >
             <h2 className="mb-4 hidden font-heading text-lg font-medium text-white lg:block lg:text-xl">
-              Find me online
+              {t("contacts.tabs.links")}
             </h2>
             <ContactLinks contactList={contactList} />
           </motion.section>
