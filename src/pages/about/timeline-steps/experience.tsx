@@ -20,13 +20,13 @@ import {
 } from "./timeline-shared";
 
 const STACK = [
-  { name: "React", icon: SiReact, color: "#61DAFB" },
+  { name: "React", icon: SiReact, color: "#FFFFFF" },
   { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
-  { name: "Nest.js", icon: SiNestjs, color: "#E0234E" },
-  { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-  { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-  { name: "PostgreSQL", icon: SiPostgresql, color: "#6E93D6" },
-  { name: "Figma", icon: SiFigma, color: "#F24E1E" },
+  { name: "Nest.js", icon: SiNestjs, color: "#FFFFFF" },
+  { name: "TypeScript", icon: SiTypescript, color: "#FFFFFF" },
+  { name: "JavaScript", icon: SiJavascript, color: "#FFFFFF" },
+  { name: "PostgreSQL", icon: SiPostgresql, color: "#FFFFFF" },
+  { name: "Figma", icon: SiFigma, color: "#FFFFFF" },
 ] as const;
 
 const ITEMS = [

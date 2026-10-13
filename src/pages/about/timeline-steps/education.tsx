@@ -14,7 +14,7 @@ const ITEMS = [
 export const Education: React.FC = () => {
   const { t, list } = useTimelineT("education");
   const reduceMotion = useReducedMotion();
-  const [openId, setOpenId] = useState<string | null>("bootcamp");
+  const [openId, setOpenId] = useState<string | null>(null);
 
   const items = useMemo(
     () =>

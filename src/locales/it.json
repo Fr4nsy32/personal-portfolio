@@ -194,5 +194,65 @@
             "email": "Email",
             "phone": "Telefono"
         }
+    },
+    "projects": {
+        "header": {
+            "title": "Panoramica dei progetti",
+            "description": "Dai un'occhiata a ciò che ho realizzato e approfondiscilo."
+        },
+        "categories": {
+            "web": "App web",
+            "mobile": "App mobile",
+            "tools": "Strumenti ed esperimenti"
+        },
+        "detail": {
+            "back": "Tutti i progetti",
+            "about": "Descrizione",
+            "highlights": "Punti chiave",
+            "stack": "Stack",
+            "repo": "Codice sorgente",
+            "demo": "Demo live",
+            "previous": "Progetto precedente",
+            "next": "Progetto successivo",
+            "siblings": "Altri progetti",
+            "gallery": "Screenshot",
+            "showImage": "Mostra screenshot {{number}}",
+            "noPreview": "Ancora nessuno screenshot"
+        },
+        "items": {
+            "portfolio": {
+                "title": "Portfolio",
+                "tagline": "Il sito che stai guardando: bilingue, animato e completamente accessibile da tastiera.",
+                "about": [
+                    "Un sito personale pensato per presentare il mio lavoro e il mio percorso in inglese e in italiano.",
+                    "Ogni pagina condivide lo stesso design system: superfici nere, bordi sottili e leggeri bagliori all'interazione."
+                ],
+                "highlights": [
+                    "Cambio lingua con preferenza salvata",
+                    "Rispetto della riduzione del movimento in tutte le animazioni",
+                    "Download del CV nella lingua attiva"
+                ]
+            },
+            "recipe-app": {
+                "title": "App di ricette",
+                "tagline": "Salva, scala e cucina le ricette passo dopo passo.",
+                "about": [
+                    "Sostituisci con la descrizione reale del progetto."
+                ],
+                "highlights": [
+                    "Sostituisci con una funzionalità chiave"
+                ]
+            },
+            "log-parser": {
+                "title": "Log parser",
+                "tagline": "Trasforma i log grezzi dei server in report ricercabili e filtrabili.",
+                "about": [
+                    "Sostituisci con la descrizione reale del progetto."
+                ],
+                "highlights": [
+                    "Sostituisci con una funzionalità chiave"
+                ]
+            }
+        }
     }
 }

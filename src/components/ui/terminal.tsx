@@ -466,9 +466,8 @@ export function Terminal({
     // </span>
     <span className="text-neutral-500">
       {" "}
-      <span className="text-emerald-600">→</span>{" "}
-      <span className="text-sky-400">~</span>{" "}
-      {/* <span className="text-neutral-500">$</span>{" "} */}
+      <span className="text-white drop-shadow-text-glow">→</span>{" "}
+      <span className="text-white drop-shadow-text-glow">~</span>{" "}
     </span>
   );
 
@@ -484,12 +483,12 @@ export function Terminal({
         {/* Title Bar */}
         <div className="flex items-center gap-2 bg-neutral-800 px-4 py-3">
           <div className="flex items-center gap-1.5">
-            <div className="h-3 w-3 rounded-full bg-red-400 transition-colors hover:bg-red-600" />
+            {/* <div className="h-3 w-3 rounded-full bg-red-400 transition-colors hover:bg-red-600" />
             <div className="h-3 w-3 rounded-full bg-yellow-400 transition-colors hover:bg-yellow-600" />
-            <div className="h-3 w-3 rounded-full bg-green-400 transition-colors hover:bg-green-600" />
-            {/* <div className="h-3 w-3 rounded-full bg-white drop-shadow-text-glow transition-colors hover:bg-red-600" />
-            <div className="h-3 w-3 rounded-full bg-white/50 drop-shadow-text-glow  transition-colors hover:bg-yellow-600" />
-            <div className="h-3 w-3 rounded-full bg-white drop-shadow-text-glow  transition-colors hover:bg-green-600" /> */}
+            <div className="h-3 w-3 rounded-full bg-green-400 transition-colors hover:bg-green-600" /> */}
+            <div className="h-3 w-3 rounded-full bg-white drop-shadow-text-glow transition-colors hover:bg-red-400" />
+            <div className="h-3 w-3 rounded-full bg-white/50 drop-shadow-text-glow  transition-colors hover:bg-yellow-400" />
+            <div className="h-3 w-3 rounded-full bg-white drop-shadow-text-glow  transition-colors hover:bg-green-400" />
           </div>
           <div className="flex-1 text-center">
             <span className="truncate text-xs text-neutral-400">
