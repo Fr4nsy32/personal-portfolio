@@ -2,10 +2,13 @@ import { RouteNames } from "@/routes/route-names";
 import demo_1 from "@/assets/img/demo_1.png";
 import demo_2 from "@/assets/img/demo_2.png";
 import type { Project, ProjectCategory } from "@/types";
-
 import { TECH } from "./tech";
 
 export const CATEGORIES: ProjectCategory[] = ["web", "mobile", "tools"];
+
+const GITHUB_USER = import.meta.env.VITE_GITHUB_USER;
+const githubRepo = (name: string) =>
+  `https://github.com/${GITHUB_USER}/${name}`;
 
 export const PROJECTS: Project[] = [
   {
@@ -20,8 +23,8 @@ export const PROJECTS: Project[] = [
       TECH.motion,
       TECH.i18next,
     ],
-    images: [demo_1, demo_2], // [portfolio1, portfolio2]
-    repo: "https://github.com/your-username/portfolio",
+    images: [demo_1, demo_2],
+    repo: githubRepo("personal-portfolio"),
     demo: "https://your-portfolio.dev",
   },
   {
@@ -31,7 +34,7 @@ export const PROJECTS: Project[] = [
     year: "2025",
     stack: [TECH.react, TECH.next, TECH.nest],
     images: [],
-    repo: "https://github.com/your-username/recipe-app",
+    repo: githubRepo("recipe-app"),
   },
   {
     id: "log-parser",
@@ -40,7 +43,7 @@ export const PROJECTS: Project[] = [
     year: "2025",
     stack: [TECH.react, TECH.next, TECH.nest, TECH.typescript, TECH.javascript],
     images: [],
-    repo: "https://github.com/your-username/log-parser",
+    repo: githubRepo("log-parser"),
     demo: "https://log-parser.example.com",
   },
 ];

@@ -2,7 +2,7 @@ import type { Variants } from "motion/react";
 
 export const motionContainer: Variants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.15, delay: 0.1 } },
+  visible: { transition: { staggerChildren: 0.05, delay: 0.1 } },
 };
 
 export const motionItem: Variants = {

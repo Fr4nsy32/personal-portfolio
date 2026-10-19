@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import sendAnimation from "@/assets/lottie/send_animation.json";
-
 import { cn } from "@/lib/utils";
 import LottieButton from "@/components/lottie-button";
 
