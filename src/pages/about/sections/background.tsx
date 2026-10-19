@@ -2,15 +2,15 @@ import React, { useMemo, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ChefHat, ConciergeBell, Users, Wine } from "lucide-react";
 import Tabs from "@/components/tabs";
-import { panelDomId, tabDomId } from "@/constants/tab-ids";
+import { panelDomId, tabDomId } from "@/lib/tab-ids";
 import {
   Chips,
   IconBadge,
   Intro,
   MetaLine,
   SectionTitle,
-  useTimelineT,
-} from "./timeline-shared";
+} from "../components";
+import { useTimelineT } from "@/hooks/use-timeline-t";
 
 const STATS = [
   { id: "years", value: "6+" },

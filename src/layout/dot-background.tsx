@@ -1,4 +1,4 @@
-import "./styles/DotBackground.css";
+import "./dot-background.css";
 
 const DotBackground: React.FC = () => {
   return (

@@ -5,12 +5,12 @@ import { Link, Mail, Phone, Send } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { cn } from "@/lib/utils";
 import Tabs from "@/components/tabs";
-import { panelDomId, tabDomId } from "@/constants/tab-ids";
+import { panelDomId, tabDomId } from "@/lib/tab-ids";
 import DemoForm from "./form";
-import type { Contact, Tab, TabId } from "@/services/types";
+import type { Contact, Tab, TabId } from "@/types";
 import MotionHeader from "@/components/motion-header";
 import ContactLinks from "./contact-links";
-import { motionContainer, motionItem } from "@/constants";
+import { motionContainer, motionItem } from "@/lib/motion-variants";
 
 const ID_PREFIX = "contact";
 

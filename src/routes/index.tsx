@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { RouteNames } from "./route-names";
-import Layout from "@/pages/layout";
+import Layout from "@/layout";
 import HomePage from "@/pages/home";
 import AboutPage from "@/pages/about";
 import ContactsPage from "@/pages/contacts";
 import ProjectsPage from "@/pages/projects";
-import ProjectDetailPage from "@/pages/projects/project-detail";
+import ProjectDetailPage from "@/pages/projects/project-details";
 
 const RenderRoutes: React.FC = () => {
   const router = createBrowserRouter([

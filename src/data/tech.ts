@@ -20,15 +20,9 @@ import {
 export interface Tech {
   name: string;
   icon?: IconType;
-  /** Omit for the default (neutral white) */
   color?: string;
 }
 
-/**
- * Single source of truth for every technology on the site.
- * Projects (and the skills section) pick from here by key,
- * so a name, icon or color is only ever defined once.
- */
 export const TECH = {
   react: { name: "React", icon: SiReact, color: "#61DAFB" },
   typescript: { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },

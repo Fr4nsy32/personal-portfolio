@@ -2,9 +2,14 @@ import React, { useMemo, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ChevronDown, GraduationCap, Landmark, Laptop } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Chips, IconBadge, Intro, SectionTitle, useTimelineT } from "./timeline-shared";
+import {
+  Chips,
+  IconBadge,
+  Intro,
+  SectionTitle,
+} from "../components";
+import { useTimelineT } from "@/hooks/use-timeline-t";
 
-/* Static (non-translatable) data lives at module level: id, icon, period. */
 const ITEMS = [
   { id: "diploma", icon: GraduationCap, period: "2015 – 2020" },
   { id: "university", icon: Landmark, period: "2020 – 2023" },

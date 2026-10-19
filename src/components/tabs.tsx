@@ -1,7 +1,7 @@
 import { motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/utils";
-import { panelDomId, tabDomId } from "@/constants";
-import type { Tab } from "@/services/types";
+import { panelDomId, tabDomId } from "@/lib/tab-ids";
+import type { Tab } from "@/types";
 
 export interface TabsProps<T extends string = string> {
   tabs: readonly Tab<T>[];

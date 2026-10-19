@@ -8,7 +8,6 @@ interface ProjectGalleryProps {
   title: string;
 }
 
-/** Render with `key={project.id}` so the selection resets between projects. */
 const ProjectGallery: React.FC<ProjectGalleryProps> = ({ images, title }) => {
   const { t } = useTranslation();
   const [index, setIndex] = useState(0);

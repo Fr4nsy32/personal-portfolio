@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
-import type { Contact } from "@/services/types";
+import type { Contact } from "@/types";
 
 const ContactLinks: React.FC<{ contactList: Contact[] }> = ({
   contactList,

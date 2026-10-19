@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { motion, MotionConfig } from "motion/react";
 import MotionHeader from "@/components/motion-header";
-import { motionContainer, motionItem } from "@/constants";
+import { motionContainer, motionItem } from "@/lib/motion-variants";
 import ProjectTree from "./project-tree";
 
 const ProjectsPage: React.FC = () => {

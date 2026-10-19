@@ -2,17 +2,14 @@ import React from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion, MotionConfig } from "motion/react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { FaGithub, FaGlobe } from "react-icons/fa6";
 import { RouteNames } from "@/routes/route-names";
-import { motionContainer, motionItem } from "@/constants";
-import { PROJECTS, projectPath } from "@/constants/projects";
-import ProjectGallery from "./project-gallery";
-import type { Project } from "@/services/types";
+import { motionContainer, motionItem } from "@/lib/motion-variants";
+import { PROJECTS } from "@/data/projects";
+import ProjectGallery from "./components/details/project-gallery";
 import TechBadge from "@/components/tech-badge";
-
-const focusRing =
-  "outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
+import SiblingButton from "./components/details/sibling-button";
 
 const SectionHeading: React.FC<React.PropsWithChildren> = ({ children }) => (
   <h2 className="mb-3 font-heading text-lg font-medium text-white lg:text-xl">
@@ -20,45 +17,11 @@ const SectionHeading: React.FC<React.PropsWithChildren> = ({ children }) => (
   </h2>
 );
 
-const SiblingButton: React.FC<{
-  project?: Project;
-  direction: "prev" | "next";
-  label: string;
-}> = ({ project, direction, label }) => {
-  const { t } = useTranslation();
-  const Icon = direction === "next" ? ArrowRight : ArrowLeft;
-  const shape =
-    "flex h-7 w-7 items-center justify-center rounded-full border transition";
-
-  // Keeps the pair aligned on the first/last project
-  if (!project) {
-    return (
-      <span
-        aria-hidden
-        className={`${shape} border-neutral-900 text-neutral-700`}
-      >
-        <Icon className="h-4 w-4" />
-      </span>
-    );
-  }
-
-  const name = t(`projects.items.${project.id}.title`);
-
-  return (
-    <Link
-      to={projectPath(project.id)}
-      aria-label={`${label}: ${name}`}
-      title={name}
-      className={`${shape} border-neutral-800 bg-black text-neutral-300 hover:border-white hover:text-white hover:drop-shadow-border-glow ${focusRing}`}
-    >
-      <Icon className="h-4 w-4" aria-hidden />
-    </Link>
-  );
-};
-
 const ProjectDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t } = useTranslation();
+  const focusRing =
+    "outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
 
   const index = PROJECTS.findIndex((p) => p.id === slug);
   if (index === -1) return <Navigate to={RouteNames.PROJECTS} replace />;
@@ -106,11 +69,13 @@ const ProjectDetailPage: React.FC = () => {
                 project={prev}
                 direction="prev"
                 label={t("projects.detail.previous")}
+                focusRing={focusRing}
               />
               <SiblingButton
                 project={next}
                 direction="next"
                 label={t("projects.detail.next")}
+                focusRing={focusRing}
               />
             </nav>
           )}

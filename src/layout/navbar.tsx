@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import logo from "@/assets/svg/personal_logo.svg";
 import { RouteNames } from "@/routes/route-names";
 import { Link, NavLink } from "react-router-dom";
-import LanguageToggle from "@/components/language-toggle";
+import LanguageToggle from "@/layout/components/language-toggle";
 import { useTranslation } from "react-i18next";
-import cv_eng from "@/assets/pdf/Andi_Sina_CV_Eng.pdf";
-import cv_ita from "@/assets/pdf/Andi_Sina_CV_Ita.pdf";
+import cv_eng from "@/assets/pdf/andi_sina_cv_eng.pdf";
+import cv_ita from "@/assets/pdf/andi_sina_cv_eng.pdf";
 import LottieButton from "@/components/lottie-button";
-import downloadAnimation from "@/assets/lottie/downloadAnimation.json";
+import downloadAnimation from "@/assets/lottie/download_animation.json";
 
 const NavbarComponent: React.FC = () => {
   const { t } = useTranslation();
@@ -24,7 +24,7 @@ const NavbarComponent: React.FC = () => {
 
     const link = document.createElement("a");
     link.href = isEnglish ? cv_eng : cv_ita;
-    link.download = isEnglish ? "Andi_Sina_CV_Eng.pdf" : "Andi_Sina_CV_Ita.pdf";
+    link.download = isEnglish ? "andi_sina_cv_eng.pdf" : "andi_sina_cv_ita.pdf";
     link.click();
   };
 

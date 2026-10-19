@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import TimelineAbout from "./timeline-about";
 import MotionHeader from "@/components/motion-header";
 import { useTranslation } from "react-i18next";
-import { motionContainer } from "@/constants";
+import { motionContainer } from "@/lib/motion-variants";
 
 const AboutPage: React.FC = () => {
   const { t } = useTranslation();

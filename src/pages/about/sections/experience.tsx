@@ -7,10 +7,10 @@ import {
   Intro,
   MetaLine,
   SectionTitle,
-  useTimelineT,
-} from "./timeline-shared";
+} from "../components";
 import TechBadge from "@/components/tech-badge";
-import { TECH } from "@/constants";
+import { TECH } from "@/data";
+import { useTimelineT } from "@/hooks/use-timeline-t";
 
 const STACK = [
   TECH.react,

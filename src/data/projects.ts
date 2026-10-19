@@ -1,7 +1,7 @@
 import { RouteNames } from "@/routes/route-names";
-import demo1 from "@/assets/img/demo1.png";
-import demo2 from "@/assets/img/demo2.png";
-import type { Project, ProjectCategory } from "@/services/types";
+import demo_1 from "@/assets/img/demo_1.png";
+import demo_2 from "@/assets/img/demo_2.png";
+import type { Project, ProjectCategory } from "@/types";
 
 import { TECH } from "./tech";
 
@@ -20,7 +20,7 @@ export const PROJECTS: Project[] = [
       TECH.motion,
       TECH.i18next,
     ],
-    images: [demo1, demo2], // [portfolio1, portfolio2]
+    images: [demo_1, demo_2], // [portfolio1, portfolio2]
     repo: "https://github.com/your-username/portfolio",
     demo: "https://your-portfolio.dev",
   },

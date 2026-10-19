@@ -1,4 +1,4 @@
-import { motionItem } from "@/constants";
+import { motionItem } from "@/lib/motion-variants";
 import { cn } from "cn";
 import { motion } from "motion/react";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import type { Tech } from "@/constants";
+import type { Tech } from "@/data";
 
 interface TechBadgeProps {
   tech: Tech;

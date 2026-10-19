@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { motion, MotionConfig } from "motion/react";
 import TerminalCarousel from "./terminal-carousel";
 import MotionHeader from "@/components/motion-header";
-import { motionContainer } from "@/constants";
+import { motionContainer } from "@/lib/motion-variants";
 
 const HomePage: React.FC = () => {
   const { t } = useTranslation();

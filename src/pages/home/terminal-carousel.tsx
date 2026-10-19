@@ -7,9 +7,9 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { Terminal, type TerminalProps } from "@/components/ui/terminal";
-import type { Project } from "@/services/types";
+import type { Project } from "@/types";
 import { useTranslation } from "react-i18next";
-import { PROJECTS } from "@/constants";
+import { PROJECTS } from "@/data";
 
 interface Slide {
   commands: string[];
