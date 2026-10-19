@@ -486,9 +486,9 @@ export function Terminal({
             {/* <div className="h-3 w-3 rounded-full bg-red-400 transition-colors hover:bg-red-600" />
             <div className="h-3 w-3 rounded-full bg-yellow-400 transition-colors hover:bg-yellow-600" />
             <div className="h-3 w-3 rounded-full bg-green-400 transition-colors hover:bg-green-600" /> */}
-            <div className="h-3 w-3 rounded-full bg-white drop-shadow-text-glow transition-colors hover:bg-red-400" />
-            <div className="h-3 w-3 rounded-full bg-white/50 drop-shadow-text-glow  transition-colors hover:bg-yellow-400" />
-            <div className="h-3 w-3 rounded-full bg-white drop-shadow-text-glow  transition-colors hover:bg-green-400" />
+            <div className="h-3 w-3 rounded-full bg-white drop-shadow-text-glow transition-colors hover:bg-white/50" />
+            <div className="h-3 w-3 rounded-full bg-white/50 drop-shadow-text-glow  transition-colors hover:bg-white/20" />
+            <div className="h-3 w-3 rounded-full bg-white drop-shadow-text-glow  transition-colors hover:bg-white/50" />
           </div>
           <div className="flex-1 text-center">
             <span className="truncate text-xs text-neutral-400">

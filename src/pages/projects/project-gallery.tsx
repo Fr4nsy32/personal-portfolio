@@ -15,7 +15,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ images, title }) => {
 
   if (images.length === 0) {
     return (
-      <div className="flex aspect-video items-center justify-center rounded-xl border border-dashed border-neutral-800 text-sm text-neutral-500">
+      <div className="flex aspect-video items-center justify-center rounded-xl border border-neutral-800 text-sm text-neutral-500 bg-black">
         {t("projects.detail.noPreview")}
       </div>
     );

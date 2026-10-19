@@ -7,7 +7,8 @@
     },
     "home": {
         "title": "Full_Stack Developer",
-        "description": "Full-stack developer turning ideas into reliable, well-crafted web products. I work with React, TypeScript, Node.js and cloud tooling to ship clean code and great user experiences. Open to freelance projects and new opportunities, so get in touch."
+        "description": "Full-stack developer turning ideas into reliable, well-crafted web products. I work with React, TypeScript, Node.js and cloud tooling to ship clean code and great user experiences. Open to freelance projects and new opportunities, so get in touch.",
+        "terminal-header": "Selected Projects"
     },
     "about": {
         "header": {
@@ -31,7 +32,7 @@
                 "items": {
                     "cook": {
                         "title": "Cook",
-                        "place": "Fine dining kitchen line",
+                        "place": "Fine dining kitchen Sous Chef",
                         "summary": "Prepared and assembled orders on the line, kept stations stocked and followed strict food safety routines while tickets kept coming in.",
                         "highlights": [
                             "Working under pressure",
@@ -73,6 +74,7 @@
             },
             "education": {
                 "intro": "I came to software through economics. The first part of my education taught me how to think about systems and data, and the second taught me how to build with them.",
+                "listTitle": "Learning path",
                 "items": {
                     "diploma": {
                         "title": "High school diploma in Economics",
@@ -100,7 +102,7 @@
                         "title": "Full-stack web development bootcamp",
                         "place": "Le Wagon · Remote",
                         "status": "Bootcamp completed",
-                        "summary": "A 6-month intensive course in full-stack web development, with a focus on React, Node.js and TypeScript. This is where I learned to build software from scratch and ship it to users.",
+                        "summary": "A 6-month intensive course in full-stack web development, with a focus on the fundamentals of developing with JavaScript and Ruby . This is where I learned to build software from scratch and ship it to users.",
                         "highlights": [
                             "Full-stack fundamentals",
                             "Pair programming and code review",
@@ -220,8 +222,7 @@
             "noPreview": "No screenshots yet"
         },
         "items": {
-            "portfolio": {
-                "title": "Portfolio",
+            "personal-portfolio": {
                 "tagline": "The site you're looking at: bilingual, animated and fully keyboard accessible.",
                 "about": [
                     "A personal site built to present my work and background in English and Italian.",
@@ -234,7 +235,6 @@
                 ]
             },
             "recipe-app": {
-                "title": "Recipe app",
                 "tagline": "Save, scale and cook recipes step by step.",
                 "about": [
                     "Replace with the real description of the project."
@@ -244,7 +244,6 @@
                 ]
             },
             "log-parser": {
-                "title": "Log parser",
                 "tagline": "Turns raw server logs into searchable, filterable reports.",
                 "about": [
                     "Replace with the real description of the project."

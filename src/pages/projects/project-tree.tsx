@@ -3,20 +3,21 @@ import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ArrowRight, ChevronDown, Folder, FolderOpen } from "lucide-react";
 import { cn } from "@/lib/utils";
-import {
-  CATEGORIES,
-  PROJECTS,
-  projectPath,
-  type Project,
-  type ProjectCategory,
-} from "@/constants/projects";
+import { CATEGORIES, PROJECTS, projectPath } from "@/constants";
+import type { Project, ProjectCategory } from "@/services/types";
+import TechBadge from "@/components/tech-badge";
 
-const MAX_CHIPS = 4;
+const MAX_CHIPS = 3;
+
+// Drop-in replacement for ProjectRow in project-tree.tsx (imports unchanged).
 
 const ProjectRow: React.FC<{ project: Project }> = ({ project }) => {
   const { t } = useTranslation();
   const base = `projects.items.${project.id}`;
-  const extra = project.stack.length - MAX_CHIPS;
+
+  // Render and count from the same list so the icons and "+N" always agree
+  const visible = project.stack.slice(0, MAX_CHIPS) ?? [];
+  const extra = (project.stack.length ?? 0) - visible.length;
 
   return (
     <li className="group/row relative">
@@ -32,23 +33,35 @@ const ProjectRow: React.FC<{ project: Project }> = ({ project }) => {
       >
         <span className="min-w-0 flex-1">
           <span className="block truncate font-heading text-base font-medium text-white group-hover:drop-shadow-text-glow group-focus-visible:drop-shadow-text-glow lg:text-lg">
-            {t(`${base}.title`)}
+            {project.title}
           </span>
           <span className="mt-1 line-clamp-2 block text-xs text-neutral-500 lg:text-sm">
             {t(`${base}.tagline`)}
           </span>
 
-          <span className="mt-3 hidden flex-wrap gap-2 sm:flex">
-            {project.stack.slice(0, MAX_CHIPS).map((tech) => (
-              <span
-                key={tech}
-                className="rounded-full border border-neutral-800 bg-neutral-950 px-2.5 py-0.5 text-[11px] text-neutral-300 lg:text-xs"
-              >
-                {tech}
-              </span>
+          {/* items-center: stops the chips stretching to the height of "+N" */}
+          <span className="mt-3 hidden flex-wrap items-center gap-2 sm:flex">
+            {visible.map((tech) => (
+              <TechBadge key={tech.name} tech={tech} iconOnly />
             ))}
+            {/* {visible.map(({ name, icon: Icon, color }) => (
+              <span
+                key={name}
+                title={name}
+                className="flex h-8 w-8 items-center justify-center rounded-full border border-neutral-800 bg-neutral-950 transition duration-200 hover:-translate-y-0.5 hover:border-neutral-600"
+              >
+                {Icon && (
+                  <Icon
+                    className="h-3 w-3 shrink-0"
+                    style={{ color }}
+                    aria-hidden
+                  />
+                )}
+                <span className="sr-only">{name}</span>
+              </span>
+            ))} */}
             {extra > 0 && (
-              <span className="px-1 py-0.5 text-[11px] text-neutral-500 lg:text-xs">
+              <span className="px-1 text-[11px] text-neutral-500 lg:text-xs">
                 +{extra}
               </span>
             )}

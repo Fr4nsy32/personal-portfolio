@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, MotionConfig } from "motion/react";
-import { Mail, Phone } from "lucide-react";
+import { Link, Mail, Phone, Send } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { cn } from "@/lib/utils";
 import Tabs from "@/components/tabs";
@@ -51,8 +51,8 @@ const ContactsPage: React.FC = () => {
   ];
 
   const contactTabs: Tab[] = [
-    { id: "form", label: t("contacts.tabs.form") },
-    { id: "links", label: t("contacts.tabs.links") },
+    { id: "form", label: t("contacts.tabs.form"), icon: Send },
+    { id: "links", label: t("contacts.tabs.links"), icon: Link },
   ];
   const [activeTab, setActiveTab] = useState<TabId>(contactTabs[0].id);
 

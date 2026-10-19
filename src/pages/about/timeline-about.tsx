@@ -3,7 +3,6 @@ import { Timeline } from "@/components/ui/timeline";
 import { useTranslation } from "react-i18next";
 import Background from "./timeline-steps/background";
 import Education from "./timeline-steps/education";
-// import Skills from "./timeline-steps/skills";
 import Experience from "./timeline-steps/experience";
 
 const TimelineAbout: React.FC = () => {
@@ -22,10 +21,6 @@ const TimelineAbout: React.FC = () => {
       title: t("about.timeline.steps.experience"),
       content: <Experience />,
     },
-    // {
-    //   title: "Skills",
-    //   content: <Skills />,
-    // },
   ];
   return (
     <div className="w-full overflow-clip">

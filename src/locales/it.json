@@ -7,7 +7,8 @@
     },
     "home": {
         "title": "Svilupatore Full_Stack",
-        "description": "Sviluppatore full-stack che trasforma le idee in prodotti web affidabili e curati. Lavoro con React, TypeScript, Node.js e strumenti cloud per realizzare codice pulito ed esperienze utente di qualità. Disponibile per progetti freelance e nuove opportunità, contattami."
+        "description": "Sviluppatore full-stack che trasforma le idee in prodotti web affidabili e curati. Lavoro con React, TypeScript, Node.js e strumenti cloud per realizzare codice pulito ed esperienze utente di qualità. Disponibile per progetti freelance e nuove opportunità, contattami.",
+        "terminal-header": "Progetti in evidenza"
     },
     "about": {
         "header": {
@@ -31,7 +32,7 @@
                 "items": {
                     "cook": {
                         "title": "Cuoco",
-                        "place": "Linea di cucina di un ristorante di alta cucina",
+                        "place": "Sous Chef ristorante di alta cucina",
                         "summary": "Preparavo e assemblavo le comande in linea, tenevo le postazioni rifornite e seguivo rigorose procedure di sicurezza alimentare mentre gli ordini continuavano ad arrivare.",
                         "highlights": [
                             "Lavorare sotto pressione",
@@ -51,7 +52,7 @@
                     },
                     "barman": {
                         "title": "Barman",
-                        "place": "Bar del centro città",
+                        "place": "Bar centro città",
                         "summary": "Preparavo drink, gestivo l'area bar e mi coordinavo con la cucina per mantenere il servizio fluido.",
                         "highlights": [
                             "Multitasking e gestione delle priorità",
@@ -73,6 +74,7 @@
             },
             "education": {
                 "intro": "Sono arrivato al software passando dall'economia. La prima parte del mio percorso di studi mi ha insegnato a ragionare su sistemi e dati, la seconda a costruire con essi.",
+                "listTitle": "Percorso di studi",
                 "items": {
                     "diploma": {
                         "title": "Diploma di scuola superiore in Economia",
@@ -100,7 +102,7 @@
                         "title": "Bootcamp di sviluppo web full-stack",
                         "place": "Le Wagon · Da remoto",
                         "status": "Bootcamp completato",
-                        "summary": "Un corso intensivo di 6 mesi in sviluppo web full-stack, con focus su React, Node.js e TypeScript. È qui che ho imparato a costruire software da zero e a metterlo in mano agli utenti.",
+                        "summary": "Un corso intensivo di 6 mesi in sviluppo web full-stack, con focus su le fondamenta di sviluppo con JvaScript e Ruby. È qui che ho imparato a costruire software da zero e a metterlo in mano agli utenti.",
                         "highlights": [
                             "Fondamenti del full-stack",
                             "Pair programming e code review",
@@ -220,7 +222,7 @@
             "noPreview": "Ancora nessuno screenshot"
         },
         "items": {
-            "portfolio": {
+            "personal-portfolio": {
                 "title": "Portfolio",
                 "tagline": "Il sito che stai guardando: bilingue, animato e completamente accessibile da tastiera.",
                 "about": [

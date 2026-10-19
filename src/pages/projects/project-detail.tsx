@@ -6,8 +6,10 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { FaGithub, FaGlobe } from "react-icons/fa6";
 import { RouteNames } from "@/routes/route-names";
 import { motionContainer, motionItem } from "@/constants";
-import { PROJECTS, projectPath, type Project } from "@/constants/projects";
+import { PROJECTS, projectPath } from "@/constants/projects";
 import ProjectGallery from "./project-gallery";
+import type { Project } from "@/services/types";
+import TechBadge from "@/components/tech-badge";
 
 const focusRing =
   "outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
@@ -72,7 +74,7 @@ const ProjectDetailPage: React.FC = () => {
   };
   const about = list(`${base}.about`);
   const highlights = list(`${base}.highlights`);
-  const title = t(`${base}.title`);
+  const title = project.title;
 
   return (
     <MotionConfig reducedMotion="user">
@@ -170,11 +172,8 @@ const ProjectDetailPage: React.FC = () => {
               <SectionHeading>{t("projects.detail.stack")}</SectionHeading>
               <ul className="flex flex-wrap gap-2">
                 {project.stack.map((tech) => (
-                  <li
-                    key={tech}
-                    className="rounded-full border border-neutral-800 bg-neutral-950 px-3 py-1 text-xs text-neutral-300 lg:text-sm"
-                  >
-                    {tech}
+                  <li key={tech.name}>
+                    <TechBadge tech={tech} />
                   </li>
                 ))}
               </ul>

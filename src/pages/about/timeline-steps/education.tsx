@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ChevronDown, GraduationCap, Landmark, Laptop } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Chips, IconBadge, Intro, useTimelineT } from "./timeline-shared";
+import { Chips, IconBadge, Intro, SectionTitle, useTimelineT } from "./timeline-shared";
 
 /* Static (non-translatable) data lives at module level: id, icon, period. */
 const ITEMS = [
@@ -32,6 +32,7 @@ export const Education: React.FC = () => {
   return (
     <div className="space-y-6">
       <Intro>{t("intro")}</Intro>
+      <SectionTitle className="mb-5">{t("listTitle")}</SectionTitle>
 
       <ol className="space-y-3">
         {items.map((item) => {
