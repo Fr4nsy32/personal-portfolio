@@ -3,10 +3,258 @@
         "about": "Chi sono",
         "projects": "Progetti",
         "contacts": "Contatti",
-        "toggleMenu": "Apri menu"
+        "toggleMenu": "Apri/chiudi menu"
     },
     "home": {
-        "title": "Sviluppatore Full_Stack",
-        "description": "Sviluppatore full-stack che trasforma le idee in prodotti web affidabili e curati. Lavoro con React, TypeScript, Node.js e strumenti cloud per realizzare codice pulito e ottime esperienze utente. Disponibile per progetti freelance e nuove opportunità: contattami."
+        "title": "Svilupatore Full_Stack",
+        "description": "Sviluppatore full-stack che trasforma le idee in prodotti web affidabili e curati. Lavoro con React, TypeScript, Node.js e strumenti cloud per realizzare codice pulito ed esperienze utente di qualità. Disponibile per progetti freelance e nuove opportunità, contattami.",
+        "terminal-header": "Progetti in evidenza"
+    },
+    "about": {
+        "header": {
+            "title": "Changelog delle mie esperienze",
+            "description": "Ecco una timeline del mio percorso professionale e delle esperienze chiave nel corso degli anni."
+        },
+        "timeline": {
+            "steps": {
+                "background": "Background",
+                "education": "Formazione",
+                "experience": "Esperienza"
+            },
+            "background": {
+                "intro": "Prima di scrivere codice, ho passato anni nell'ospitalità, dalla linea di cucina al bancone dei fast food. Era un ambiente veloce, rumoroso e senza sconti, e mi ha insegnato gran parte di ciò che so sul lavorare con le persone.",
+                "listTitle": "Il percorso",
+                "listLabel": "Ruoli nell'ospitalità",
+                "stats": {
+                    "years": "Anni nell'ospitalità",
+                    "roles": "Ruoli, dalla cucina alla sala"
+                },
+                "items": {
+                    "cook": {
+                        "title": "Cuoco",
+                        "place": "Sous Chef ristorante di alta cucina",
+                        "summary": "Preparavo e assemblavo le comande in linea, tenevo le postazioni rifornite e seguivo rigorose procedure di sicurezza alimentare mentre gli ordini continuavano ad arrivare.",
+                        "highlights": [
+                            "Lavorare sotto pressione",
+                            "Sicurezza e igiene alimentare",
+                            "Preparazione e organizzazione della postazione"
+                        ]
+                    },
+                    "service": {
+                        "title": "Servizio",
+                        "place": "Bancone e sala",
+                        "summary": "Prendevo gli ordini, gestivo i pagamenti e mi occupavo direttamente degli ospiti, compresi quelli che entravano già insoddisfatti.",
+                        "highlights": [
+                            "Servizio clienti e comunicazione",
+                            "Organizzazione del lavoro",
+                            "Software di cassa e sistemi POS"
+                        ]
+                    },
+                    "barman": {
+                        "title": "Barman",
+                        "place": "Bar centro città",
+                        "summary": "Preparavo drink, gestivo l'area bar e mi coordinavo con la cucina per mantenere il servizio fluido.",
+                        "highlights": [
+                            "Multitasking e gestione delle priorità",
+                            "Mixology e preparazione dei drink",
+                            "Servizio clienti sotto pressione"
+                        ]
+                    },
+                    "lead": {
+                        "title": "Responsabile di turno",
+                        "place": "Catena di fast food",
+                        "summary": "Coordinavo la squadra nelle ore di punta, formavo i nuovi colleghi e prendevo le decisioni rapide che mantenevano il turno in carreggiata.",
+                        "highlights": [
+                            "Delegare e stabilire le priorità",
+                            "Formazione dei nuovi colleghi",
+                            "Organizzazione e turnazione del personale"
+                        ]
+                    }
+                }
+            },
+            "education": {
+                "intro": "Sono arrivato al software passando dall'economia. La prima parte del mio percorso di studi mi ha insegnato a ragionare su sistemi e dati, la seconda a costruire con essi.",
+                "listTitle": "Percorso di studi",
+                "items": {
+                    "diploma": {
+                        "title": "Diploma di scuola superiore in Economia",
+                        "place": "IIS Cassata Gattapone, Gubbio",
+                        "status": "Diploma conseguito",
+                        "summary": "La mia prima introduzione strutturata a come funzionano denaro, aziende e istituzioni, con materie economiche e aziendali accanto al programma di base.",
+                        "highlights": [
+                            "Basi di economia e gestione aziendale",
+                            "Leggere e mettere in discussione i dati",
+                            "Disciplina nello studio"
+                        ]
+                    },
+                    "university": {
+                        "title": "Laurea triennale in Economia, Mercati e Istituzioni",
+                        "place": "Università di Torino",
+                        "status": "2 anni completati",
+                        "summary": "Corso triennale in economia, mercati e istituzioni, di cui ho completato due anni. Mi ha dato una solida base di metodi quantitativi e di come funzionano mercati e decisioni di politica economica, e mi ha allenato a scomporre problemi complessi e a sostenere il ragionamento con i dati.",
+                        "highlights": [
+                            "Statistica e ragionamento quantitativo",
+                            "Micro e macroeconomia",
+                            "Pensiero strutturato e analitico"
+                        ]
+                    },
+                    "bootcamp": {
+                        "title": "Bootcamp di sviluppo web full-stack",
+                        "place": "Le Wagon · Da remoto",
+                        "status": "Bootcamp completato",
+                        "summary": "Un corso intensivo di 6 mesi in sviluppo web full-stack, con focus su le fondamenta di sviluppo con JvaScript e Ruby. È qui che ho imparato a costruire software da zero e a metterlo in mano agli utenti.",
+                        "highlights": [
+                            "Fondamenti del full-stack",
+                            "Pair programming e code review",
+                            "Lavorare in inglese con un team internazionale",
+                            "Portare a termine un progetto end to end"
+                        ]
+                    }
+                }
+            },
+            "experience": {
+                "intro": "Sviluppo software per robot che preparano drink. Il mio lavoro si colloca dove il software incontra l'hardware: interfacce che clienti e operatori usano ogni giorno per far funzionare macchine reali in locali reali.",
+                "stackTitle": "Stack principale",
+                "listTitle": "Progetti su cui ho lavorato",
+                "listHint": "Scegli una scheda per vedere i dettagli.",
+                "listLabel": "Aree di lavoro",
+                "items": {
+                    "platform": {
+                        "title": "Software di gestione dei robot",
+                        "summary": "Il frontend di una complessa piattaforma di gestione che permette ai nostri clienti di interagire con il robot e il suo hardware a ogni livello.",
+                        "highlights": [
+                            "Ho sviluppato il frontend di una grande piattaforma di gestione multilivello",
+                            "Ho lavorato fianco a fianco con un team di designer esperti",
+                            "Ho trasformato azioni e stati dell'hardware in interfacce chiare e utilizzabili"
+                        ]
+                    },
+                    "sites": {
+                        "title": "Siti web e presentazioni",
+                        "summary": "Oltre alla piattaforma principale, mi sono occupato di diversi progetti frontend per l'azienda e per aziende collegate.",
+                        "highlights": [
+                            "Progetto di presentazione artistica",
+                            "Menu del bar",
+                            "Sito di lancio"
+                        ]
+                    },
+                    "design": {
+                        "title": "Un prodotto costruito da zero",
+                        "summary": "Un progetto è stato progettato interamente da me, poi sviluppato end to end sul frontend e rilasciato insieme al team backend.",
+                        "highlights": [
+                            "Ho curato il design UI e UX partendo da una pagina bianca",
+                            "Ho sviluppato l'intero frontend",
+                            "Ho lavorato a stretto contatto con il team backend durante sviluppo e rilascio"
+                        ]
+                    },
+                    "deploy": {
+                        "title": "Installazioni internazionali",
+                        "summary": "Ho partecipato all'installazione del software sul posto, lavorando direttamente sull'hardware.",
+                        "highlights": [
+                            "Installazioni negli USA e in Europa",
+                            "Lavoro pratico direttamente sulle macchine",
+                            "Ho gestito la comunicazione tra software e hardware sul posto"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "contacts": {
+        "header": {
+            "title": "Mettiamoci in contatto",
+            "description": "Hai un progetto in mente o vuoi semplicemente salutarmi? Scrivimi un messaggio o contattami direttamente."
+        },
+        "tabsLabel": "Opzioni di contatto",
+        "tabs": {
+            "form": "Invia un messaggio",
+            "links": "Trovami online"
+        },
+        "form": {
+            "name": {
+                "label": "Nome",
+                "placeholder": "Il tuo nome"
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": "tu@esempio.com"
+            },
+            "subject": {
+                "label": "Oggetto",
+                "placeholder": "Di cosa si tratta?"
+            },
+            "message": {
+                "label": "Messaggio",
+                "placeholder": "Raccontami del tuo progetto o della tua idea..."
+            },
+            "submit": "Invia messaggio",
+            "statusIdle": "Modulo dimostrativo: l'invio non spedisce ancora nulla.",
+            "statusSent": "Grazie! Questa è una demo, quindi non è stato inviato nulla."
+        },
+        "links": {
+            "github": "GitHub",
+            "linkedin": "LinkedIn",
+            "email": "Email",
+            "phone": "Telefono"
+        }
+    },
+    "projects": {
+        "header": {
+            "title": "Panoramica dei progetti",
+            "description": "Dai un'occhiata a ciò che ho realizzato e approfondiscilo."
+        },
+        "categories": {
+            "web": "App web",
+            "mobile": "App mobile",
+            "tools": "Strumenti ed esperimenti"
+        },
+        "detail": {
+            "back": "Tutti i progetti",
+            "about": "Descrizione",
+            "highlights": "Punti chiave",
+            "stack": "Stack",
+            "repo": "Codice sorgente",
+            "demo": "Demo live",
+            "previous": "Progetto precedente",
+            "next": "Progetto successivo",
+            "siblings": "Altri progetti",
+            "gallery": "Screenshot",
+            "showImage": "Mostra screenshot {{number}}",
+            "noPreview": "Ancora nessuno screenshot"
+        },
+        "items": {
+            "personal-portfolio": {
+                "title": "Portfolio",
+                "tagline": "Il sito che stai guardando: bilingue, animato e completamente accessibile da tastiera.",
+                "about": [
+                    "Un sito personale pensato per presentare il mio lavoro e il mio percorso in inglese e in italiano.",
+                    "Ogni pagina condivide lo stesso design system: superfici nere, bordi sottili e leggeri bagliori all'interazione."
+                ],
+                "highlights": [
+                    "Cambio lingua con preferenza salvata",
+                    "Rispetto della riduzione del movimento in tutte le animazioni",
+                    "Download del CV nella lingua attiva"
+                ]
+            },
+            "recipe-app": {
+                "title": "App di ricette",
+                "tagline": "Salva, scala e cucina le ricette passo dopo passo.",
+                "about": [
+                    "Sostituisci con la descrizione reale del progetto."
+                ],
+                "highlights": [
+                    "Sostituisci con una funzionalità chiave"
+                ]
+            },
+            "log-parser": {
+                "title": "Log parser",
+                "tagline": "Trasforma i log grezzi dei server in report ricercabili e filtrabili.",
+                "about": [
+                    "Sostituisci con la descrizione reale del progetto."
+                ],
+                "highlights": [
+                    "Sostituisci con una funzionalità chiave"
+                ]
+            }
+        }
     }
 }

@@ -1,7 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { RouteNames } from "./route-names";
-import Layout from "@/pages/layout";
+import Layout from "@/layout";
 import HomePage from "@/pages/home";
+import AboutPage from "@/pages/about";
+import ContactsPage from "@/pages/contacts";
+import ProjectsPage from "@/pages/projects";
+import ProjectDetailPage from "@/pages/projects/project-details";
 
 const RenderRoutes: React.FC = () => {
   const router = createBrowserRouter([
@@ -15,15 +19,20 @@ const RenderRoutes: React.FC = () => {
         },
         {
           path: RouteNames.ABOUT,
-          element: <div className="text-white text-center">About Page</div>,
+          element: <AboutPage />,
         },
         {
           path: RouteNames.PROJECTS,
-          element: <div className="text-white text-center">Projects Page</div>,
+          element: <ProjectsPage />,
+        },
+        { path: RouteNames.PROJECTS, element: <ProjectsPage /> },
+        {
+          path: `${RouteNames.PROJECTS}/:slug`,
+          element: <ProjectDetailPage />,
         },
         {
           path: RouteNames.CONTACTS,
-          element: <div className="text-white text-center">Contact Page</div>,
+          element: <ContactsPage />,
         },
       ],
     },

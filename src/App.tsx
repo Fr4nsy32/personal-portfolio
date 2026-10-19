@@ -1,4 +1,3 @@
-import "./App.css";
 import RenderRoutes from "./routes";
 
 const App: React.FC = () => {

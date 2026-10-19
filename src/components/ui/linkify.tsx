@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 
 const LINK_REGEX = /(https?:\/\/[^\s]+|\/projects\/[\w-]+)/g;
-const linkClass =
-  "text-sky-400 underline underline-offset-2 hover:text-sky-300";
 
 export function Linkify({ text }: { text: string }) {
+  const linkClass =
+    "text-white hover:drop-shadow-text-glow underline underline-offset-2 ";
+
   return (
     <>
       {text.split(LINK_REGEX).map((part, i) => {

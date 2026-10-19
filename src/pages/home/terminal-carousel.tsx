@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+/* eslint-disable react-hooks/purity */
+import { useEffect, useMemo, useState } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -6,35 +7,17 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { Terminal, type TerminalProps } from "@/components/ui/terminal";
-import { GITHUB_USER, projects, type Project } from "@/utils/projects";
+import type { Project } from "@/types";
+import { useTranslation } from "react-i18next";
+import { PROJECTS } from "@/data";
 
 interface Slide {
   commands: string[];
   outputs: NonNullable<TerminalProps["outputs"]>;
 }
 
-const PAUSE_AFTER_DONE = 10000;
-
-const buildSlide = (p: Project): Slide => {
-  const url = `https://github.com/${GITHUB_USER}/${p.repo}`;
-  return {
-    commands: [`git clone ${url}.git`, "cat README.md"],
-    outputs: {
-      0: [`Cloning into '${p.repo}'...`, "Receiving objects: 100%, done."],
-      1: [
-        `# ${p.title}`,
-        p.description,
-        `Stack: ${p.stack.join(" · ")}`,
-        ...(p.demoUrl ? [`Live: ${p.demoUrl}`] : []),
-        `Case study: /projects/${p.slug}`,
-      ],
-    },
-  };
-};
-
-const slides = projects.slice(0, 3).map(buildSlide);
-
 const TerminalCarousel: React.FC = () => {
+  const { t } = useTranslation();
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [completed, setCompleted] = useState(false);
@@ -59,14 +42,38 @@ const TerminalCarousel: React.FC = () => {
   useEffect(() => {
     if (!api || !completed || paused) return;
 
-    const timer = setTimeout(() => api.scrollNext(), PAUSE_AFTER_DONE);
+    const timer = setTimeout(() => api.scrollNext(), 10000);
     return () => clearTimeout(timer);
   }, [api, completed, paused]);
 
+  const buildSlide = (p: Project): Slide => {
+    return {
+      commands: [`git clone ${p.repo}.git`, "cat README.md"],
+      outputs: {
+        0: [`Cloning into '${p.id}'...`, "Receiving objects: 100%, done."],
+        1: [
+          `# ${p.title}`,
+          t(`projects.items.${p.id}.tagline`),
+          `Stack: ${p.stack.map((tech) => tech.name).join(" · ")}`,
+          ...(p.demo ? [`Live: ${p.demo}`] : []),
+          `Case study: /projects/${p.id}`,
+        ],
+      },
+    };
+  };
+
+  const slides = useMemo(() => {
+    const count = Math.floor(Math.random() * 3) + 1; // 1 to 3
+    return [...PROJECTS]
+      .sort(() => Math.random() - 0.5)
+      .slice(0, count)
+      .map(buildSlide);
+  }, []);
+
   return (
     <section className="w-full mt-2 xl:py-20">
-      <p className="mb-6 text-center font-heading text-sm uppercase tracking-widest text-neutral-400">
-        Selected projects
+      <p className="mb-6 text-center font-heading text-sm uppercase tracking-widest text-white">
+        {t("home.terminal-header")}
       </p>
 
       <Carousel

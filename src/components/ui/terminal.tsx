@@ -277,16 +277,15 @@ function tokenizeBash(text: string): Token[] {
 
   return tokens;
 }
-
 const tokenColors: Record<TokenType, string> = {
-  command: "text-emerald-400",
-  flag: "text-sky-400",
-  string: "text-amber-300",
-  number: "text-purple-400",
-  operator: "text-red-400",
-  path: "text-cyan-300",
-  variable: "text-pink-400",
-  comment: "text-neutral-500",
+  command: "font-semibold text-white",
+  flag: "text-neutral-400",
+  string: "text-neutral-200 italic",
+  number: "text-neutral-300",
+  operator: "text-neutral-500",
+  path: "text-neutral-200",
+  variable: "text-neutral-300 italic",
+  comment: "text-neutral-600 italic",
   default: "text-neutral-300",
 };
 
@@ -328,7 +327,7 @@ export function Terminal({
   className,
   typingSpeed = 50,
   delayBetweenCommands = 800,
-  initialDelay = 500,
+  initialDelay = 800,
   enableSound = true,
   onComplete,
 }: TerminalProps) {
@@ -458,11 +457,17 @@ export function Terminal({
   }, [phase]);
 
   const prompt = (
+    // <span className="text-neutral-500">
+    //   {" "}
+    //   {/* <span className="text-sky-500">{username}</span>{" "} */}
+    //   <span className="text-white drop-shadow-text-glow">→</span>{" "}
+    //   <span className="text-white drop-shadow-text-glow">projects</span>{" "}
+    //   <span className="text-neutral-500">$</span>{" "}
+    // </span>
     <span className="text-neutral-500">
-      <span className="text-sky-500">{username}</span>
-      <span className="text-emerald-600">:</span>
-      <span className="text-sky-400">~</span>
-      <span className="text-neutral-500">$</span>{" "}
+      {" "}
+      <span className="text-white drop-shadow-text-glow">→</span>{" "}
+      <span className="text-white drop-shadow-text-glow">~</span>{" "}
     </span>
   );
 
@@ -478,9 +483,12 @@ export function Terminal({
         {/* Title Bar */}
         <div className="flex items-center gap-2 bg-neutral-800 px-4 py-3">
           <div className="flex items-center gap-1.5">
-            <div className="h-3 w-3 rounded-full bg-red-500 transition-colors hover:bg-red-600" />
-            <div className="h-3 w-3 rounded-full bg-yellow-500 transition-colors hover:bg-yellow-600" />
-            <div className="h-3 w-3 rounded-full bg-green-500 transition-colors hover:bg-green-600" />
+            {/* <div className="h-3 w-3 rounded-full bg-red-400 transition-colors hover:bg-red-600" />
+            <div className="h-3 w-3 rounded-full bg-yellow-400 transition-colors hover:bg-yellow-600" />
+            <div className="h-3 w-3 rounded-full bg-green-400 transition-colors hover:bg-green-600" /> */}
+            <div className="h-3 w-3 rounded-full bg-white drop-shadow-text-glow transition-colors hover:bg-white/50" />
+            <div className="h-3 w-3 rounded-full bg-white/50 drop-shadow-text-glow  transition-colors hover:bg-white/20" />
+            <div className="h-3 w-3 rounded-full bg-white drop-shadow-text-glow  transition-colors hover:bg-white/50" />
           </div>
           <div className="flex-1 text-center">
             <span className="truncate text-xs text-neutral-400">
