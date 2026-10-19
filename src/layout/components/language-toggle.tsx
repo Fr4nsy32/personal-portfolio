@@ -1,12 +1,11 @@
 import { useTranslation } from "react-i18next";
-// import TranslateIcon from "@/assets/svg/translate-icon.svg";
 import { useState } from "react";
 import TranslateIcon from "./translate-icon";
 
 const LANGUAGES = [
   { code: "en", label: "EN" },
   { code: "it", label: "IT" },
-];
+] as const;
 
 const LanguageToggle: React.FC = () => {
   const [openTranslate, setOpenTranslate] = useState(false);
@@ -26,7 +25,7 @@ const LanguageToggle: React.FC = () => {
             aria-pressed={current === code}
             className={`px-2 py-1 rounded-full transition-colors ${
               current === code
-                ? "text-white font-medium"
+                ? "text-white font-medium font-heading"
                 : "text-gray-500 hover:text-gray-200 dark:hover:text-white"
             }`}
           >
@@ -34,7 +33,7 @@ const LanguageToggle: React.FC = () => {
           </button>
         ))}
       <TranslateIcon
-        className="w-5 h-5 hover:drop-shadow-[0_0_1px_#fff] cursor-pointer "
+        className={`w-5 h-5 cursor-pointer ${openTranslate ? "drop-shadow-text-glow" : ""}`}
         onClick={() => setOpenTranslate(!openTranslate)}
       />
     </div>

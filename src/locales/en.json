@@ -7,6 +7,251 @@
     },
     "home": {
         "title": "Full_Stack Developer",
-        "description": "Full-stack developer turning ideas into reliable, well-crafted web products. I work with React, TypeScript, Node.js and cloud tooling to ship clean code and great user experiences. Open to freelance projects and new opportunities, so get in touch."
+        "description": "Full-stack developer turning ideas into reliable, well-crafted web products. I work with React, TypeScript, Node.js and cloud tooling to ship clean code and great user experiences. Open to freelance projects and new opportunities, so get in touch.",
+        "terminal-header": "Selected Projects"
+    },
+    "about": {
+        "header": {
+            "title": "Changelog of my experiences",
+            "description": "Here is a timeline of my professional journey and key experiences throughout the years."
+        },
+        "timeline": {
+            "steps": {
+                "background": "Background",
+                "education": "Education",
+                "experience": "Experience"
+            },
+            "background": {
+                "intro": "Before I wrote code, I spent years in hospitality, from the kitchen line to the front counter at fast food chains. It was fast, loud and unforgiving, and it taught me most of what I know about working with people.",
+                "listTitle": "The path",
+                "listLabel": "Hospitality roles",
+                "stats": {
+                    "years": "Years in hospitality",
+                    "roles": "Roles, kitchen to front"
+                },
+                "items": {
+                    "cook": {
+                        "title": "Cook",
+                        "place": "Fine dining kitchen Sous Chef",
+                        "summary": "Prepared and assembled orders on the line, kept stations stocked and followed strict food safety routines while tickets kept coming in.",
+                        "highlights": [
+                            "Working under pressure",
+                            "Food safety and hygiene",
+                            "Prep and station organization"
+                        ]
+                    },
+                    "service": {
+                        "title": "Service",
+                        "place": "Front counter and dining room",
+                        "summary": "Took orders, handled payments and dealt with guests directly, including the ones who were already unhappy when they walked in.",
+                        "highlights": [
+                            "Customer service and communication",
+                            "Workplace organization",
+                            "Register software and POS systems"
+                        ]
+                    },
+                    "barman": {
+                        "title": "Barman",
+                        "place": "City center bars",
+                        "summary": "Prepared drinks, managed the bar area and coordinated with the kitchen to keep the service running smoothly.",
+                        "highlights": [
+                            "Multitasking and prioritization",
+                            "Mixology and drink prep",
+                            "Customer service under pressure"
+                        ]
+                    },
+                    "lead": {
+                        "title": "Shift lead",
+                        "place": "Fast food chain",
+                        "summary": "Coordinated the team during busy hours, trained new staff and made the quick calls that kept the shift running.",
+                        "highlights": [
+                            "Delegating and prioritizing",
+                            "Training new people",
+                            "Workforce organization and scheduling"
+                        ]
+                    }
+                }
+            },
+            "education": {
+                "intro": "I came to software through economics. The first part of my education taught me how to think about systems and data, and the second taught me how to build with them.",
+                "listTitle": "Learning path",
+                "items": {
+                    "diploma": {
+                        "title": "High school diploma in Economics",
+                        "place": "IIS Cassata Gattapone, Gubbio",
+                        "status": "Diploma earned",
+                        "summary": "My first structured introduction to how money, businesses and institutions work, with economics and business subjects alongside the core curriculum.",
+                        "highlights": [
+                            "Economics and business basics",
+                            "Reading and questioning data",
+                            "Study discipline"
+                        ]
+                    },
+                    "university": {
+                        "title": "B.Sc. Economics, Markets and Institutions",
+                        "place": "University of Turin",
+                        "status": "2 years completed",
+                        "summary": "Three-year program in economics, markets and institutions, of which I completed two years. It gave me a solid grounding in quantitative methods and in how markets and policy decisions work, and it trained me to break complex problems down and back my reasoning with data.",
+                        "highlights": [
+                            "Statistics and quantitative reasoning",
+                            "Micro and macroeconomics",
+                            "Structured, analytical thinking"
+                        ]
+                    },
+                    "bootcamp": {
+                        "title": "Full-stack web development bootcamp",
+                        "place": "Le Wagon · Remote",
+                        "status": "Bootcamp completed",
+                        "summary": "A 6-month intensive course in full-stack web development, with a focus on the fundamentals of developing with JavaScript and Ruby . This is where I learned to build software from scratch and ship it to users.",
+                        "highlights": [
+                            "Full-stack fundamentals",
+                            "Pair programming and code review",
+                            "Working in English with an international team",
+                            "Shipping a project end to end"
+                        ]
+                    }
+                }
+            },
+            "experience": {
+                "intro": "I build software for robots that make drinks. My work sits where software meets hardware: interfaces that clients and operators use every day to run real machines in real venues.",
+                "stackTitle": "Core Stack",
+                "listTitle": "What I worked on",
+                "listHint": "Pick a card to see the details.",
+                "listLabel": "Areas of work",
+                "items": {
+                    "platform": {
+                        "title": "Robot management software",
+                        "summary": "The frontend of a complex management platform that lets our clients interact with the robot and its hardware at every level.",
+                        "highlights": [
+                            "Built the frontend of a large, multi-level management platform",
+                            "Worked side by side with a team of experienced designers",
+                            "Turned hardware actions and states into clear, usable interfaces"
+                        ]
+                    },
+                    "sites": {
+                        "title": "Websites and presentations",
+                        "summary": "Beyond the core platform, I took care of several frontend projects for the company and for connected companies.",
+                        "highlights": [
+                            "Art presentation project",
+                            "Bar menu",
+                            "Launch website"
+                        ]
+                    },
+                    "design": {
+                        "title": "A product built from scratch",
+                        "summary": "One project was designed entirely by me, then built end to end on the frontend and shipped together with the backend team.",
+                        "highlights": [
+                            "Owned the UI and UX design from a blank page",
+                            "Built the complete frontend",
+                            "Worked closely with the backend team through development and deployment"
+                        ]
+                    },
+                    "deploy": {
+                        "title": "International deployments",
+                        "summary": "I took part in installing the software on site, working directly on the hardware.",
+                        "highlights": [
+                            "Deployments in the USA and Europe",
+                            "Hands-on work directly on the machines",
+                            "Handled the communication between software and hardware on site"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "contacts": {
+        "header": {
+            "title": "Get in touch",
+            "description": "Have a project in mind or just want to say hi? Send a message or reach me directly."
+        },
+        "tabsLabel": "Contact options",
+        "tabs": {
+            "form": "Send a message",
+            "links": "Find me online"
+        },
+        "form": {
+            "name": {
+                "label": "Name",
+                "placeholder": "Your name"
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": "you@example.com"
+            },
+            "subject": {
+                "label": "Subject",
+                "placeholder": "What is it about?"
+            },
+            "message": {
+                "label": "Message",
+                "placeholder": "Tell me about your project or idea..."
+            },
+            "submit": "Send message",
+            "statusIdle": "Demo form: submitting doesn't send anything yet.",
+            "statusSent": "Thanks! This is a demo, so nothing was actually sent."
+        },
+        "links": {
+            "github": "GitHub",
+            "linkedin": "LinkedIn",
+            "email": "Email",
+            "phone": "Phone"
+        }
+    },
+    "projects": {
+        "header": {
+            "title": "Projects Overview",
+            "description": "Check out what I have worked on and dig into it."
+        },
+        "categories": {
+            "web": "Web apps",
+            "mobile": "Mobile apps",
+            "tools": "Tools and experiments"
+        },
+        "detail": {
+            "back": "All projects",
+            "about": "About",
+            "highlights": "Highlights",
+            "stack": "Stack",
+            "repo": "Source code",
+            "demo": "Live demo",
+            "previous": "Previous project",
+            "next": "Next project",
+            "siblings": "More projects",
+            "gallery": "Screenshots",
+            "showImage": "Show screenshot {{number}}",
+            "noPreview": "No screenshots yet"
+        },
+        "items": {
+            "personal-portfolio": {
+                "tagline": "The site you're looking at: bilingual, animated and fully keyboard accessible.",
+                "about": [
+                    "A personal site built to present my work and background in English and Italian.",
+                    "Every page shares one design system: black surfaces, thin borders and soft glows on interaction."
+                ],
+                "highlights": [
+                    "Language switch with persisted preference",
+                    "Reduced motion respected across all animations",
+                    "CV download in the active language"
+                ]
+            },
+            "recipe-app": {
+                "tagline": "Save, scale and cook recipes step by step.",
+                "about": [
+                    "Replace with the real description of the project."
+                ],
+                "highlights": [
+                    "Replace with a key feature"
+                ]
+            },
+            "log-parser": {
+                "tagline": "Turns raw server logs into searchable, filterable reports.",
+                "about": [
+                    "Replace with the real description of the project."
+                ],
+                "highlights": [
+                    "Replace with a key feature"
+                ]
+            }
+        }
     }
 }

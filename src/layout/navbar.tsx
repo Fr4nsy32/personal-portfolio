@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import logo from "@/assets/svg/personal_logo.svg";
-import DownloadResumeButton from "@/components/download-resume-button";
 import { RouteNames } from "@/routes/route-names";
 import { Link, NavLink } from "react-router-dom";
-import LanguageToggle from "@/components/language-toggle";
+import LanguageToggle from "@/layout/components/language-toggle";
 import { useTranslation } from "react-i18next";
+import cv_eng from "@/assets/pdf/andi_sina_cv_eng.pdf";
+import cv_ita from "@/assets/pdf/andi_sina_cv_eng.pdf";
+import LottieButton from "@/components/lottie-button";
+import downloadAnimation from "@/assets/lottie/download_animation.json";
 
 const NavbarComponent: React.FC = () => {
   const { t } = useTranslation();
@@ -16,15 +19,24 @@ const NavbarComponent: React.FC = () => {
   ];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const downloadCv = () => {
+    const isEnglish = document.documentElement.lang === "en";
+
+    const link = document.createElement("a");
+    link.href = isEnglish ? cv_eng : cv_ita;
+    link.download = isEnglish ? "andi_sina_cv_eng.pdf" : "andi_sina_cv_ita.pdf";
+    link.click();
+  };
+
   return (
     <nav
       className={`
         z-50 flex
         w-[calc(100%-2rem)] max-w-4xl
         px-6 py-4
-        text-white text-sm
+        text-white text-md
         bg-black
-        border border-slate-700
+        border border-white/30
         transition-[border-radius]
         fixed top-4 left-1/2 -translate-x-1/2 items-center justify-between duration-50 ease-in-out
         ${isMenuOpen ? "rounded-t-4xl" : "rounded-full"}
@@ -56,8 +68,8 @@ const NavbarComponent: React.FC = () => {
               overflow-hidden
               h-6
               relative group
-              hover:drop-shadow-[0_0_1px_#fff]
-              ${isActive ? "text-white font-medium drop-shadow-[0_0_1px_#fff] " : "text-gray-300"}
+              font-heading
+              ${isActive ? "text-white font-medium drop-shadow-text-glow" : "text-gray-300"}
             `}
           >
             <span
@@ -88,7 +100,13 @@ const NavbarComponent: React.FC = () => {
             items-center gap-4
           "
         >
-          <DownloadResumeButton />
+          <LottieButton
+            text={"CV"}
+            animation={downloadAnimation}
+            speed={2}
+            onComplete={downloadCv}
+            className="mb-3 sm:mb-0"
+          />{" "}
           <LanguageToggle />
         </div>
       </div>
@@ -98,7 +116,7 @@ const NavbarComponent: React.FC = () => {
         aria-expanded={isMenuOpen}
         aria-label="Toggle menu"
         className="
-          text-gray-600
+          text-white/30
           sm:hidden
         "
       >
@@ -144,7 +162,7 @@ const NavbarComponent: React.FC = () => {
               flex flex-col
               text-base
               bg-black
-              border border-t-0 border-slate-700 rounded-b-3xl
+              border border-t-0  border-white/30 rounded-b-3xl
               items-center
             "
           >
@@ -156,7 +174,8 @@ const NavbarComponent: React.FC = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className={({ isActive }) => `
                     py-4
-                    ${isActive ? "text-white font-medium drop-shadow-[0_0_1px_#fff]" : "text-gray-300"}
+                    font-heading
+                    ${isActive ? "text-white font-medium drop-shadow-text-glow" : "text-gray-300"}
                   `}
                 >
                   {label}
@@ -165,14 +184,20 @@ const NavbarComponent: React.FC = () => {
                   <div
                     className="
                       w-50 h-px
-                      bg-slate-700
+                      bg-white/30
                     "
                   />
                 )}
               </React.Fragment>
             ))}
             <div className="flex gap-3 align-middle">
-              <DownloadResumeButton />
+              <LottieButton
+                text={"CV"}
+                animation={downloadAnimation}
+                speed={2}
+                onComplete={downloadCv}
+                className="mb-3 sm:mb-0"
+              />{" "}
               <LanguageToggle />
             </div>
           </div>

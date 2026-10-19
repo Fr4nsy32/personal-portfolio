@@ -11,6 +11,7 @@
   top: -3.75rem;
   width: 90vw;
   height: 120vh;
+  z-index: -1;
 
   background-image: radial-gradient(
     circle,
