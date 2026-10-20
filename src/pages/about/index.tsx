@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { motionContainer } from "@/lib/motion-variants";
 
 const AboutPage: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("about");
 
   return (
     <>
@@ -16,8 +16,8 @@ const AboutPage: React.FC = () => {
         animate="visible"
       >
         <MotionHeader
-          title={t("about.header.title")}
-          description={t("about.header.description")}
+          title={t("header.title")}
+          description={t("header.description")}
         />
       </motion.div>
       <TimelineAbout />;

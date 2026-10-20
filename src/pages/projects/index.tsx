@@ -6,7 +6,7 @@ import { motionContainer, motionItem } from "@/lib/motion-variants";
 import ProjectTree from "./project-tree";
 
 const ProjectsPage: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("projects");
 
   return (
     <MotionConfig reducedMotion="user">
@@ -21,8 +21,8 @@ const ProjectsPage: React.FC = () => {
           className="mb-10 flex flex-col items-center text-center lg:mb-14"
         >
           <MotionHeader
-            title={t("projects.header.title")}
-            description={t("projects.header.description")}
+            title={t("header.title")}
+            description={t("header.description")}
             full
           />
         </motion.div>

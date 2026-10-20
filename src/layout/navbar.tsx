@@ -5,17 +5,17 @@ import { Link, NavLink } from "react-router-dom";
 import LanguageToggle from "@/layout/components/language-toggle";
 import { useTranslation } from "react-i18next";
 import cv_eng from "@/assets/pdf/andi_sina_cv_eng.pdf";
-import cv_ita from "@/assets/pdf/andi_sina_cv_eng.pdf";
+import cv_ita from "@/assets/pdf/andi_sina_cv_ita.pdf";
 import LottieButton from "@/components/lottie-button";
 import downloadAnimation from "@/assets/lottie/download_animation.json";
 
 const NavbarComponent: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common", { keyPrefix: "nav" });
 
   const NAV_LINKS = [
-    { label: t("nav.about"), route: RouteNames.ABOUT },
-    { label: t("nav.projects"), route: RouteNames.PROJECTS },
-    { label: t("nav.contacts"), route: RouteNames.CONTACTS },
+    { label: t("about"), route: RouteNames.ABOUT },
+    { label: t("projects"), route: RouteNames.PROJECTS },
+    { label: t("contacts"), route: RouteNames.CONTACTS },
   ];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -116,7 +116,7 @@ const NavbarComponent: React.FC = () => {
         aria-expanded={isMenuOpen}
         aria-label="Toggle menu"
         className="
-          text-white/30
+          text-white
           sm:hidden
         "
       >
@@ -162,7 +162,7 @@ const NavbarComponent: React.FC = () => {
               flex flex-col
               text-base
               bg-black
-              border border-t-0  border-white/30 rounded-b-3xl
+              border border-t-0 border-white/30 rounded-b-3xl
               items-center
             "
           >
@@ -190,15 +190,19 @@ const NavbarComponent: React.FC = () => {
                 )}
               </React.Fragment>
             ))}
-            <div className="flex gap-3 align-middle">
+            <div className="w-50 h-px bg-white/30" />
+
+            <div className="grid w-full grid-cols-[1fr_auto_1fr] items-center px-6 py-4">
+              <div className="justify-self-start">{/* <ThemeToggle /> */}</div>
               <LottieButton
-                text={"CV"}
+                text="CV"
                 animation={downloadAnimation}
                 speed={2}
                 onComplete={downloadCv}
-                className="mb-3 sm:mb-0"
-              />{" "}
-              <LanguageToggle />
+              />
+              <div className="justify-self-end">
+                <LanguageToggle />
+              </div>
             </div>
           </div>
         </div>

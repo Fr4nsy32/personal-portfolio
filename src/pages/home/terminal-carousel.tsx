@@ -17,7 +17,7 @@ interface Slide {
 }
 
 const TerminalCarousel: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(["projects", "home"]);
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [completed, setCompleted] = useState(false);
@@ -53,7 +53,7 @@ const TerminalCarousel: React.FC = () => {
         0: [`Cloning into '${p.id}'...`, "Receiving objects: 100%, done."],
         1: [
           `# ${p.title}`,
-          t(`projects.items.${p.id}.tagline`),
+          t(`items.${p.id}.tagline`),
           `Stack: ${p.stack.map((tech) => tech.name).join(" · ")}`,
           ...(p.demo ? [`Live: ${p.demo}`] : []),
           `Case study: /projects/${p.id}`,
@@ -73,7 +73,7 @@ const TerminalCarousel: React.FC = () => {
   return (
     <section className="w-full mt-2 xl:py-20">
       <p className="mb-6 text-center font-heading text-sm uppercase tracking-widest text-white">
-        {t("home.terminal-header")}
+        {t("home:terminal-header")}
       </p>
 
       <Carousel

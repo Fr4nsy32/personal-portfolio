@@ -5,7 +5,7 @@ import MotionHeader from "@/components/motion-header";
 import { motionContainer } from "@/lib/motion-variants";
 
 const HomePage: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("home");
 
   return (
     <MotionConfig reducedMotion="user">
@@ -17,8 +17,8 @@ const HomePage: React.FC = () => {
           animate="visible"
         >
           <MotionHeader
-            title={t("home.title")}
-            description={t("home.description")}
+            title={t("title")}
+            description={t("description")}
           />
         </motion.div>
         <motion.div

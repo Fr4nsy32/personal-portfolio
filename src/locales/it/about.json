@@ -1,0 +1,149 @@
+{
+    "header": {
+        "title": "Changelog delle mie esperienze",
+        "description": "Ecco una timeline del mio percorso professionale e delle esperienze chiave nel corso degli anni."
+    },
+    "timeline": {
+        "steps": {
+            "background": "Background",
+            "education": "Formazione",
+            "experience": "Esperienza"
+        },
+        "background": {
+            "intro": "Prima di scrivere codice, ho passato anni nella ristorazione, dalle cucine di alto livello e dai bar del centro al bancone dei fast food. Era un ambiente veloce, rumoroso e senza sconti, e mi ha insegnato gran parte di ciò che so su come lavorare con le persone.",
+            "listTitle": "Il percorso",
+            "listLabel": "Ruoli nella ristorazione",
+            "stats": {
+                "years": "Anni nella ristorazione",
+                "roles": "Ruoli, dalla cucina alla sala"
+            },
+            "items": {
+                "cook": {
+                    "title": "Sous chef",
+                    "place": "Ristorante di alta cucina",
+                    "summary": "Preparavo e assemblavo gli ordini in linea, tenevo le postazioni rifornite e seguivo rigorose procedure di sicurezza alimentare mentre le comande continuavano ad arrivare.",
+                    "highlights": [
+                        "Lavorare sotto pressione",
+                        "Sicurezza e igiene alimentare",
+                        "Preparazione e organizzazione della postazione"
+                    ]
+                },
+                "service": {
+                    "title": "Servizio",
+                    "place": "Bancone e sala",
+                    "summary": "Prendevo gli ordini, gestivo i pagamenti e mi occupavo direttamente dei clienti, compresi quelli che entravano già insoddisfatti.",
+                    "highlights": [
+                        "Servizio clienti e comunicazione",
+                        "Organizzazione del lavoro",
+                        "Software di cassa e sistemi POS"
+                    ]
+                },
+                "barman": {
+                    "title": "Barman",
+                    "place": "Bar del centro",
+                    "summary": "Preparavo drink, gestivo l'area bar e mi coordinavo con la cucina per far scorrere il servizio senza intoppi.",
+                    "highlights": [
+                        "Multitasking e gestione delle priorità",
+                        "Mixology e preparazione dei drink",
+                        "Servizio clienti sotto pressione"
+                    ]
+                },
+                "lead": {
+                    "title": "Responsabile di turno",
+                    "place": "Catena di fast food",
+                    "summary": "Coordinavo la squadra nelle ore di punta, formavo i nuovi colleghi e prendevo le decisioni rapide che mantenevano il turno in carreggiata.",
+                    "highlights": [
+                        "Delegare e stabilire le priorità",
+                        "Formazione dei nuovi colleghi",
+                        "Organizzazione e turnazione del personale"
+                    ]
+                }
+            }
+        },
+        "education": {
+            "intro": "Sono arrivato al software passando dall'economia. La prima parte del mio percorso di studi mi ha insegnato a ragionare su sistemi e dati, la seconda a costruirci sopra.",
+            "listTitle": "Percorso di studi",
+            "items": {
+                "diploma": {
+                    "title": "Diploma di scuola superiore in Economia",
+                    "place": "IIS Cassata Gattapone, Gubbio",
+                    "status": "Diploma conseguito",
+                    "summary": "La mia prima introduzione strutturata a come funzionano denaro, aziende e istituzioni, con materie economiche e aziendali accanto al programma di base.",
+                    "highlights": [
+                        "Basi di economia e gestione aziendale",
+                        "Leggere e mettere in discussione i dati",
+                        "Disciplina nello studio"
+                    ]
+                },
+                "university": {
+                    "title": "Laurea triennale in Economia, Mercati e Istituzioni",
+                    "place": "Università di Torino",
+                    "status": "2 anni completati",
+                    "summary": "Corso triennale in economia, mercati e istituzioni, di cui ho completato due anni. Mi ha dato una solida base nei metodi quantitativi e nel funzionamento di mercati e decisioni di politica economica, e mi ha allenato a scomporre problemi complessi e a sostenere i miei ragionamenti con i dati.",
+                    "highlights": [
+                        "Statistica e ragionamento quantitativo",
+                        "Micro e macroeconomia",
+                        "Pensiero strutturato e analitico"
+                    ]
+                },
+                "bootcamp": {
+                    "title": "Bootcamp di sviluppo web full-stack",
+                    "place": "Le Wagon · Da remoto",
+                    "status": "Bootcamp completato",
+                    "summary": "Un corso intensivo di 6 mesi in sviluppo web full-stack, con focus sui fondamenti dello sviluppo in JavaScript e Ruby. È qui che ho imparato a costruire software da zero e a metterlo in mano agli utenti.",
+                    "highlights": [
+                        "Fondamenti del full-stack",
+                        "Pair programming e code review",
+                        "Lavorare in inglese con un team internazionale",
+                        "Portare a termine un progetto end to end"
+                    ]
+                }
+            }
+        },
+        "experience": {
+            "intro": "Sviluppo software per robot che preparano drink. Il mio lavoro si colloca dove il software incontra l'hardware: interfacce che clienti e operatori usano ogni giorno per far funzionare macchine reali in locali reali.",
+            "stackTitle": "Stack principale",
+            "listTitle": "Su cosa ho lavorato",
+            "listHint": "Scegli una scheda per vedere i dettagli.",
+            "listLabel": "Aree di lavoro",
+            "items": {
+                "platform": {
+                    "title": "Software di gestione dei robot",
+                    "summary": "Il frontend di una complessa piattaforma di gestione che permette ai nostri clienti di interagire con il robot e il suo hardware a ogni livello.",
+                    "highlights": [
+                        "Ho sviluppato il frontend di una grande piattaforma di gestione multilivello",
+                        "Ho lavorato fianco a fianco con un team di designer esperti",
+                        "Ho trasformato azioni e stati dell'hardware in interfacce chiare e utilizzabili"
+                    ]
+                },
+                "sites": {
+                    "title": "Siti web e presentazioni",
+                    "summary": "Oltre alla piattaforma principale, mi sono occupato di diversi progetti frontend per l'azienda e per aziende affiliate.",
+                    "highlights": [
+                        "Progetto di presentazione artistica",
+                        "Menu del bar",
+                        "Sito di lancio"
+                    ]
+                },
+                "design": {
+                    "title": "Un prodotto costruito da zero",
+                    "summary": "Un progetto è stato progettato interamente da me, poi sviluppato end to end sul frontend e rilasciato insieme al team backend.",
+                    "highlights": [
+                        "Ho curato il design UI e UX partendo da una pagina bianca",
+                        "Ho sviluppato l'intero frontend",
+                        "Ho lavorato a stretto contatto con il team backend durante sviluppo e rilascio"
+                    ]
+                },
+                "deploy": {
+                    "title": "Installazioni internazionali",
+                    "summary": "Ho partecipato all'installazione del software sul posto, lavorando direttamente sull'hardware.",
+                    "highlights": [
+                        "Installazioni negli USA e in Europa",
+                        "Lavoro pratico sulle macchine",
+                        "Ho gestito la comunicazione tra software e hardware sul posto"
+                    ]
+                }
+            }
+        }
+    }
+}

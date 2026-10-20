@@ -6,19 +6,19 @@ import Education from "./sections/education";
 import Experience from "./sections/experience";
 
 const TimelineAbout: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("about");
 
   const timelineData = [
     {
-      title: t("about.timeline.steps.background"),
+      title: t("timeline.steps.background"),
       content: <Background />,
     },
     {
-      title: t("about.timeline.steps.education"),
+      title: t("timeline.steps.education"),
       content: <Education />,
     },
     {
-      title: t("about.timeline.steps.experience"),
+      title: t("timeline.steps.experience"),
       content: <Experience />,
     },
   ];

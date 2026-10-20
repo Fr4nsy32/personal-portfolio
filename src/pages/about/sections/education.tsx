@@ -2,13 +2,8 @@ import React, { useMemo, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ChevronDown, GraduationCap, Landmark, Laptop } from "lucide-react";
 import { cn } from "@/lib/utils";
-import {
-  Chips,
-  IconBadge,
-  Intro,
-  SectionTitle,
-} from "../components";
-import { useTimelineT } from "@/hooks/use-timeline-t";
+import { Chips, IconBadge, Intro, SectionTitle } from "../components";
+import { useTranslation } from "react-i18next";
 
 const ITEMS = [
   { id: "diploma", icon: GraduationCap, period: "2015 – 2020" },
@@ -17,7 +12,7 @@ const ITEMS = [
 ] as const;
 
 export const Education: React.FC = () => {
-  const { t, list } = useTimelineT("education");
+  const { t } = useTranslation("about", { keyPrefix: "timeline.education" });
   const reduceMotion = useReducedMotion();
   const [openId, setOpenId] = useState<string | null>(null);
 
@@ -29,9 +24,11 @@ export const Education: React.FC = () => {
         place: t(`items.${item.id}.place`),
         status: t(`items.${item.id}.status`),
         summary: t(`items.${item.id}.summary`),
-        highlights: list(`items.${item.id}.highlights`),
+        highlights: t(`items.${item.id}.highlights`, {
+          returnObjects: true,
+        }) as string[],
       })),
-    [t, list],
+    [t],
   );
 
   return (

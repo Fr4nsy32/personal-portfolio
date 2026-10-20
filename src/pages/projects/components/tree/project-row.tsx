@@ -6,8 +6,9 @@ import type { Project } from "@/types";
 import TechBadge from "@/components/tech-badge";
 
 const ProjectRow: React.FC<{ project: Project }> = ({ project }) => {
-  const { t } = useTranslation();
-  const base = `projects.items.${project.id}`;
+  const { t } = useTranslation("projects", {
+    keyPrefix: `items.${project.id}`,
+  });
   const visible = project.stack.slice(0, 3) ?? [];
   const extra = (project.stack.length ?? 0) - visible.length;
 
@@ -27,7 +28,7 @@ const ProjectRow: React.FC<{ project: Project }> = ({ project }) => {
             {project.title}
           </span>
           <span className="mt-1 line-clamp-2 block text-xs text-neutral-500 lg:text-sm">
-            {t(`${base}.tagline`)}
+            {t(`tagline`)}
           </span>
 
           <span className="mt-3 hidden flex-wrap items-center gap-2 sm:flex">

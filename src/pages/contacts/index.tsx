@@ -15,12 +15,12 @@ import { motionContainer, motionItem } from "@/lib/motion-variants";
 const ID_PREFIX = "contact";
 
 const ContactsPage: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("contacts");
 
   const contactList: Contact[] = [
     {
       id: "github",
-      label: t("contacts.links.github"),
+      label: t("links.github"),
       value: `github.com/${import.meta.env.VITE_GITHUB_USER}`,
       href: `https://www.github.com/${import.meta.env.VITE_GITHUB_USER}`,
       icon: FaGithub,
@@ -28,7 +28,7 @@ const ContactsPage: React.FC = () => {
     },
     {
       id: "linkedin",
-      label: t("contacts.links.linkedin"),
+      label: t("links.linkedin"),
       value: `linkedin.com/in/${import.meta.env.VITE_LINKEDIN_USER}`,
       href: `https://www.linkedin.com/in/${import.meta.env.VITE_LINKEDIN_USER}`,
       icon: FaLinkedinIn,
@@ -36,14 +36,14 @@ const ContactsPage: React.FC = () => {
     },
     {
       id: "email",
-      label: t("contacts.links.email"),
+      label: t("links.email"),
       value: import.meta.env.VITE_EMAIL,
       href: `mailto:${import.meta.env.VITE_EMAIL}`,
       icon: Mail,
     },
     {
       id: "phone",
-      label: t("contacts.links.phone"),
+      label: t("links.phone"),
       value: import.meta.env.VITE_PHONE_NUMBER,
       href: `tel:${import.meta.env.VITE_PHONE_NUMBER}`,
       icon: Phone,
@@ -51,8 +51,8 @@ const ContactsPage: React.FC = () => {
   ];
 
   const contactTabs: Tab[] = [
-    { id: "form", label: t("contacts.tabs.form"), icon: Send },
-    { id: "links", label: t("contacts.tabs.links"), icon: Link },
+    { id: "form", label: t("tabs.form"), icon: Send },
+    { id: "links", label: t("tabs.links"), icon: Link },
   ];
   const [activeTab, setActiveTab] = useState<TabId>(contactTabs[0].id);
 
@@ -72,8 +72,8 @@ const ContactsPage: React.FC = () => {
           className="mb-10 flex flex-col items-center text-center lg:mb-14"
         >
           <MotionHeader
-            title={t("contacts.header.title")}
-            description={t("contacts.header.description")}
+            title={t("header.title")}
+            description={t("header.description")}
             full
           />
         </motion.div>
@@ -84,7 +84,7 @@ const ContactsPage: React.FC = () => {
             activeId={activeTab}
             onSelect={setActiveTab}
             idPrefix={ID_PREFIX}
-            label={t("contacts.tabsLabel")}
+            label={t("tabsLabel")}
             fill
             bordered={false}
             className="lg:hidden"
@@ -101,7 +101,7 @@ const ContactsPage: React.FC = () => {
           >
             {/* The tab acts as the title below lg */}
             <h2 className="mb-4 hidden font-heading text-lg font-medium text-white lg:block lg:text-xl">
-              {t("contacts.tabs.form")}
+              {t("tabs.form")}
             </h2>
             <DemoForm />
           </motion.section>
@@ -114,7 +114,7 @@ const ContactsPage: React.FC = () => {
             className={panelClass("links")}
           >
             <h2 className="mb-4 hidden font-heading text-lg font-medium text-white lg:block lg:text-xl">
-              {t("contacts.tabs.links")}
+              {t("tabs.links")}
             </h2>
             <ContactLinks contactList={contactList} />
           </motion.section>

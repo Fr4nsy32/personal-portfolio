@@ -2,15 +2,10 @@ import React, { useMemo, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { LayoutDashboard, PenTool, Palette, Plane } from "lucide-react";
 import { cn } from "@/lib/utils";
-import {
-  IconBadge,
-  Intro,
-  MetaLine,
-  SectionTitle,
-} from "../components";
+import { IconBadge, Intro, MetaLine, SectionTitle } from "../components";
 import TechBadge from "@/components/tech-badge";
 import { TECH } from "@/data";
-import { useTimelineT } from "@/hooks/use-timeline-t";
+import { useTranslation } from "react-i18next";
 
 const STACK = [
   TECH.react,
@@ -30,7 +25,7 @@ const ITEMS = [
 ] as const;
 
 export const Experience: React.FC = () => {
-  const { t, list } = useTimelineT("experience");
+  const { t } = useTranslation("about", { keyPrefix: "timeline.experience" });
   const reduceMotion = useReducedMotion();
   const [activeId, setActiveId] = useState<string>(ITEMS[0].id);
 
@@ -40,9 +35,11 @@ export const Experience: React.FC = () => {
         ...item,
         title: t(`items.${item.id}.title`),
         summary: t(`items.${item.id}.summary`),
-        highlights: list(`items.${item.id}.highlights`),
+        highlights: t(`items.${item.id}.highlights`, {
+          returnObjects: true,
+        }) as string[],
       })),
-    [t, list],
+    [t],
   );
 
   // Always one item selected, so the detail card is never empty

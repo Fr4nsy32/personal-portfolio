@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import LottieButton from "@/components/lottie-button";
 
 const DemoForm: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("contacts", { keyPrefix: "form" });
   const [sent, setSent] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const labelClass = "mb-1.5 block text-xs font-medium text-white";
@@ -29,7 +29,7 @@ const DemoForm: React.FC = () => {
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="contact-name" className={labelClass}>
-            {t("contacts.form.name.label")}
+            {t("name.label")}
           </label>
           <input
             id="contact-name"
@@ -37,13 +37,13 @@ const DemoForm: React.FC = () => {
             type="text"
             autoComplete="name"
             // required
-            placeholder={t("contacts.form.name.placeholder")}
+            placeholder={t("name.placeholder")}
             className={fieldClass}
           />
         </div>
         <div>
           <label htmlFor="contact-email" className={labelClass}>
-            {t("contacts.form.email.label")}
+            {t("email.label")}
           </label>
           <input
             id="contact-email"
@@ -51,7 +51,7 @@ const DemoForm: React.FC = () => {
             type="email"
             autoComplete="email"
             // required
-            placeholder={t("contacts.form.email.placeholder")}
+            placeholder={t("email.placeholder")}
             className={fieldClass}
           />
         </div>
@@ -59,27 +59,27 @@ const DemoForm: React.FC = () => {
 
       <div>
         <label htmlFor="contact-subject" className={labelClass}>
-          {t("contacts.form.subject.label")}
+          {t("subject.label")}
         </label>
         <input
           id="contact-subject"
           name="subject"
           type="text"
-          placeholder={t("contacts.form.subject.placeholder")}
+          placeholder={t("subject.placeholder")}
           className={fieldClass}
         />
       </div>
 
       <div>
         <label htmlFor="contact-message" className={labelClass}>
-          {t("contacts.form.message.label")}
+          {t("message.label")}
         </label>
         <textarea
           id="contact-message"
           name="message"
           rows={4}
           //   required
-          placeholder={t("contacts.form.message.placeholder")}
+          placeholder={t("message.placeholder")}
           className={cn(fieldClass, "resize-y")}
         />
       </div>
@@ -87,13 +87,13 @@ const DemoForm: React.FC = () => {
       <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
         <LottieButton
           type="submit"
-          text={t("contacts.form.submit")}
+          text={t("submit")}
           animation={sendAnimation}
           onComplete={handleSubmit}
         />
 
         <p role="status" className="text-xs text-neutral-400">
-          {sent ? t("contacts.form.statusSent") : t("contacts.form.statusIdle")}
+          {sent ? t("statusSent") : t("statusIdle")}
         </p>
       </div>
     </form>

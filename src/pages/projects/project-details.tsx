@@ -19,7 +19,7 @@ const SectionHeading: React.FC<React.PropsWithChildren> = ({ children }) => (
 
 const ProjectDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { t } = useTranslation();
+  const { t } = useTranslation("projects");
   const focusRing =
     "outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
 
@@ -29,7 +29,7 @@ const ProjectDetailPage: React.FC = () => {
   const project = PROJECTS[index];
   const prev = PROJECTS[index - 1];
   const next = PROJECTS[index + 1];
-  const base = `projects.items.${project.id}`;
+  const base = `items.${project.id}`;
 
   const list = (key: string): string[] => {
     const value = t(key, { returnObjects: true });
@@ -57,24 +57,24 @@ const ProjectDetailPage: React.FC = () => {
             className={`inline-flex items-center gap-2 rounded text-sm text-neutral-500 transition hover:text-white hover:drop-shadow-text-glow ${focusRing}`}
           >
             <ArrowLeft className="h-4 w-4" aria-hidden />
-            {t("projects.detail.back")}
+            {t("detail.back")}
           </Link>
 
           {(prev || next) && (
             <nav
-              aria-label={t("projects.detail.siblings")}
+              aria-label={t("detail.siblings")}
               className="flex items-center gap-2"
             >
               <SiblingButton
                 project={prev}
                 direction="prev"
-                label={t("projects.detail.previous")}
+                label={t("detail.previous")}
                 focusRing={focusRing}
               />
               <SiblingButton
                 project={next}
                 direction="next"
-                label={t("projects.detail.next")}
+                label={t("detail.next")}
                 focusRing={focusRing}
               />
             </nav>
@@ -94,7 +94,7 @@ const ProjectDetailPage: React.FC = () => {
           <motion.div variants={motionItem} className="space-y-8">
             <header className="space-y-3">
               <p className="flex gap-3 text-xs text-neutral-500 lg:text-sm">
-                <span>{t(`projects.categories.${project.category}`)}</span>
+                <span>{t(`categories.${project.category}`)}</span>
                 <span className="text-white">{project.year}</span>
               </p>
               <h1 className="font-heading text-3xl font-medium text-white lg:text-4xl">
@@ -115,7 +115,7 @@ const ProjectDetailPage: React.FC = () => {
                     className={`inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black transition hover:drop-shadow-border-glow ${focusRing}`}
                   >
                     <FaGlobe className="h-4 w-4" aria-hidden />
-                    {t("projects.detail.demo")}
+                    {t("detail.demo")}
                     {/* <ArrowUpRight className="h-4 w-4" aria-hidden /> */}
                   </a>
                 )}
@@ -127,14 +127,14 @@ const ProjectDetailPage: React.FC = () => {
                     className={`inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-black px-5 py-2.5 text-sm font-medium text-white transition hover:border-white hover:drop-shadow-border-glow focus-visible:border-white ${focusRing}`}
                   >
                     <FaGithub className="h-4 w-4" aria-hidden />
-                    {t("projects.detail.repo")}
+                    {t("detail.repo")}
                   </a>
                 )}
               </div>
             )}
 
             <section>
-              <SectionHeading>{t("projects.detail.stack")}</SectionHeading>
+              <SectionHeading>{t("detail.stack")}</SectionHeading>
               <ul className="flex flex-wrap gap-2">
                 {project.stack.map((tech) => (
                   <li key={tech.name}>
@@ -154,7 +154,7 @@ const ProjectDetailPage: React.FC = () => {
           >
             {about.length > 0 && (
               <section>
-                <SectionHeading>{t("projects.detail.about")}</SectionHeading>
+                <SectionHeading>{t("detail.about")}</SectionHeading>
                 <div className="max-w-xl space-y-3 text-sm leading-relaxed text-neutral-300 lg:text-base">
                   {about.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
@@ -165,9 +165,7 @@ const ProjectDetailPage: React.FC = () => {
 
             {highlights.length > 0 && (
               <section>
-                <SectionHeading>
-                  {t("projects.detail.highlights")}
-                </SectionHeading>
+                <SectionHeading>{t("detail.highlights")}</SectionHeading>
                 <ul className="max-w-xl list-disc space-y-2 pl-5 text-sm leading-relaxed text-neutral-300 marker:text-neutral-600 lg:text-base">
                   {highlights.map((item) => (
                     <li key={item}>{item}</li>

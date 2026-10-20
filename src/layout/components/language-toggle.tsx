@@ -13,7 +13,7 @@ const LanguageToggle: React.FC = () => {
   const current = i18n.resolvedLanguage;
 
   return (
-    <div className="flex  items-center text-sm mb-3 sm:mb-0">
+    <div className="flex items-center text-sm  sm:mb-0">
       {openTranslate &&
         LANGUAGES.map(({ code, label }) => (
           <button
