@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion, MotionConfig } from "motion/react";
 import { ArrowLeft } from "lucide-react";
@@ -10,6 +10,7 @@ import { PROJECTS } from "@/data/projects";
 import ProjectGallery from "./components/details/project-gallery";
 import TechBadge from "@/components/tech-badge";
 import SiblingButton from "./components/details/sibling-button";
+import NotFoundPage from "../not-found";
 
 const SectionHeading: React.FC<React.PropsWithChildren> = ({ children }) => (
   <h2 className="mb-3 font-heading text-lg font-medium text-white lg:text-xl">
@@ -24,7 +25,7 @@ const ProjectDetailPage: React.FC = () => {
     "outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
 
   const index = PROJECTS.findIndex((p) => p.id === slug);
-  if (index === -1) return <Navigate to={RouteNames.PROJECTS} replace />;
+  if (index === -1) return <NotFoundPage />;
 
   const project = PROJECTS[index];
   const prev = PROJECTS[index - 1];

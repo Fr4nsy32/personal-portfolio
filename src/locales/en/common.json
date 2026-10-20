@@ -4,5 +4,21 @@
         "projects": "Projects",
         "contacts": "Contact",
         "toggleMenu": "Toggle menu"
+    },
+    "not-found": {
+        "description": "This page doesn't exist or has been moved.",
+        "button": "Back home"
+    },
+    "error": {
+        "stale": {
+            "title": "New version available",
+            "description": "The site was updated while you were browsing. Reload to get the latest version.",
+            "button": "Reload"
+        },
+        "wrong": {
+            "title": "Something went wrong",
+            "description": "An unexpected error occurred. You can head back home and try again.",
+            "button": "Back home"
+        }
     }
 }

@@ -4,5 +4,21 @@
         "projects": "Progetti",
         "contacts": "Contatti",
         "toggleMenu": "Apri/chiudi menu"
+    },
+    "not-found": {
+        "description": "Questa pagina non esiste o è stata rimossa",
+        "button": "Torna alla home"
+    },
+    "error": {
+        "stale": {
+            "title": "Nuova versione disponibile.",
+            "description": "Il sito è statoa ggiornato mentre navigavi. Ricarica la pagine per l'ultima versione",
+            "button": "Ricarica"
+        },
+        "wrong": {
+            "title": "Qualcosa è andato storto.",
+            "description": "Si è verificato un errore imprevisto. Puoi tornare alla home e riprovare.",
+            "button": "Torna alla home"
+        }
     }
 }
