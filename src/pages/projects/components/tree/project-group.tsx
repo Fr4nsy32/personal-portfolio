@@ -9,7 +9,7 @@ const ProjectGroup: React.FC<{
   category: ProjectCategory;
   projects: Project[];
 }> = ({ category, projects }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("projects");
   const [open, setOpen] = useState(true);
   const panelId = `projects-group-${category}`;
   const Icon = open ? FolderOpen : Folder;
@@ -27,7 +27,7 @@ const ProjectGroup: React.FC<{
           className="h-5 w-5 text-white drop-shadow-text-glow"
           aria-hidden
         />
-        <span>{t(`projects.categories.${category}`)}</span>
+        <span>{t(`categories.${category}`)}</span>
         <span className="text-sm font-normal text-neutral-500">
           {projects.length}
         </span>

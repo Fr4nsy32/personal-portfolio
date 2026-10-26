@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 interface LottieButtonProps {
   text: string;
-  animation: UseLottieOptions["src"];
+  animation?: UseLottieOptions["src"];
   onComplete: () => void;
   type?: "button" | "submit";
   speed?: number;
@@ -39,7 +39,7 @@ const LottieButton: React.FC<LottieButtonProps> = ({
   const busyRef = useRef(false);
 
   const lottie = useLottie({
-    src: animation,
+    src: animation!,
     loop: false,
     speed,
     subscriptions: {

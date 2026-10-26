@@ -1,0 +1,57 @@
+{
+    "header": {
+        "title": "Projects overview",
+        "description": "Check out what I've worked on and dig into the details."
+    },
+    "categories": {
+        "web": "Web apps",
+        "mobile": "Mobile apps",
+        "tools": "Tools and experiments"
+    },
+    "detail": {
+        "back": "All projects",
+        "about": "About",
+        "highlights": "Highlights",
+        "stack": "Stack",
+        "repo": "Source code",
+        "demo": "Live demo",
+        "previous": "Previous project",
+        "next": "Next project",
+        "siblings": "More projects",
+        "gallery": "Screenshots",
+        "showImage": "Show screenshot {{number}}",
+        "noPreview": "No screenshots yet"
+    },
+    "items": {
+        "personal-portfolio": {
+            "tagline": "The site you're looking at: bilingual, animated and fully keyboard-accessible.",
+            "about": [
+                "A personal site built to present my work and background in English and Italian.",
+                "Every page shares one design system: black surfaces, thin borders and soft glows on interaction."
+            ],
+            "highlights": [
+                "Language switch with persisted preference",
+                "Reduced-motion preference respected across all animations",
+                "CV download in the active language"
+            ]
+        },
+        "recipe-app": {
+            "tagline": "Save, scale and cook recipes step by step.",
+            "about": [
+                "Replace with the real description of the project."
+            ],
+            "highlights": [
+                "Replace with a key feature"
+            ]
+        },
+        "log-parser": {
+            "tagline": "Turns raw server logs into searchable, filterable reports.",
+            "about": [
+                "Replace with the real description of the project."
+            ],
+            "highlights": [
+                "Replace with a key feature"
+            ]
+        }
+    }
+}

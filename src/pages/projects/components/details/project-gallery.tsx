@@ -9,13 +9,13 @@ interface ProjectGalleryProps {
 }
 
 const ProjectGallery: React.FC<ProjectGalleryProps> = ({ images, title }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("projects");
   const [index, setIndex] = useState(0);
 
   if (images.length === 0) {
     return (
       <div className="flex aspect-video items-center justify-center rounded-xl border border-neutral-800 text-sm text-neutral-500 bg-black">
-        {t("projects.detail.noPreview")}
+        {t("detail.noPreview")}
       </div>
     );
   }
@@ -40,7 +40,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ images, title }) => {
       {images.length > 1 && (
         <ul
           className="flex gap-3 overflow-x-auto p-1"
-          aria-label={t("projects.detail.gallery")}
+          aria-label={t("detail.gallery")}
         >
           {images.map((src, i) => (
             <li key={src} className="shrink-0">
@@ -48,7 +48,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ images, title }) => {
                 type="button"
                 onClick={() => setIndex(i)}
                 aria-pressed={i === index}
-                aria-label={t("projects.detail.showImage", { number: i + 1 })}
+                aria-label={t("detail.showImage", { number: i + 1 })}
                 className={cn(
                   "block h-16 w-28 overflow-hidden rounded-lg border bg-neutral-950 outline-none transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white",
                   i === index

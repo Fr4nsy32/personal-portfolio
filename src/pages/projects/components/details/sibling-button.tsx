@@ -11,7 +11,7 @@ const SiblingButton: React.FC<{
   label: string;
   focusRing: string;
 }> = ({ project, direction, label, focusRing }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("projects");
   const Icon = direction === "next" ? ArrowRight : ArrowLeft;
   const shape =
     "flex h-7 w-7 items-center justify-center rounded-full border transition";
@@ -27,7 +27,7 @@ const SiblingButton: React.FC<{
     );
   }
 
-  const name = t(`projects.items.${project.id}.title`);
+  const name = t(`items.${project.id}.title`);
 
   return (
     <Link

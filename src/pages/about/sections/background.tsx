@@ -3,14 +3,8 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ChefHat, ConciergeBell, Users, Wine } from "lucide-react";
 import Tabs from "@/components/tabs";
 import { panelDomId, tabDomId } from "@/lib/tab-ids";
-import {
-  Chips,
-  IconBadge,
-  Intro,
-  MetaLine,
-  SectionTitle,
-} from "../components";
-import { useTimelineT } from "@/hooks/use-timeline-t";
+import { Chips, IconBadge, Intro, MetaLine, SectionTitle } from "../components";
+import { useTranslation } from "react-i18next";
 
 const STATS = [
   { id: "years", value: "6+" },
@@ -27,11 +21,9 @@ const ITEMS = [
 const ID_PREFIX = "bg";
 
 export const Background: React.FC = () => {
-  const { t, list } = useTimelineT("background");
+  const { t } = useTranslation("about", { keyPrefix: "timeline.background" });
   const reduceMotion = useReducedMotion();
   const [activeId, setActiveId] = useState<string>(ITEMS[0].id);
-
-  /* Translations are resolved once, in one place, into a ready-to-render shape. */
   const items = useMemo(
     () =>
       ITEMS.map((item) => ({
@@ -39,9 +31,11 @@ export const Background: React.FC = () => {
         title: t(`items.${item.id}.title`),
         place: t(`items.${item.id}.place`),
         summary: t(`items.${item.id}.summary`),
-        highlights: list(`items.${item.id}.highlights`),
+        highlights: t(`items.${item.id}.highlights`, {
+          returnObjects: true,
+        }) as string[],
       })),
-    [t, list],
+    [t],
   );
 
   const tabs = useMemo(
