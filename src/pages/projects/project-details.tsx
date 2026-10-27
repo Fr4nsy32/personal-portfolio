@@ -83,8 +83,8 @@ const ProjectDetailPage: React.FC = () => {
         </motion.div>
 
         {/* Top: screenshots on the left, summary on the right */}
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
-          <motion.div variants={motionItem}>
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
+          <motion.div variants={motionItem} className="min-w-0">
             <ProjectGallery
               key={project.id}
               images={project.images}
@@ -92,7 +92,7 @@ const ProjectDetailPage: React.FC = () => {
             />
           </motion.div>
 
-          <motion.div variants={motionItem} className="space-y-8">
+          <motion.div variants={motionItem} className="min-w-0 space-y-8">
             <header className="space-y-3">
               <p className="flex gap-3 text-xs text-neutral-500 lg:text-sm">
                 <span>{t(`categories.${project.category}`)}</span>
@@ -151,10 +151,10 @@ const ProjectDetailPage: React.FC = () => {
         {(about.length > 0 || highlights.length > 0) && (
           <motion.div
             variants={motionItem}
-            className="mt-10 grid gap-10 lg:grid-cols-2 lg:gap-16 "
+            className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16"
           >
             {about.length > 0 && (
-              <section>
+              <section className="min-w-0">
                 <SectionHeading>{t("detail.about")}</SectionHeading>
                 <div className="max-w-xl space-y-3 text-sm leading-relaxed text-neutral-300 lg:text-base">
                   {about.map((paragraph) => (
@@ -165,7 +165,7 @@ const ProjectDetailPage: React.FC = () => {
             )}
 
             {highlights.length > 0 && (
-              <section>
+              <section className="min-w-0">
                 <SectionHeading>{t("detail.highlights")}</SectionHeading>
                 <ul className="max-w-xl list-disc space-y-2 pl-5 text-sm leading-relaxed text-neutral-300 marker:text-neutral-600 lg:text-base">
                   {highlights.map((item) => (

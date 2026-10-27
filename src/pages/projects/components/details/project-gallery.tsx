@@ -39,7 +39,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ images, title }) => {
 
       {images.length > 1 && (
         <ul
-          className="flex gap-3 overflow-x-auto p-1"
+          className="flex gap-3 overflow-x-auto p-1 no-scrollbar"
           aria-label={t("detail.gallery")}
         >
           {images.map((src, i) => (

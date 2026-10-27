@@ -20,5 +20,9 @@
             "description": "Si è verificato un errore imprevisto. Puoi tornare alla home e riprovare.",
             "button": "Torna alla home"
         }
+    },
+    "footer": {
+        "builtBy": "Progettato e sviluppato da me",
+        "sourceCode": "Codice sorgente (MIT)"
     }
 }

@@ -32,7 +32,8 @@
             "highlights": [
                 "Language switch with persisted preference",
                 "Reduced-motion preference respected across all animations",
-                "CV download in the active language"
+                "CV download in the active language",
+                "Discord bot integration on contact form"
             ]
         },
         "recipe-app": {

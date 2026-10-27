@@ -1,7 +1,7 @@
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import DotBackground from "./dot-background";
 import NavbarComponent from "./navbar";
-import { version } from "@/../package.json";
+import Footer from "./footer";
 
 const Layout: React.FC = () => {
   return (
@@ -14,10 +14,7 @@ const Layout: React.FC = () => {
         <Outlet />
       </main>
 
-      <footer className="mt-auto text-center text-sm text-muted-foreground py-4">
-        <p>&copy; {new Date().getFullYear()} Andi Sina. All rights reserved.</p>
-        <p>Version: {version}</p>
-      </footer>
+      <Footer />
     </div>
   );
 };
