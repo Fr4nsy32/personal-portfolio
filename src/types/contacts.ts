@@ -6,3 +6,10 @@ export type Contact = {
   icon: React.ElementType;
   external?: boolean;
 };
+
+export interface ContactPayload {
+  name: string;
+  email: string;
+  subject?: string;
+  message: string;
+}
