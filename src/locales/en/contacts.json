@@ -26,8 +26,10 @@
             "placeholder": "Tell me about your project or idea..."
         },
         "submit": "Send message",
-        "statusIdle": "Demo form: submitting doesn't send anything yet.",
-        "statusSent": "Thanks! This is a demo, so nothing was actually sent."
+        "statusIdle": "Complete the form and send me a message.",
+        "statusSending": "Your message is being sent...",
+        "statusSent": "Thanks! Will get back to you asap.",
+        "statusError": "Something went wrong, please try again later."
     },
     "links": {
         "github": "GitHub",
