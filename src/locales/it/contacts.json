@@ -1,0 +1,40 @@
+{
+    "header": {
+        "title": "Mettiamoci in contatto",
+        "description": "Hai un progetto in mente o vuoi semplicemente salutarmi? Scrivimi un messaggio o contattami direttamente."
+    },
+    "tabsLabel": "Opzioni di contatto",
+    "tabs": {
+        "form": "Invia un messaggio",
+        "links": "Trovami online"
+    },
+    "form": {
+        "name": {
+            "label": "Nome",
+            "placeholder": "Il tuo nome"
+        },
+        "email": {
+            "label": "Email",
+            "placeholder": "tu@esempio.com"
+        },
+        "subject": {
+            "label": "Oggetto",
+            "placeholder": "Di cosa si tratta?"
+        },
+        "message": {
+            "label": "Messaggio",
+            "placeholder": "Raccontami del tuo progetto o della tua idea..."
+        },
+        "submit": "Invia messaggio",
+        "statusIdle": "Compila il from e inviami un messaggio.",
+        "statusSending": "Invio del messaggio in corso...",
+        "statusSent": "Grazie! Ti risponderò il prima possibile.",
+        "statusError": "Qualcosa è andato storto, riprova più tardi."
+    },
+    "links": {
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "email": "Email",
+        "phone": "Telefono"
+    }
+}

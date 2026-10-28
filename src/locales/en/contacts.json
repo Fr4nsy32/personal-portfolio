@@ -1,0 +1,40 @@
+{
+    "header": {
+        "title": "Get in touch",
+        "description": "Have a project in mind or just want to say hi? Send a message or reach me directly."
+    },
+    "tabsLabel": "Contact options",
+    "tabs": {
+        "form": "Send a message",
+        "links": "Find me online"
+    },
+    "form": {
+        "name": {
+            "label": "Name",
+            "placeholder": "Your name"
+        },
+        "email": {
+            "label": "Email",
+            "placeholder": "you@example.com"
+        },
+        "subject": {
+            "label": "Subject",
+            "placeholder": "What is it about?"
+        },
+        "message": {
+            "label": "Message",
+            "placeholder": "Tell me about your project or idea..."
+        },
+        "submit": "Send message",
+        "statusIdle": "Complete the form and send me a message.",
+        "statusSending": "Your message is being sent...",
+        "statusSent": "Thanks! Will get back to you asap.",
+        "statusError": "Something went wrong, please try again later."
+    },
+    "links": {
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "email": "Email",
+        "phone": "Phone"
+    }
+}
