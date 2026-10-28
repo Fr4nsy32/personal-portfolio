@@ -29,7 +29,7 @@ export const PROJECTS: Project[] = [
     ],
     images: [homepage, about, projects, contact],
     repo: githubRepo("personal-portfolio"),
-    demo: "https://your-portfolio.dev",
+    demo: "https://www.as-web.dev",
   },
   // {
   //   id: "recipe-app",
