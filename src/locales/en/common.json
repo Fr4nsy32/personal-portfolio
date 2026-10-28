@@ -20,5 +20,9 @@
             "description": "An unexpected error occurred. You can head back home and try again.",
             "button": "Back home"
         }
+    },
+    "footer": {
+        "builtBy": "Designed and built by me",
+        "sourceCode": "Source code (MIT)"
     }
 }

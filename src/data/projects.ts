@@ -1,6 +1,10 @@
 import { RouteNames } from "@/routes/route-names";
-import demo_1 from "@/assets/img/demo_1.png";
-import demo_2 from "@/assets/img/demo_2.png";
+// import demo_1 from "@/assets/img/demo_1.png";
+// import demo_2 from "@/assets/img/demo_2.png";
+import homepage from "@/assets/img/personal-portfolio/homepage.png";
+import about from "@/assets/img/personal-portfolio/about.png";
+import projects from "@/assets/img/personal-portfolio/projects.png";
+import contact from "@/assets/img/personal-portfolio/contact.png";
 import type { Project, ProjectCategory } from "@/types";
 import { TECH } from "./tech";
 
@@ -23,7 +27,7 @@ export const PROJECTS: Project[] = [
       TECH.motion,
       TECH.i18next,
     ],
-    images: [demo_1, demo_2],
+    images: [homepage, about, projects, contact],
     repo: githubRepo("personal-portfolio"),
     demo: "https://your-portfolio.dev",
   },

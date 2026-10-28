@@ -26,8 +26,10 @@
             "placeholder": "Raccontami del tuo progetto o della tua idea..."
         },
         "submit": "Invia messaggio",
-        "statusIdle": "Modulo demo: l'invio non spedisce ancora nulla.",
-        "statusSent": "Grazie! Questa è una demo, quindi non è stato inviato nulla."
+        "statusIdle": "Compila il from e inviami un messaggio.",
+        "statusSending": "Invio del messaggio in corso...",
+        "statusSent": "Grazie! Ti risponderò il prima possibile.",
+        "statusError": "Qualcosa è andato storto, riprova più tardi."
     },
     "links": {
         "github": "GitHub",
