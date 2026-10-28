@@ -7,7 +7,7 @@ const TranslateIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     strokeWidth={14}
     strokeLinecap="round"
     strokeLinejoin="round"
-    aria-hidden="true"
+    aria-label="translate-icon"
     {...props}
   >
     <polyline points="231.994 216 175.994 104 119.994 216" />
