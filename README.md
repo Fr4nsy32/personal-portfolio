@@ -2,7 +2,7 @@
 
 My personal portfolio website, built with **React** and **Vite** and deployed on **Cloudflare**. It is fully bilingual (🇮🇹 Italian / 🇬🇧 English), accessible, and includes a contact form that delivers messages straight to my Discord through a Cloudflare serverless function.
 
-🔗 **Live site:** [your-domain.com](https://your-domain.com)
+🔗 **Live site:** [as-web.dev](https://www.as-web.dev)
 
 ---
 
@@ -186,6 +186,6 @@ The content (text, images, CV) is personal and not covered by the license. Pleas
 
 ## 📬 Contact
 
-- Website: [your-domain.com](https://your-domain.com)
+- Website: [as-web.dev](https://www.as-web.dev)
 - GitHub: [@fr4nsy32](https://github.com/fr4nsy32)
-- LinkedIn: [andi-sina](https://linkedin.com/in/andi-sina)
+- LinkedIn: [Andi Sina](https://linkedin.com/in/andi-sina)
