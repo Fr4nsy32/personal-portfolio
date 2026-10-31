@@ -1,0 +1,39 @@
+
+# Default permission profile
+default_permissions = "safe-dev"
+approval_policy = "on-request"
+
+[permissions.safe-dev]
+description = "Allow coding but protect secrets"
+extends = ":workspace"
+
+# Filesystem permissions
+[permissions.safe-dev.filesystem]
+glob_scan_max_depth = 6
+
+[permissions.safe-dev.filesystem.":workspace_roots"]
+
+# ALLOW: Normal project access
+"." = "write"
+
+# READ ONLY: Configuration examples
+".env.example" = "read"
+
+# DENY: Secret files
+".env" = "deny"
+".env.*" = "deny"
+"**/.env" = "deny"
+"**/.env.*" = "deny"
+".dev.vars" = "deny"
+".dev.vars.*" = "deny"
+"**/.dev.vars" = "deny"
+"**/.dev.vars.*" = "deny"
+
+# DENY: Other sensitive files
+"**/secrets" = "deny"
+"**/*.pem" = "deny"
+"**/*.key" = "deny"
+
+# Network access
+[permissions.safe-dev.network]
+enabled = false

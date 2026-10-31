@@ -1,0 +1,21 @@
+
+# Require approval before staging changes
+prefix_rule(
+    pattern = ["git", "add"],
+    decision = "prompt",
+    justification = "Ask the user before staging files.",
+)
+
+# Require approval before committing
+prefix_rule(
+    pattern = ["git", "commit"],
+    decision = "prompt",
+    justification = "Ask the user before creating commits.",
+)
+
+# Require approval before pushing
+prefix_rule(
+    pattern = ["git", "push"],
+    decision = "prompt",
+    justification = "Ask the user before pushing changes.",
+)
