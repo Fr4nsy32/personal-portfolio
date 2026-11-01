@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const SITE_URL = "https://www.as-web.dev";
+export const SITE_URL = "https://as-web.dev";
 
 export function pageMetadata(title: string, description: string, path: string): Metadata {
   return {

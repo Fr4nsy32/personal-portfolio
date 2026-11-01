@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.as-web.dev/sitemap.xml
+Sitemap: https://as-web.dev/sitemap.xml
