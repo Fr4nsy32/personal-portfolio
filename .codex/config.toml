@@ -36,4 +36,4 @@ glob_scan_max_depth = 6
 
 # Network access
 [permissions.safe-dev.network]
-enabled = false
+enabled = true
