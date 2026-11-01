@@ -1,8 +1,8 @@
 # Andi Sina | Personal Portfolio
 
-My personal portfolio website, built with **React** and **Next.js**, currently hosted on **Cloudflare**. It is fully bilingual (🇮🇹 Italian / 🇬🇧 English), accessible, and includes a contact form that delivers messages straight to my Discord through a Next.js API route.
+My personal portfolio website, built with **React** and **Next.js**, deployed on **Vercel**. It is fully bilingual (🇮🇹 Italian / 🇬🇧 English), accessible, and includes a contact form that delivers messages straight to my Discord through a Next.js API route.
 
-🔗 **Live site:** [as-web.dev](https://www.as-web.dev)
+🔗 **Live site:** [as-web.dev](https://as-web.dev)
 
 ---
 
@@ -28,7 +28,7 @@ My personal portfolio website, built with **React** and **Next.js**, currently h
 - **Interactive sections**: a terminal-style home page with carousel, an about timeline, and a project explorer with a tree view and detail pages with galleries.
 - **Lottie micro-interactions**: animated buttons for download, send, reload and the home hero.
 - **Modern UI**: animations and polished components built with Motion, Aceternity UI and shadcn/ui.
-- **Fast delivery**: the live site is served from Cloudflare's global network.
+- **Fast delivery**: the frontend and contact API are deployed together on Vercel.
 
 ---
 
@@ -45,7 +45,8 @@ My personal portfolio website, built with **React** and **Next.js**, currently h
 | i18n | [i18next](https://www.i18next.com/) + [react-i18next](https://react.i18next.com/) |
 | Backend / API | [Next.js Route Handlers](https://nextjs.org/docs/app/getting-started/route-handlers) |
 | Integrations | [Discord Webhooks](https://discord.com/developers/docs/resources/webhook) |
-| Hosting | [Cloudflare](https://www.cloudflare.com/) |
+| Hosting | [Vercel](https://vercel.com/) |
+| Domain registration / DNS | [Cloudflare](https://www.cloudflare.com/) |
 | Linting | [ESLint](https://eslint.org/) |
 
 ---
@@ -113,7 +114,7 @@ The contact form sends messages to Discord without ever exposing the webhook URL
 | --- | --- |
 | `DISCORD_WEBHOOK_URL` | Discord webhook URL of the channel that receives the messages |
 
-This secret is configured as a server-side environment variable in Cloudflare for the current live deployment, or in `.env.local` for local Next.js development. It is only available to the server-side contact endpoint and is never committed to the repository or bundled into the frontend.
+This secret is configured as a server-side environment variable in Vercel for the deployed application, or in `.env.local` for local Next.js development. It is only available to the server-side contact endpoint and is never committed to the repository or bundled into the frontend.
 
 ---
 
@@ -123,12 +124,12 @@ Two kinds of variables are used:
 
 | Type | Example | Where it lives | Exposed to the browser? |
 | --- | --- | --- | --- |
-| Secret | `DISCORD_WEBHOOK_URL` | `.env.local` / Cloudflare environment settings | No |
-| UI variables | `NEXT_PUBLIC_EMAIL`, `NEXT_PUBLIC_PHONE_NUMBER`, `NEXT_PUBLIC_GITHUB_USER`, `NEXT_PUBLIC_LINKEDIN_USER` | `.env.local` / Cloudflare environment settings | Yes |
+| Secret | `DISCORD_WEBHOOK_URL` | `.env.local` / Vercel environment settings | No |
+| UI variables | `NEXT_PUBLIC_EMAIL`, `NEXT_PUBLIC_PHONE_NUMBER`, `NEXT_PUBLIC_GITHUB_USER`, `NEXT_PUBLIC_LINKEDIN_USER` | `.env.local` / Vercel environment settings | Yes |
 
 The UI variables hold my public contact details (email, social links, and so on) shown across the site. Next.js only exposes variables prefixed with `NEXT_PUBLIC_`, and they are embedded in the built bundle, so only public information belongs there. Anything sensitive stays in server-side environment variables.
 
-These are configured in Cloudflare environment settings for the live deployment or locally in `.env.local` for Next.js development and are never committed to the repository.
+These are configured in Vercel environment settings for the live deployment or locally in `.env.local` for Next.js development and are never committed to the repository.
 
 ---
 
@@ -203,18 +204,34 @@ The development server serves both the frontend and `/api/contact`. Run `npm run
 
 ---
 
-## 🚀 Deploy on Vercel — Work in Progress
+## 🚀 Deployment on Vercel
 
-**Status: work in progress.**
-The live site remains hosted on Cloudflare. The steps below describe the planned Vercel deployment of the migrated Next.js application; the hosting switch has not been completed.
+The portfolio is deployed on **Vercel**, which hosts the Next.js frontend and `/api/contact` together under the same domain. **Cloudflare** remains the domain registrar and DNS provider.
 
-1. Import this repository into Vercel and use the **Next.js** framework preset with the repository root as the root directory. Keep the detected build and output settings.
-2. Add `NEXT_PUBLIC_GITHUB_USER`, `NEXT_PUBLIC_LINKEDIN_USER`, `NEXT_PUBLIC_EMAIL`, `NEXT_PUBLIC_PHONE_NUMBER`, and `DISCORD_WEBHOOK_URL` to the appropriate Preview and Production environments before deploying. Keep the webhook variable server-side.
-3. Deploy and check the preview URL: routes, both languages, CV downloads, and contact form success/error handling.
-4. Add the custom domains in Vercel and apply the DNS records it provides. Cloudflare can continue managing DNS.
-5. Once the new deployment and domain work, disable automatic production builds for the old Cloudflare Pages project.
+### Environments and custom domains
 
-Vercel deploys the frontend and `/api/contact` together under the same domain, so no separate API deployment is needed. Redeploy after changing environment variables; public values are embedded at build time.
+| Environment | Branch | Custom domain |
+| --- | --- | --- |
+| Production | `main` | [as-web.dev](https://as-web.dev) |
+| Staging | `develop` | [staging.as-web.dev](https://staging.as-web.dev) |
+
+With Vercel's Git integration, pushes to `develop` trigger staging deployments, and merges or pushes to `main` trigger production deployments. A version bump is not required to trigger a deployment.
+
+### DNS, HTTPS, and redirects
+
+- **DNS**: records are managed in Cloudflare and point the production and staging domains to Vercel using the records provided by Vercel.
+- **HTTPS**: HTTP requests redirect to HTTPS.
+- **Preferred production domain**: `www.as-web.dev` permanently redirects to `as-web.dev`, so the public site uses the bare domain.
+
+### Environment variables
+
+Configure `NEXT_PUBLIC_GITHUB_USER`, `NEXT_PUBLIC_LINKEDIN_USER`, `NEXT_PUBLIC_EMAIL`, `NEXT_PUBLIC_PHONE_NUMBER`, and `DISCORD_WEBHOOK_URL` in the appropriate Vercel Preview and Production environments. Staging uses the Preview environment for `develop`; production uses the Production environment.
+
+Keep `DISCORD_WEBHOOK_URL` server-side. Redeploy after changing environment variables; `NEXT_PUBLIC_` values are embedded at build time.
+
+### SEO and Google indexing
+
+The site includes page metadata, canonical URLs, Open Graph and Twitter cards, a sitemap at `/sitemap.xml`, and a `robots.txt` file. Google Search Console is configured, and indexing of the production site is confirmed.
 
 See the official [Next.js on Vercel guide](https://vercel.com/docs/frameworks/full-stack/nextjs) and [environment variable documentation](https://vercel.com/docs/environment-variables).
 
@@ -230,6 +247,6 @@ The content (text, images, CV) is personal and not covered by the license. Pleas
 
 ## 📬 Contact
 
-- Website: [as-web.dev](https://www.as-web.dev)
+- Website: [as-web.dev](https://as-web.dev)
 - GitHub: [@fr4nsy32](https://github.com/fr4nsy32)
 - LinkedIn: [Andi Sina](https://linkedin.com/in/andi-sina)
