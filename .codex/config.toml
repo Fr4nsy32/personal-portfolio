@@ -1,25 +1,19 @@
 
-# Default permission profile
+# Default development permissions
 default_permissions = "safe-dev"
+
+# Ask before supported elevated operations
 approval_policy = "on-request"
 
 [permissions.safe-dev]
-description = "Allow coding but protect secrets"
+description = "Safe everyday development"
 extends = ":workspace"
 
-# Filesystem permissions
+# Protect sensitive project files
 [permissions.safe-dev.filesystem]
-glob_scan_max_depth = 6
+glob_scan_max_depth = 10
 
 [permissions.safe-dev.filesystem.":workspace_roots"]
-
-# ALLOW: Normal project access
-"." = "write"
-
-# READ ONLY: Configuration examples
-".env.example" = "read"
-
-# DENY: Secret files
 ".env" = "deny"
 ".env.*" = "deny"
 "**/.env" = "deny"
@@ -28,12 +22,15 @@ glob_scan_max_depth = 6
 ".dev.vars.*" = "deny"
 "**/.dev.vars" = "deny"
 "**/.dev.vars.*" = "deny"
-
-# DENY: Other sensitive files
 "**/secrets" = "deny"
 "**/*.pem" = "deny"
 "**/*.key" = "deny"
 
-# Network access
+# Allow development networking
 [permissions.safe-dev.network]
 enabled = true
+
+# Reduce secret environment exposure
+[shell_environment_policy]
+inherit = "core"
+ignore_default_excludes = false
