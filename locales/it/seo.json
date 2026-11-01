@@ -1,0 +1,18 @@
+{
+  "home": {
+    "title": "Andi Sina – Sviluppatore Web",
+    "description": "Il portfolio di Andi Sina, sviluppatore web che realizza applicazioni veloci e accessibili."
+  },
+  "about": {
+    "title": "Chi sono – Andi Sina",
+    "description": "Scopri il percorso, la formazione e le esperienze di Andi Sina come sviluppatore web full-stack."
+  },
+  "projects": {
+    "title": "Progetti – Andi Sina",
+    "description": "Esplora i progetti web di Andi Sina, le tecnologie utilizzate, gli screenshot e il codice sorgente."
+  },
+  "contacts": {
+    "title": "Contatti – Andi Sina",
+    "description": "Contatta Andi Sina per parlare di progetti web freelance e nuove opportunità."
+  }
+}
