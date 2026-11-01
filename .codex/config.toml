@@ -1,0 +1,36 @@
+
+# Default development permissions
+default_permissions = "safe-dev"
+
+# Ask before supported elevated operations
+approval_policy = "on-request"
+
+[permissions.safe-dev]
+description = "Safe everyday development"
+extends = ":workspace"
+
+# Protect sensitive project files
+[permissions.safe-dev.filesystem]
+glob_scan_max_depth = 10
+
+[permissions.safe-dev.filesystem.":workspace_roots"]
+".env" = "deny"
+".env.*" = "deny"
+"**/.env" = "deny"
+"**/.env.*" = "deny"
+".dev.vars" = "deny"
+".dev.vars.*" = "deny"
+"**/.dev.vars" = "deny"
+"**/.dev.vars.*" = "deny"
+"**/secrets" = "deny"
+"**/*.pem" = "deny"
+"**/*.key" = "deny"
+
+# Allow development networking
+[permissions.safe-dev.network]
+enabled = true
+
+# Reduce secret environment exposure
+[shell_environment_policy]
+inherit = "core"
+ignore_default_excludes = false

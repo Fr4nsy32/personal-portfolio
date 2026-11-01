@@ -1,0 +1,18 @@
+{
+  "home": {
+    "title": "Andi Sina – Web Developer",
+    "description": "Andi Sina portfolio, web developer building fast, accessible web apps."
+  },
+  "about": {
+    "title": "About – Andi Sina",
+    "description": "Explore Andi Sina’s background, education and experience as a full-stack web developer."
+  },
+  "projects": {
+    "title": "Projects – Andi Sina",
+    "description": "Explore Andi Sina’s web development projects, technologies, screenshots and source code."
+  },
+  "contacts": {
+    "title": "Contact – Andi Sina",
+    "description": "Contact Andi Sina to discuss freelance web development projects and new opportunities."
+  }
+}

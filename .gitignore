@@ -26,3 +26,12 @@ dist-ssr
 .dev*
 .wrangler
 .vscode
+
+# Next.js / Vercel
+.next/
+out/
+.vercel/
+next-env.d.ts
+*.tsbuildinfo
+.env*
+!.env.example
