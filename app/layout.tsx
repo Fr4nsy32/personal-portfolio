@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Andi Sina – Web Developer",
   description: "Andi Sina portfolio, web developer building fast, accessible web apps.",
+  other: {
+    "websitelaunches-verification": "f56cad8744570c6dff13dd7aa3b91bab",
+  },
   icons: {
     icon: [{ url: "/favicon.ico", sizes: "32x32" }, { url: "/favicon.svg", type: "image/svg+xml" }],
     apple: "/apple-touch-icon.png",
